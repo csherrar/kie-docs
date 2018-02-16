@@ -1,0 +1,31 @@
+[id='optashift-ER-running-jar-proc']
+= Running the Employee Rostering starter application JAR file
+You can run the Employee Rostering starter application from a JAR file included in the reference implementation download.
+
+.Prerequisites
+* You have downloaded and extracted the `{PRODUCT_FILE}-reference-implementation.zip` file as described in <<er-deploy-prepare-proc>>.
+* A Java Development Kit is installed.
+* Maven is installed.
+* The host has access to the Internet. The build process uses the Internet for downloading Maven packages from external repositories.
+
+.Procedure
+. In a command terminal, change to the `sources` directory.
+. Enter the following command:
++
+[source,bash]
+----
+mvn clean install -DskipTests
+----
++
+. Wait for the build process to complete.
+. Navigate to the `optaweb-employee-rostering-distribution-{MAVEN_ARTIFACT_VERSION}/sources/optaweb-employee-rostering-standalone/target` directory.
+. Enter the following command to run the Employee Rostering JAR file:
++
+[source,xml,subs="attributes+"]
+----
+java -jar optaweb-employee-rostering-standalone-*-exec.jar
+----
++
+NOTE: This command starts the employee rostering application with a non-production database. To start the employee rostering application with a production database, add the `--spring.profiles.active=production` argument to the preceding command.
+
+. To access the application, enter `\http://localhost:8080/` in a web browser.

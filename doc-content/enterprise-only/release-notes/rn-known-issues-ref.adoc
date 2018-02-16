@@ -1,0 +1,223 @@
+[id='rn-known-issues-ref']
+= Known issues in {PRODUCT} 7.7.0
+
+This section lists known issues with {PRODUCT} {PRODUCT_VERSION}.
+
+== {CENTRAL}
+
+
+.In a high-availability deployment of {CENTRAL}, deploying a service to a {KIE_SERVER} using {CENTRAL} intermittently fails [https://issues.redhat.com/browse/RHPAM-2830[RHPAM-2830]]
+
+Issue: In a high-availability deployment of {CENTRAL}, Sometimes the service is not deployed to a {KIE_SERVER} when you use the {CENTRAL} user interface in a high-availability deployment.
+
+Workaround: There is no workaround in an on-premise deployment using the {EAP}. Do not use an on-premises high-availability deployment of {CENTRAL} to deploy services to {KIE_SERVERS}.
+
+In a deployment on {OPENSHIFT}, the issue is resolved starting in {PRODUCT} version 7.7.1. When you deploy a high-availability authoring environment on {OPENSHIFT} in {PRODUCT} version 7.7.0, you must enable the `OpenShiftStartupStrategy` setting. For instructions about enabling this setting, see
+ifdef::PAM[]
+{URL_DEPLOYING_AUTHORING_ON_OPENSHIFT}/environment-authoring-con#startupstrategy-enable-proc[_Enabling the OpenShiftStartupStrategy setting to connect additional KIE Servers to Business Central_] in the _{DEPLOYING_AUTHORING_ON_OPENSHIFT}_ document.
+endif::PAM[]
+ifdef::DM[]
+{URL_DEPLOYING_AUTHORING_MANAGED_ON_OPENSHIFT}/environment-authoring-con#startupstrategy-enable-proc[_Enabling the OpenShiftStartupStrategy setting to connect additional KIE Servers to Business Central_] in the _{DEPLOYING_AUTHORING_MANAGED_ON_OPENSHIFT}_ document.
+endif::DM[]
+You must complete this procedure even if you do not connect any additional {KIE_SERVERS} to {CENTRAL}.
+
+
+.When you log out and log back in to {CENTRAL}, the language switches to English instead of the selected language [https://issues.redhat.com/browse/RHPAM-2779[RHPAM-2779]]
+
+Issue: In {CENTRAL}, when you select a language from the *Languages* drop-down menu and log out and log back in to {CENTRAL}, the language switches to English instead of the selected language.
+
+Steps to reproduce:
+
+. In {CENTRAL}, select the *Admin* icon in the top-right corner of the screen and select *Languages*.
+. Select *French* from the *Languages* drop-down menu.
+. Click *Ok*.
+. Log out of {CENTRAL}.
+. Log in to {CENTRAL}.
+. In {CENTRAL}, select the *Admin* icon in the top-right corner of the screen and select *Languages*.
+
+Expected result: A dialog box with a list of languages appears.
+
+Actual result: {CENTRAL} is reloaded and the language switches to English instead of French.
+
+Workaround: Select the *Admin* icon in the top-right corner of the screen, select *Languages* and select the desired language.
+
+ifdef::PAM[]
+.An error occurs during a WAR file deployment with invalid jandex index files in {CENTRAL} [https://issues.redhat.com/browse/RHPAM-2742[RHPAM-2742]]
+endif::[]
+
+ifdef::DM[]
+.An error occurs during a WAR file deployment with invalid jandex index files in {CENTRAL} [https://issues.redhat.com/browse/RHDM-1267[RHDM-1267]]
+endif::[]
+
+Issue: When you deploy {CENTRAL} or {KIE_SERVER} `WAR` files to {EAP} or Thorntail, an invalid jandex index file error occurs with the following message:
+
+----
+WFLYSRV0002: Could not read provided index: /content/kie-server.war/WEB-INF/lib/kubernetes-client-4.6.0.jar/META-INF/jandex.idx
+----
+
+.The alerts panel mixes the messages from multiple projects instead of showing messages related just to the opened project [https://issues.redhat.com/browse/RHDM-1243[RHDM-1243]]
+
+Issue: In the *Alerts* panel, you can see alert messages from multiple projects instead of only messages related to the opened project.
+
+Steps to reproduce:
+
+. Start {CENTRAL}.
+. Open *MySpace*.
+. Add a project named `a-project`.
+. Add a DMN asset named `a-model`.
+. Add a decision node named `A-Decision` but do not specify its expression.
+. Click *Save* to save the `a-model`.
+. Return to *MySpace*.
+. Add a project named `b-project`.
+. Add a DMN asset named `b-model`.
+. Add a decision node named `B-Decision` but do not specify its expression.
+. Click *Save* to save the `b-model`.
+
+Expected result: The *Alerts* panel does not mix messages from multiple projects.
+
+Actual result: The *Alerts* mixes messages from multiple projects.
+
+Workaround: None.
+
+.Dashbuilder data transfer feature does not work on Windows [https://issues.redhat.com/browse/RHPAM-2751[RHPAM-2751]]
+
+Issue: The Dashbuilder data transfer feature does not work on Windows. You can not export and import the Dashbuilder related data out of or into {CENTRAL}.
+
+Steps to reproduce:
+
+. Start {CENTRAL} on Windows.
+. Select the *Admin* icon in the top-right corner of the screen and select *Dashbuilder Data Transfer*.
+. Try to export or import some data.
+
+Expected result: You can export or import dashboard data on Windows.
+
+Actual result: You cannot export or import dashboard data on Windows.
+
+Workaround: None.
+
+ifdef::PAM[]
+
+== Process Designer
+
+.If you try to migrate a process with a custom data type containing `<` `>` characters, you receive a warning message [https://issues.redhat.com/browse/RHPAM-2772[RHPAM-2772]]
+
+Issue: It is not possible to migrate a process with a custom data type containing `<` `>` characters. You receive an empty error message in the *Migrate Diagram* window.
+
+Steps to reproduce:
+
+. Create a process in the legacy process designer.
+. Define a process variable with the name and custom data type containing `<` `>` characters.
+. Migrate the process to the new process designer.
+
+Expected result: You can migrate the process to the new process designer. If the process is broken, an error message appears telling you that you cannot migrate the process.
+
+Actual result: Warnings are shown that you cannot migrate the process.
+
+Workaround: Remove `<` and `>` characters from custom type of all process variable definitions before you start the migration.
+
+.If you use the '^' character in the subject of a user task notification an error occurs [https://issues.redhat.com/browse/RHPAM-2763[RHPAM-2763]]
+
+Issue: In the the process designer, if you use the `^` character in *Notifications* subject in user task it break a process.
+
+Steps to reproduce:
+
+. Create an user task.
+. Click *Notifications* to specify notifications associated with the user task.
+. Enter the subject `^` in the *Notifications*.
+. Click *Save*.
+. Save and reopen the process.
+
+Expected result: The process designer opens and the process is not broken.
+
+Actual result: The process is broken. A system error message appears.
+
+Workaround: Do not use `^` character in the Notifications subject.
+
+.Called element in reusable sub process is not populated [https://issues.redhat.com/browse/RHPAM-2760[RHPAM-2760]]
+
+Issue: In the process designer, the reusable sub process is not populated in the *Called element* drop-down list.
+
+Steps to reproduce:
+
+. Create process A.
+. Create process B.
+. Create reusable sub process in process B.
+. Click *Called element* property.
+
+Expected result: Called element property is populated.
+
+Actual result: Called element property is not populated.
+
+Workaround: Deactivate the Reusable sub-process and activate it again.
+
+.An error occurs when editing the process during restoring the other process [https://issues.redhat.com/browse/RHPAM-2757[RHPAM-2757]]
+
+Issue: In the process designer, While editing the process when you try to restore other process an error message is shown.
+
+Steps to reproduce:
+
+. Create process A and do not close this process.
+. Create process B.
+. Make a change in process B and click *Save*.
+. Click *Latest version* and select *Version 1*. Do not click *Restore*.
+. Open the process A.
+. Make a change in process A and click *Save*.
+
+Expected result: No error messages are shown.
+
+Actual result: An error message is shown.
+
+Workaround: Finish restoring the previous version by clicking *Restore* before you start editing other processes.
+
+.You cannot remove the case file and global variables [https://issues.redhat.com/browse/RHPAM-2643[RHPAM-2643]]
+
+Issue: When editing a case definition in process designer, you can add case file variables in the *Case Management* section, but you cannot delete them. It is also not possible to delete the global variables.
+
+Steps to reproduce:
+
+. Create a case project.
+. Create a case definition.
+. In the *Properties* panel add a case file variable in the *Case Management* section.
+. Add a global variable in the *Properties* panel.
+. Try to delete the case file variable and global variable.
+
+Expected result: A trash can icon appears next to each variable. After you click the icon, the variable is removed.
+
+Actual result: It is not possible to delete variables and the trash can icon is missing.
+
+Workaround:
+
+. Download the process or a case.
+. Locate the case file variable and global variable in the downloaded `.bpmn` file and delete them.
+. Delete the process or a case from {CENTRAL}.
+. Import the previously downloaded and edited `.bpmn` file back into {CENTRAL}.
+
+.Ruleflow group is not populated [https://issues.redhat.com/browse/RHPAM-2740[RHPAM-2740]]
+
+Issue: In the process designer, the Ruleflow group menu is not populated with the rule flow groups defined in the project.
+
+Steps to reproduce:
+
+. Create a new DRL file containing a rule flow group.
+. Create a new process.
+. Activate the Business Rule task.
+. Click the *Rule Flow Group* property of the Business Rule task.
+
+Expected result: All the rule flow groups from the project are listed in the *Rule Flow Group* drop-down menu.
+
+Actual result: The *Rule flow Group* drop-down menu is empty.
+
+Workaround:
+
+. Click on the canvas.
+. Click the *Rule flow Group* drop-down menu again.
+
+endif::[]
+
+== DMN Designer
+
+.In the DMN Designer, you cannot convert a Java class with that contains an invalid DMN identifier [https://issues.redhat.com/browse/RHDM-1231[RHDM-1231]]
+
+Issue: When you try to convert a Java class to a DMN data type and the Java class contains a field name, you will receive an error.
+
+Workaround: None.

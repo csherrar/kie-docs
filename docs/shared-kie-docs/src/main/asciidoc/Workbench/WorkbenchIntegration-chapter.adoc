@@ -1,6 +1,0 @@
-[[_wb.workbenchintegration]]
-= Workbench Integration
-
-include::RemoteAPI/REST-section.adoc[leveloffset=+1]
-include::KeycloakSSOIntegration/KC_SSO_integ-section.adoc[leveloffset=+1]
-

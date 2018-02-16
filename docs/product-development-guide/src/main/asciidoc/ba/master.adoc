@@ -1,5 +1,0 @@
-
-:BA:
-
-include::topics/main.adoc[]
-

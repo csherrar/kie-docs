@@ -1,6 +1,0 @@
-[[_ch.commands]]
-= Drools Commands
-
-include::API/API-section.adoc[leveloffset=+1]
-include::Commands/Commands-section.adoc[leveloffset=+1]
-
