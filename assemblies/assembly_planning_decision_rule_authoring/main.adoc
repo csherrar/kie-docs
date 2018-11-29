@@ -10,3 +10,21 @@ include::_artifacts/document-attributes.adoc[]
 include::_artifacts/author-group.adoc[]
 
 As a business analyst or business rules developer, when planning your decision service rule authoring for your project you must determine which models to use for your project in {Product}.
+
+== About {PRODUCT}
+ifdef::PAM[]
+{PRODUCT} is an open source business process management suite that combines business process management and business rules management. It enables business and IT users to create, manage, validate, and deploy business processes and rules.
+
+{PRODUCT} uses a centralized repository where all resources are stored. This ensures consistency, transparency, and the ability to audit across the business. Business users can modify business logic and business processes without requiring assistance from IT personnel.
+endif::[]
+ifdef::DM[]
+{PRODUCT} is an open source decision management platform that combines business rules management, complex event processing, Decision Model & Notation (DMN) execution, and {PLANNER} for solving planning problems. It automates business decisions and makes that logic available to the entire business.
+
+Business assets such as rules, decision tables, and DMN models are stored in a central repository. This ensures consistency, transparency, and the ability to audit across the business. Business users can modify business logic without requiring assistance from IT personnel.
+
+{PRODUCT} is fully supported on OpenShift and can be installed on various platforms.
+endif::[]
+
+include::{enterprise-dir}/installation/components-con.adoc[leveloffset=+1]
+
+//include::{enterprise-dir}/product-installation-guide/business-optimizer-con.adoc[leveloffset=+2]
