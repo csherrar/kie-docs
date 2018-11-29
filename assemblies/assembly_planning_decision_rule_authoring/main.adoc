@@ -8,3 +8,5 @@ include::_artifacts/document-attributes.adoc[]
 :imagesdir: _images
 :context: planning
 include::_artifacts/author-group.adoc[]
+
+As a business analyst or business rules developer, when planning your decision service rule authoring for your project you must determine which models to use for your project in {Product}.
