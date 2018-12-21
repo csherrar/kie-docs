@@ -8,16 +8,16 @@ Red Hat Developer Studio is the JBoss integrated development environment (IDE) b
 .. Log in to the https://access.redhat.com[Red Hat Customer Portal].
 .. Click *DOWNLOADS* at the top of the page.
 .. On the *Product Downloads* page that opens, navigate to the JBOSS DEVELOPMENT AND MANAGEMENT section, and click *Red Hat Developer Studio*.
-.. On the *Software Downloads* page, download *Red Hat Developer Studio 11.3.0 Stand-alone Installer* (`devstudio-11.3.0.GA-installer-standalone.jar`).
+.. On the *Software Downloads* page, download *Red Hat Developer Studio 12.9.0 Stand-alone Installer* (`devstudio-12.9.0.GA-installer-standalone.jar`).
 . In a terminal window, navigate to the directory where you downloaded the installer JAR file and enter the following command:
 +
 [source]
 ----
-java -jar devstudio-11.3.0.GA-installer-standalone.jar
+java -jar devstudio-12.9.0.GA-installer-standalone.jar
 ----
 . Follow the instructions in the installer to complete the installation.
 
-For more information, see the https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio/11.3/html-single/installation_guide[_Red Hat Developer Studio Installation Guide_].
+For more information, see the https://access.redhat.com/documentation/en-us/red_hat_developer_studio/12.9/html/installation_guide/[_Red Hat Developer Studio Installation Guide_].
 
 [IMPORTANT]
 ==== 
