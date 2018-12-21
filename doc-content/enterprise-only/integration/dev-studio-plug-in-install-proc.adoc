@@ -10,15 +10,15 @@ The Red Hat Developer Studio plug-ins for {PRODUCT}  are based on the community 
 .. Log in to the https://access.redhat.com[Red Hat Customer Portal].
 .. Click *DOWNLOADS* at the top of the page.
 .. On the *Product Downloads* page that opens, navigate to the JBOSS DEVELOPMENT AND MANAGEMENT section, and click *Red Hat Developer Studio*.
-.. On the *Software Downloads* page, download *Red Hat Developer Studio Integration Stack 11.3.0 Update Site Zip* (`devstudio-integration-stack-11.3.0.GA-updatesite.zip`).
-//. Unzip the `devstudio-11.3.0.GA-updatesite-core.zip` file.
+.. On the *Software Downloads* page, from the *Version* list, select *12.0.0*, and then download *Red Hat Developer Studio Integration Stack 12.0.0 Update Site Zip* (`devstudio-integration-stack-12.0.0.GA-updatesite.zip`).
+//. Unzip the `devstudio-integration-stack-12.0.0.GA-updatesite.zip` file.
 . Start Red Hat Developer Studio by selecting *Red Hat Developer Studio* from the Start menu.
 . Click *Help* -> *Install New Software*.
 . Click *Add* to display the *Add Repository* box.
-. Enter a name in the *Name* field, for example, `devstudio-11.3.0.GA`.
-. Click *Archive*, select the `devstudio-11.3.0.GA-updatesite-core.zip` file, and click *OK*.
+. Enter a name in the *Name* field, for example, `devstudio-12.0.0.GA`.
+. Click *Archive*, select the `devstudio-integration-stack-12.0.0.GA-updatesite.zip` file, and click *OK*.
 //+
-//`https://devstudio.jboss.com/11/stable/updates/integration-stack`
+//`https://devstudio.jboss.com/12/stable/updates/integration-stack`
 . In the Install window, select *JBoss Business Process and Rule Development* from the list, click *Next*, and then click *Next* again.
 . Read the license agreement, accept it, and click *Finish*.
 . Restart Red Hat Developer Studio after the installation process finishes.
