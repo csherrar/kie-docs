@@ -21,6 +21,6 @@ For more information, see the https://access.redhat.com/documentation/en-us/red_
 
 [IMPORTANT]
 ==== 
-Because of an issue in the way multi-byte rule names are handled, you must ensure that the instance of Red Hat Developer Studio is started with the file encoding set to `UTF-8`. You can do this by editing the `$_JBDS_HOME_/studio/devstudio.ini` file and adding the following property: `"-Dfile.encoding=UTF-8"`.
+Because of an issue in the way multi-byte rule names are handled, you must ensure that the instance of Red Hat Developer Studio is started with the file encoding set to `UTF-8`. You can do this by editing the `$_DS_HOME_/studio/devstudio.ini` file and adding the following property: `"-Dfile.encoding=UTF-8"`.
 ====
 
