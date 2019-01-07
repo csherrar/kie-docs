@@ -7,11 +7,7 @@
 .Procedure
 . In Red Hat Developer Studio, from the main menu, click *File* -> *New* -> *Project*.
 . In the search field, enter `Drools Project`, select *Drools Project*, and then click *Next*.
-<<<<<<< HEAD
 . Select the second option to create a project with a {PRODUCT} example, and then click *Next*.
-=======
-. Select the second option to create a project with a {PRODUCT} example. Click *Next*.
->>>>>>> BXMSDOC-3379-master: Add Creating Drools Project procedure
 . In the *Project name* field, enter a name for the project.
 . Click *Finish*.
 
