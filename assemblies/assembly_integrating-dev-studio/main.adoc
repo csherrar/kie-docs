@@ -22,9 +22,8 @@ include::{enterprise-dir}/integration/dev-studio-import-local-git-repo-proc.adoc
 
 == Next Steps
 
-* https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio/11.3/html-single/getting_started_with_container_and_cloud-based_development/[_Getting Started with Container and Cloud-based Development_]
-* https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio/11.3/html-single/getting_started_with_jboss_developer_studio_tools/[_Getting Started with JBoss Developer Studio Tools_]
-
+* https://access.redhat.com/documentation/en-us/red_hat_developer_studio/12.9/html/getting_started_with_container_and_cloud-based_development/[_Getting Started with Container and Cloud-based Development_]
+* https://access.redhat.com/documentation/en-us/red_hat_developer_studio/12.9/html/getting_started_with_developer_studio_tools/[_Getting Started with Developer Studio Tools_]
 
 // Versioning info
 include::_artifacts/versioning-information.adoc[]
