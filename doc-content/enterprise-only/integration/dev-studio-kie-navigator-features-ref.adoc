@@ -1,0 +1,70 @@
+[id='dev-studio-kie-navigator-features-ref']
+= Kie Navigator Features
+
+In the Kie Navigator tree, you can see four levels:
+
+* Server
+* Organizational Unit
+* Repository
+* Project
+
+== Kie Navigator Server Level
+
+Right clicking the server level gives you the following options:
+
+Refresh::
+Performs a REST call to update the entire tree.
+
+Create Organization::
+Creates a new Organizational Unit.
+
+Properties::
+Displays the server properties.
+
+== Kie Navigator Organizational Unit Level
+
+Right clicking the Organizational Unit level gives you the following options:
+
+Add Repository::
+Adds a repository that is not associated with another Organizational Unit.
+
+Create Repository::
+Creates a repository.
+
+Delete Organization::
+Deletes the selected Organizational Unit.
+
+Properties::
+Displays properties of the selected Organizational Unit.
+
+== Kie Navigator Repository Level
+
+Right clicking the Repository level gives you the following options:
+
+Import Repository::
+Clones the Repository and makes it available in the Git Repository View. This menu action is available if the Repository has not already been cloned.
+
+Create Project::
+Creates a project.
+
+Remove Repository::
+Removes the selected repository.
+
+Show in Git Repository View::
+Opens the Git Repositories View and highlights the selected Repository.
+
+Properties::
+Displays the properties of the selected repository.
+
+== Kie Navigator Project Level
+
+Right clicking the Project level gives you the following options:
+
+Import Project::
+Imports the project into your Red Hat Developer Studio.
+
+Delete Project::
+Deletes the selected Project.
+
+Properties::
+Displays the project properties.
