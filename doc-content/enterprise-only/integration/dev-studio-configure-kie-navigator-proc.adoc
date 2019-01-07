@@ -1,0 +1,28 @@
+[id='dev-studio-configure-kie-navigator-proc']
+= Kie Navigator
+
+You can use Kie Navigator to browse, change, and deploy the content of your {PRODUCT} server.
+
+.Prerequisite
+Red Hat Developer Studio is installed.
+
+.Procedure
+. In Red Hat Developer Studio, click *Window* -> *Show View* -> *Other*.
+. In the search field, enter `Kie Navigator`, select *Kie Navigator*, and then click *Open*.
+. If you have no server with {PRODUCT} configured in your Red Hat Developer Studio, you will be asked to configure a server first. See <<dm-server-configure-proc>> for more information.
+. In the *Kie Navigator* pane, right click the server name you want to use and select *Properties*.
+. In the *Username* and *Password* fields, enter the credentials of a user that has a kie role.
+. Enter the following:
++
+* *KIE Application Name*: `business-central`
+* *HTTP Port*: `8080`
+* *Git Port*: `8001`
++
+[NOTE]
+====
+The values above are the default values. If you changed the default values of Git or Business Central ports, use your values.
+====
+
+. Select the *Use default Git Repository Path* check box and click *Apply and Close*.
+. Start your server in the *Servers* tab and wait until the server has started.
+. In the *Kie Navigator* pane, right click your server name and click *Refresh*. You will see the contents of the {PRODUCT} git repository. Double click a project to import it into Red Hat Developer Studio.
