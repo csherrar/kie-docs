@@ -1,5 +1,9 @@
 [id='dev-studio-configure-kie-navigator-proc']
+<<<<<<< HEAD
 = Configuring Kie Navigator
+=======
+= Kie Navigator
+>>>>>>> BXMSDOC-3379-master: Add procedure to configure Kie Navigator
 
 You can use Kie Navigator to browse, change, and deploy the content of your {PRODUCT} server.
 
