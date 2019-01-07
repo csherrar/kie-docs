@@ -1,19 +1,18 @@
-[id='dev-studio-creating-drools-project-proc']
-= Creating a Drools Project
+[id='dev-studio-creating-BPM-project-proc']
 
-.Prerequisite
-* Red Hat Developer Studio is installed.
+= Creating a Red Hat JBoss BPM Suite Project
 
 .Procedure
 . In Red Hat Developer Studio, from the main menu, click *File* -> *New* -> *Project*.
-. In the search field, enter `Drools Project`, select *Drools Project*, and then click *Next*.
+. In the search field, enter `jBPM Project`, select *jBPM Project*, and then click *Next*.
 . Select the second option to create a project with a {PRODUCT} example, and then click *Next*.
 . In the *Project name* field, enter a name for the project.
+. Select the *Also include a sample JUnit test for the process* check box.
 . Click *Finish*.
 
 To test the project:
 
 . Navigate to the `src/main/java` directory and expand the `com.sample` package.
-. Right click a Java class and select *Run As* ->  *Java Application*.
+. Right click `ProcessTest.java` and select *Run As* -> *JUnit Test*.
 +
-The output will be displayed on the console tab.
+The output will be displayed in the console tab.
