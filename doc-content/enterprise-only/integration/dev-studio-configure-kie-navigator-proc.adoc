@@ -1,5 +1,5 @@
 [id='dev-studio-configure-kie-navigator-proc']
-= Kie Navigator
+= Configuring Kie Navigator
 
 You can use Kie Navigator to browse, change, and deploy the content of your {PRODUCT} server.
 
