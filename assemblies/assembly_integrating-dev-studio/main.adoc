@@ -16,6 +16,7 @@ As a developer, you can integrate Red Hat Developer Studio with {PRODUCT} to wri
 include::{enterprise-dir}/integration/dev-studio-install-proc.adoc[leveloffset=+1]
 include::{enterprise-dir}/integration/dev-studio-plug-in-install-proc.adoc[leveloffset=+1]
 include::{enterprise-dir}/admin-and-config/dm-server-configure-proc.adoc[leveloffset=+1]
+include::{enterprise-dir}/integration/dev-studio-configure-kie-navigator-proc.adoc[leveloffset=+1]
 include::{enterprise-dir}/integration/dev-studio-import-projects-from-git-repo-con.adoc[leveloffset=+1]
 include::{enterprise-dir}/integration/dev-studio-clone-remote-git-repo-proc.adoc[leveloffset=+2]
 include::{enterprise-dir}/integration/dev-studio-import-local-git-repo-proc.adoc[leveloffset=+2]
