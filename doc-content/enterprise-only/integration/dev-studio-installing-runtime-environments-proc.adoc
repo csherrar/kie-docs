@@ -1,7 +1,7 @@
-[id='dev-studio-setting-drools-runtime-proc']
-= Setting Drools Runtime
+[id='dev-studio-installing-runtime-environments-proc']
+= Installing {PRODUCT} Runtime Environments
 
-In order to create {PRODUCT} projects in Red Hat Developer Studio, it is necessary to set up the Drools run time environment.
+In order to create {PRODUCT} projects in Red Hat Developer Studio, it is necessary to install the {PRODUCT} run time environment.
 
 A run time environment is a collection of JAR files that represent a specific release of the software and includes the required libraries for compiling and running your business asset.
 
@@ -9,12 +9,12 @@ A run time environment is a collection of JAR files that represent a specific re
 Red Hat Developer Studio is installed.
 
 .Procedure
-. Download the Drools Engine:
+. Download the {ENGINE}:
 .. Log in to the https://access.redhat.com[Red Hat Customer Portal].
 .. Click *DOWNLOADS* at the top of the page.
-.. On the *Product Downloads* page that opens, navigate to the JBOSS DEVELOPMENT AND MANAGEMENT section, and click *Red Hat Decision Manager*.
-.. On the *Software Downloads* page, download *Red Hat Decision Manager 7.1.1 Add-Ons* (`rhdm-7.1.1-add-ons.zip`).
-.. Extract `rhdm-7.1.1-add-ons.zip` and then extract the Drools run time environment JAR files located in `rhdm-7.1.1-add-ons/rhdm-7.1-decision-engine.zip`.
+.. On the *Product Downloads* page that opens, navigate to the JBOSS DEVELOPMENT AND MANAGEMENT section, and click *{PRODUCT}*.
+.. On the *Software Downloads* page, download *{PRODUCT} {PRODUCT_VERSION_LONG} Add-Ons* (`{PRODUCT_FILE}-add-ons.zip`).
+.. Extract `{PRODUCT_FILE}-add-ons.zip` and then extract the Drools run time environment JAR files located in `{PRODUCT_FILE}-add-ons/{PRODUCT_FILE}-{URL_COMPONENT_ENGINE}.zip`.
 . From the Red Hat Developer Studio menu, click *Window* -> *Preferences*.
 . Click *Drools* -> *Installed Drools Runtimes*, and then click *Add*.
 . In the name field, enter a name for the new run time environment.
