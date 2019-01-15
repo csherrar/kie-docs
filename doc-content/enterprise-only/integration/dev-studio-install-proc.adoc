@@ -1,7 +1,7 @@
 [id='dev-studio-install-proc']
 = Installing Red Hat Developer Studio
 
-Red Hat Developer Studio is the JBoss integrated development environment (IDE) based on Eclipse. It integrates tooling and runtime components by combining Eclipse, Eclipse Tooling, and {EAP_LONG}. Red Hat Developer Studio provides plug-ins with tools and interfaces for {PRODUCT}.
+Red Hat Developer Studio is the JBoss integrated development environment (IDE) based on Eclipse. It integrates tooling and run time components by combining Eclipse, Eclipse Tooling, and {EAP_LONG}. Red Hat Developer Studio provides plug-ins with tools and interfaces for {PRODUCT}.
 
 .Procedure
 . Download Red Hat Developer Studio:
@@ -16,7 +16,7 @@ Red Hat Developer Studio is the JBoss integrated development environment (IDE) b
 java -jar devstudio-12.9.0.GA-installer-standalone.jar
 ----
 . Follow the instructions in the installer to complete the installation.
-
++
 For more information, see the https://access.redhat.com/documentation/en-us/red_hat_developer_studio/12.9/html/installation_guide/[_Red Hat Developer Studio Installation Guide_].
 
 [IMPORTANT]

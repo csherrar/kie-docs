@@ -1,6 +1,6 @@
 [id='dev-studio-import-local-git-repo-proc']
 = Importing a local Git repository
-You can import a local git repository to use with Red Hat Developer Studio.
+You can import a local Git repository to use with Red Hat Developer Studio.
 
 .Prerequisite
 Red Hat Developer Studio is installed.

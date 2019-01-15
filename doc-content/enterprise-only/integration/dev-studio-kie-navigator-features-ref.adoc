@@ -1,14 +1,13 @@
 [id='dev-studio-kie-navigator-features-ref']
 = Kie Navigator Features
-
-In the Kie Navigator tree, you can see four levels:
+You can use Kie Navigator to browse, change, and deploy the content of your {PRODUCT} server. The Kie Navigator tree has four levels:
 
 * Server
 * Organizational Unit
 * Repository
 * Project
 
-== Kie Navigator Server Level
+== Kie Navigator Server level
 
 Right clicking the server level gives you the following options:
 
@@ -21,7 +20,7 @@ Creates a new Organizational Unit.
 Properties::
 Displays the server properties.
 
-== Kie Navigator Organizational Unit Level
+== Kie Navigator Organizational Unit level
 
 Right clicking the Organizational Unit level gives you the following options:
 
@@ -37,7 +36,7 @@ Deletes the selected Organizational Unit.
 Properties::
 Displays properties of the selected Organizational Unit.
 
-== Kie Navigator Repository Level
+== Kie Navigator Repository level
 
 Right clicking the Repository level gives you the following options:
 
@@ -56,7 +55,7 @@ Opens the Git Repositories View and highlights the selected Repository.
 Properties::
 Displays the properties of the selected repository.
 
-== Kie Navigator Project Level
+== Kie Navigator Project level
 
 Right clicking the Project level gives you the following options:
 

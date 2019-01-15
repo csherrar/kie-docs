@@ -1,6 +1,6 @@
 [id='dev-studio-creating-BPM-project-proc']
-
 = Creating a Red Hat JBoss BPM Suite Project
+You can create and manage a Red Hat JBoss BPM Suite project in Red Hat Developer Studio.
 
 .Procedure
 . In Red Hat Developer Studio, from the main menu, click *File* -> *New* -> *Project*.
@@ -9,10 +9,8 @@
 . In the *Project name* field, enter a name for the project.
 . Select the *Also include a sample JUnit test for the process* check box.
 . Click *Finish*.
-
-To test the project:
-
-. Navigate to the `src/main/java` directory and expand the `com.sample` package.
-. Right click `ProcessTest.java` and select *Run As* -> *JUnit Test*.
+. Complete the following steps to test the project:
+.. Navigate to the `src/main/java` directory and expand the `com.sample` package.
+.. Right click `ProcessTest.java` and select *Run As* -> *JUnit Test*.
 +
-The output will be displayed in the console tab.
+The output is displayed in the console tab.
