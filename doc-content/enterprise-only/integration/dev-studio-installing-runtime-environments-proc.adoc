@@ -1,5 +1,5 @@
 [id='dev-studio-installing-runtime-environments-proc']
-= Installing {PRODUCT} Runtime Environments
+= Installing {PRODUCT} runtime environments
 
 In order to create {PRODUCT} projects in Red Hat Developer Studio, it is necessary to install the {PRODUCT} run time environment.
 

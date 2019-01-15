@@ -1,5 +1,5 @@
 [id='dev-studio-creating-BPM-project-proc']
-= Creating a Red Hat JBoss BPM Suite Project
+= Creating a Red Hat JBoss BPM Suite project
 You can create and manage a Red Hat JBoss BPM Suite project in Red Hat Developer Studio.
 
 .Procedure
