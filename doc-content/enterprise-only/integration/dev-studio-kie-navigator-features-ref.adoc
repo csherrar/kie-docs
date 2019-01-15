@@ -1,5 +1,5 @@
 [id='dev-studio-kie-navigator-features-ref']
-= Kie Navigator Features
+= Kie Navigator features
 You can use Kie Navigator to browse, change, and deploy the content of your {PRODUCT} server. The Kie Navigator tree has four levels:
 
 * Server

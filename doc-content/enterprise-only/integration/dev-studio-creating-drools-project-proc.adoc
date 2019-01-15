@@ -1,5 +1,5 @@
 [id='dev-studio-creating-drools-project-proc']
-= Creating a Drools Project
+= Creating a Drools project
 You can create and manage a Drools project in Red Hat Developer Studio.
 
 .Prerequisite
