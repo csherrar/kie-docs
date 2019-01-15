@@ -4,7 +4,8 @@
 You can use Kie Navigator to browse, change, and deploy the content of your {PRODUCT} server.
 
 .Prerequisite
-Red Hat Developer Studio is installed.
+. Red Hat Developer Studio is installed.
+. Red Hat Developer Studio plug-ins are installed.
 
 .Procedure
 . In Red Hat Developer Studio, click *Window* -> *Show View* -> *Other*.

@@ -3,9 +3,14 @@
 You can use Kie Navigator to browse, change, and deploy the content of your {PRODUCT} server. The Kie Navigator tree has four levels:
 
 * Server
-* Organizational Unit
+* Space
 * Repository
 * Project
+
+[NOTE]
+====
+A level is only visible if an instance of that level exists.
+====
 
 == Kie Navigator Server level
 
@@ -14,56 +19,56 @@ Right clicking the server level gives you the following options:
 Refresh::
 Performs a REST call to update the entire tree.
 
-Create Organization::
-Creates a new Organizational Unit.
+Create Space::
+Creates a new space.
 
 Properties::
 Displays the server properties.
 
-== Kie Navigator Organizational Unit level
+== Kie Navigator Space level
 
-Right clicking the Organizational Unit level gives you the following options:
+Right clicking the space level gives you the following options:
 
-Add Repository::
-Adds a repository that is not associated with another Organizational Unit.
+Refresh::
+Performs a REST call to update the tree.
 
 Create Repository::
-Creates a repository.
+Creates a repository that is associated with the space.
 
-Delete Organization::
-Deletes the selected Organizational Unit.
+Delete Space::
+Deletes the selected space.
 
 Properties::
-Displays properties of the selected Organizational Unit.
+Displays properties of the selected space.
 
 == Kie Navigator Repository level
 
-Right clicking the Repository level gives you the following options:
+Right clicking the repository level gives you the following options:
+
+Refresh::
+Performs a REST call to update the tree.
 
 Import Repository::
-Clones the Repository and makes it available in the Git Repository View. This menu action is available if the Repository has not already been cloned.
+Clones the repository and makes it available in the Git Repositories view. This menu action is available if the repository has not already been cloned.
 
-Create Project::
-Creates a project.
-
-Remove Repository::
-Removes the selected repository.
+Delete Repository::
+Deletes the selected repository.
 
 Show in Git Repository View::
-Opens the Git Repositories View and highlights the selected Repository.
+Opens the Git Repositories view and highlights the selected repository.
 
 Properties::
 Displays the properties of the selected repository.
 
 == Kie Navigator Project level
 
-Right clicking the Project level gives you the following options:
+Right clicking the project level gives you the following options:
 
 Import Project::
 Imports the project into your Red Hat Developer Studio.
 
 Delete Project::
-Deletes the selected Project.
+Deletes the selected project.
 
 Properties::
 Displays the project properties.
