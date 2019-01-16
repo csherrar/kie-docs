@@ -1,7 +1,7 @@
 [id='dev-studio-plug-in-install-proc']
 = Installing Red Hat Developer Studio plug-ins
 
-The Red Hat Developer Studio plug-ins for {PRODUCT}  are based on the community version of the plug-ins. For this reason, the {PRODUCT} plug-in is called the Drools plug-in.
+The Red Hat Developer Studio plug-ins for {PRODUCT} are based on the community version of the plug-ins. For this reason, the {PRODUCT} plug-in is called the Drools plug-in.
 
 //Get the latest Red Hat Developer Studio from the https://access.redhat.com[Red Hat Customer //Portal]. The {PRODUCT} plug-ins for Red Hat Developer Studio are available using the update site.
 
