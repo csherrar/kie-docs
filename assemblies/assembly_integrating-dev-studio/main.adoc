@@ -20,7 +20,7 @@ include::{enterprise-dir}/integration/dev-studio-installing-runtime-environments
 ifdef::JBPM[]
 include::{enterprise-dir}/integration/dev-studio-installing-jbpm-runtime-environment-proc.adoc[leveloffset=+1]
 endif::[]
-ifdef::DM,PAM[]
+ifdef::DM,PAM,DROOLS[]
 include::{enterprise-dir}/integration/dev-studio-creating-a-project-proc.adoc[leveloffset=+1]
 endif::[]
 ifdef::JBPM[]
@@ -29,8 +29,10 @@ endif::[]
 include::{enterprise-dir}/integration/dev-studio-import-projects-from-git-repo-con.adoc[leveloffset=+1]
 include::{enterprise-dir}/integration/dev-studio-clone-remote-git-repo-proc.adoc[leveloffset=+2]
 include::{enterprise-dir}/integration/dev-studio-import-local-git-repo-proc.adoc[leveloffset=+2]
+ifdef::JBPM,DROOLS[]
 include::{enterprise-dir}/integration/dev-studio-configure-kie-navigator-proc.adoc[leveloffset=+1]
 include::{enterprise-dir}/integration/dev-studio-kie-navigator-features-ref.adoc[leveloffset=+1]
+endif::[]
 
 == Next Steps
 
