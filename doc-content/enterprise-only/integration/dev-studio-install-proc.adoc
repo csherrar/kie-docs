@@ -3,6 +3,11 @@
 
 Red Hat Developer Studio is an integrated development environment (IDE) based on Eclipse. It integrates tooling and run time components by combining Eclipse, Eclipse Tooling, and {EAP_LONG}. Red Hat Developer Studio provides plug-ins with tools and interfaces for {PRODUCT}.
 
+[WARNING]
+====
+Red Hat Developer Studio is in maintenance mode. Installing and setting up the development environment with Red Hat JBoss Developer Studio for {PRODUCT} {PRODUCT_VERSION} is deprecated.
+====
+
 .Procedure
 . Download Red Hat Developer Studio:
 .. Log in to the https://access.redhat.com[Red Hat Customer Portal].
