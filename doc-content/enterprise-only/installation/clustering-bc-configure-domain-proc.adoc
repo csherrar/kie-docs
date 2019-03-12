@@ -38,20 +38,22 @@ These steps describe a basic cluster configuration. For more complex configurati
 ----
 <system-properties>
   <property name="appformer-jms-connection-mode" value="JNDI"/>
-  <property name="appformer-jms-username" value="<JMS_USER>  "/>
+  <property name="appformer-jms-username" value="<JMS_USER>"/>
   <property name="appformer-jms-password" value="<JMS_USER_PASSWORD>"/>
   <property name="org.appformer.ext.metadata.infinispan.port" value="11222"/>
-  <property name="org.appformer.ext.metadata.infinispan.host" 
-      value="<INFINISPAN_NODE_IP>"/>
+  <property name="org.appformer.ext.metadata.infinispan.host"
+      value="127.0.0.1"/>
+  <property name="org.appformer.ext.metadata.infinispan.realm"
+      value="ApplicationRealm"/>
   <property name="org.appformer.ext.metadata.infinispan.username"
-      value="<USERNAME>"/>
+      value=""/>
   <property name="org.appformer.ext.metadata.infinispan.password"
-      value="<PASSWORD>"/>
-  <property name="org.appformer.ext.metadata.infinispan.cluster" 
+      value=""/>
+  <property name="org.appformer.ext.metadata.infinispan.cluster"
       value="kie-cluster"/>
-  <property name="org.appformer.ext.metadata.index" value="infinispan"/> 
-  <property name="org.appformer.ext.metadata.infinispan.retries" value="10"/>
-  <property name="appformer-jms-connection-factory" value="java:/ConnectionFactory"/> 
+  <property name="org.appformer.ext.metadata.index" value="infinispan"/>
+  <property name="appformer-jms-connection-factory"
+      value="java:/ConnectionFactory"/>
 </system-properties>
 ----
 .  In the `<subsystem xmlns="urn:jboss:domain:messaging-activemq:2.0">` element, make the following changes:

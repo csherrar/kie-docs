@@ -32,15 +32,16 @@ These steps describe a basic cluster configuration. For more complex configurati
   <property name="appformer-jms-url" value="tcp://<AMQ_BROKER_IP_ADDRESS>:61616?ha=true&amp;retryInterval=1000&amp;retryIntervalMultiplier=1.0&amp;reconnectAttempts=-1"/>
   <property name="org.appformer.ext.metadata.infinispan.port" value="11222"/>
   <property name="org.appformer.ext.metadata.infinispan.host"
-      value="<INFINISPAN_NODE_IP>"/>
+      value="127.0.0.1"/>
+  <property name="org.appformer.ext.metadata.infinispan.realm"
+      value="ApplicationRealm"/>
   <property name="org.appformer.ext.metadata.infinispan.username"
-      value="<USERNAME>"/>
+      value=""/>
   <property name="org.appformer.ext.metadata.infinispan.password"
-      value="<PASSWORD>"/>
+      value=""/>
   <property name="org.appformer.ext.metadata.infinispan.cluster"
       value="kie-cluster"/>
   <property name="org.appformer.ext.metadata.index" value="infinispan"/>
-  <property name="org.appformer.ext.metadata.infinispan.retries" value="10"/>
   <property name="org.uberfire.nio.git.dir" value="<SHARED_NETWORK_FOLDER>"/>
   <property name="es.set.netty.runtime.available.processors" value="false"/>
 </system-properties>

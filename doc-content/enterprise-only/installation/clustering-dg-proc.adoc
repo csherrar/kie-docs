@@ -29,12 +29,12 @@ The unzipped directory is referred to as `$JDG_HOME`.
 +
 [source]
 ----
-$JDG_HOME/bin/standalone.sh
+$JDG_HOME/bin/standalone.sh -c clustered.xml
 ----
 +
 On Windows, enter:
 +
 [source]
 ----
-$JDG_HOME/bin/standalone.bat
+$JDG_HOME/bin/standalone.bat -c clustered.xml
 ----
