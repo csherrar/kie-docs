@@ -12,6 +12,11 @@ include::_artifacts/author-group.adoc[]
 // Purpose statement for the assembly
 As a developer, you can integrate Red Hat Developer Studio with {PRODUCT} to write complex applications and leverage code auto-completion.
 
+[WARNING]
+====
+Red Hat Developer Studio is in maintenance mode. Therefore, Installing and setting up the development environment with Red Hat Developer Studio for {PRODUCT} {PRODUCT_VERSION} is deprecated.
+====
+
 //include::{enterprise-dir}/product-installation-guide/dev-studio-con.adoc[leveloffset=+1]
 include::{enterprise-dir}/integration/dev-studio-install-proc.adoc[leveloffset=+1]
 include::{enterprise-dir}/integration/dev-studio-plug-in-install-proc.adoc[leveloffset=+1]
