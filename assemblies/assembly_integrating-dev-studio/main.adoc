@@ -14,7 +14,7 @@ As a developer, you can integrate Red Hat Developer Studio with {PRODUCT} to wri
 
 [WARNING]
 ====
-Red Hat Developer Studio is in maintenance mode. Therefore, Installing and setting up the development environment with Red Hat Developer Studio for {PRODUCT} {PRODUCT_VERSION} is deprecated.
+Red Hat Developer Studio is in maintenance mode and is no longer fully supported by Red Hat.
 ====
 
 //include::{enterprise-dir}/product-installation-guide/dev-studio-con.adoc[leveloffset=+1]
