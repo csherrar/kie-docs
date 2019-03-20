@@ -30,7 +30,7 @@ These steps describe a basic cluster configuration. For more complex configurati
 </server-group>
 ----
 . Edit or add the following properties to the `<system-properties>` element and replace the following placeholders:
-* `<INFINISPAN_NODE_IP>` is the IP addresses where Red Hat JBoss Data Grid is installed.
+* `<INFINISPAN_NODE_IP>` is the IP address where Red Hat JBoss Data Grid is installed.
 * `<JMS_USER>` is a {EAP} application user. It is the user that {CENTRAL} uses to connect to the  embedded JMS broker. 
 * `<JMS_USER_PASSWORD>` is the password for `<JMS_USER>`.
 +
