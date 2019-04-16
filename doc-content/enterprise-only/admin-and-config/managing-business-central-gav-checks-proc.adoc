@@ -5,11 +5,11 @@ In {CENTRAL}, projects are identified using Maven naming convention or GAV (grou
 
 By default, {CENTRAL} detects duplicate GAVs. This feature can be disabled by users with the _admin_ role.
 
-[float]
-==== Enabling GAV checks and child GAV edition
+
+= Enabling GAV checks and child GAV edition
+
 .Procedure
-. Log in to {CENTRAL}.
-. Select *Menu* -> *Design* -> *Projects*.
+. In {CENTRAL}, go to *Menu* -> *Design* -> *Projects*.
 . Double-click the project to open it.
 . In the *Project Editor* window, click the *Settings* tab.
 . Make the following selections from the *General Settings* tab.
@@ -34,3 +34,5 @@ $ ~/EAP_HOME/bin/standalone.sh -c standalone-full.xml
 -Dorg.guvnor.project.gav.check.disabled=true
 ----
 =====
+
+NOTE: Duplicate GAV detection is disabled for projects in *Development Mode*. To enable duplicate GAV detection in {CENTRAL}, go to project *Settings* -> *General Settings* -> *Version* and toggle the *Development Mode* option to *OFF* (if applicable).

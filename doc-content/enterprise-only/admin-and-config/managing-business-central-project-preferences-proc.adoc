@@ -8,10 +8,10 @@ For example, an organization has many departments, such as HR, Payroll, Engineer
 You can create a new Project from scratch or clone projects from an existing Git repository.
 
 .Procedure
-. Log in to {CENTRAL}.
-. Select *Admin* -> *Projects*. The *Projects* page opens.
-. *Project Preferences* has the following four options,
-* *File exporting* option. It has the following properties,
+. In {CENTRAL}, go to *Admin* -> *Projects*. The *Projects* page opens.
+. In the *Project Preferences* pane, click the preference you want to modify. There are four preferences:
++
+* *File exporting* option. It has the following properties:
 +
 [caption="Table 1. "]
 .File exporting properties
@@ -27,7 +27,7 @@ You can create a new Project from scratch or clone projects from an existing Git
 |PDF page format |Determines whether the PDF page format is _A[0-10]_, _B[0-10]_, or _C[0-10]_.
 |===
 +
-* *Spaces* option. It has the following properties,
+* *Spaces* option. It has the following properties:
 +
 [caption="Table 2. "]
 .Spaces properties
@@ -47,7 +47,7 @@ You can create a new Project from scratch or clone projects from an existing Git
 |Alias (in plural) |Determines the customized alias (plural) of the space.
 |===
 +
-* *Default values* option. It has following properties,
+* *Default values* option. It has following properties:
 +
 [caption="Table 3. "]
 .Default values properties
@@ -63,7 +63,7 @@ You can create a new Project from scratch or clone projects from an existing Git
 |Branch |The default branch to be used when using a Git repository.
 |===
 +
-* *Default values* option. It has following properties,
+* *Default values* option. It has following properties:
 +
 [caption="Table 4. "]
 .Advanced GAV preference properties

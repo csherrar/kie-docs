@@ -12,9 +12,8 @@ You must register your newly created SSH public key with the {CENTRAL} keystore.
 cat ~/.ssh/id_rsa.pub
 ----
 . Copy the contents of your SSH public key.
-. Log in to {CENTRAL}.
-. Select *Admin* -> *SSH Keys*.
-. From the *SSH Keys* page, click *Add SSH Keys*.
+. In {CENTRAL}, go to *Admin* -> *SSH Keys*.
+. On the *SSH Keys* page, click *Add SSH Keys*.
 . In the *Add SSH Key* window, enter a name in the *Name* field and copy the contents of the SSH public key to the *Keys* field.
 +
 [NOTE]

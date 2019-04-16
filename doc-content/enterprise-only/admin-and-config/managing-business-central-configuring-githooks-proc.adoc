@@ -20,33 +20,35 @@ You need to have _cygwin_ installed and configured if you are running {PRODUCT} 
 . After successful installation, add the path to _cygwin_ _bin_ folder to your environment PATH variable. E.g. *C:\cygwin64\bin*
 
 .Procedure
-
-. Log in to {CENTRAL}.
-. Select *Menu* -> *Projects*.
+. In {CENTRAL}, go to *Menu* -> *Projects*.
 . Select or create the space into which you want to import the projects.
 . Click image:project-data/dots.png[] on the right side of the screen and select *Import Project*.
-. In the *Import Project* window, enter the URL (for example, `\https://github.com/USERNAME/REPOSITORY_NAME.git`) and credentials for the Git repository that contains the project that you want to import and click *Import*.
+. In the *Import Project* window, enter the URL (for example, `\https://github.com/USERNAME/REPOSITORY_NAME.git`) and credentials for the GIT repository that contains the project that you want to import and click *Import*.
 +
 The project is added to the {CENTRAL} Git repository and is available in the created or default space.
 +
 [IMPORTANT]
 =====
 Use the HTTPS or Git protocol instead of a SCP-style SSH URL. {CENTRAL} does not support the basic SSH URL and an error appears if you use this URL.
+
+You must have your public ssh key configured in your git provider.
+
+The GIT repository must be a KJAR project, containing only a single KJAR, and is compatible with the {PROJECT} version. The KJAR content must be in the root of the repository.
 =====
 
 . In a terminal window, change to the created repository.
 +
 [source]
 ----
-cd JBOSS_HOME/bin/.niogit/REPOSITORY_NAME.git
+cd JBOSS_HOME/bin/.niogit/<SPACE>/REPOSITORY_NAME.git
 ----
 
-. Create the `post-commit` file in the `JBOSS_HOME/bin/.niogit/REPOSITORY_NAME.git/hooks` directory, set the permissions to `rwxr--r--` and add the following content:
+. Create the `post-commit` file in the `JBOSS_HOME/bin/.niogit/<SPACE>/REPOSITORY_NAME.git/hooks` directory, set the permissions to `rwxr--r--` and add the following content:
 +
 [source]
 ----
 #!/bin/sh
-git push origin master
+git push origin +master
 ----
 
 . Make sure that the configuration was successful by creating a new guided rule in {CENTRAL}:

@@ -4,8 +4,7 @@
 You can customize the default pagination option in {CENTRAL} by editing the *Default items per page* property on the *Process Administration* page.
 
 .Procedure
-. Log in to {CENTRAL}.
-. Select *Admin* -> *Process Administration*.
+. In {CENTRAL}, go to *Admin* -> *Process Administration*.
 . From the *Properties* section, update the *Default items per page* property and click *Save*.
 +
 [NOTE]
