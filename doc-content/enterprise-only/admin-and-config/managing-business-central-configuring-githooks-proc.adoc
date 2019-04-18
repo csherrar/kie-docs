@@ -152,6 +152,6 @@ The notification service will choose the one based on the user language, if ther
 for that language it will use the default ones specified on the `Messages.properties` file.
 
 
-==== Additional resources
+== Additional resources
 
 * https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks/[_Customizing Git Hooks_]

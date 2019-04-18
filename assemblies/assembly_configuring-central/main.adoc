@@ -107,9 +107,9 @@ include::{enterprise-dir}/admin-and-config/managing-business-central-gav-checks-
 
 include::{enterprise-dir}/admin-and-config/environment-mode-con.adoc[leveloffset=+1]
 
-include::{enterprise-dir}/admin-and-config/kie-server-configuring-environment-mode-proc.adoc[leveloffset=+1]
+include::{enterprise-dir}/admin-and-config/kie-server-configuring-environment-mode-proc.adoc[leveloffset=+2]
 
-include::{enterprise-dir}/admin-and-config/business-central-configuring-environment-mode-proc.adoc[leveloffset=+1]
+include::{enterprise-dir}/admin-and-config/business-central-configuring-environment-mode-proc.adoc[leveloffset=+2]
 
 include::{enterprise-dir}/admin-and-config/managing-business-central-githooks-con.adoc[leveloffset=+1]
 
