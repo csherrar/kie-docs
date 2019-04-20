@@ -19,7 +19,7 @@ For example, if the persistence mode (one of the items you can configure) define
 
 
 [float]
-==== What Can You Configure?
+== What Can You Configure?
 
 High level technical configuration details can be configured via deployment descriptors.
 The following table lists these along with the permissible and default values for each.
@@ -103,4 +103,3 @@ The following table lists these along with the permissible and default values fo
 | No default value
 
 |===
-
