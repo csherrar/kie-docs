@@ -103,14 +103,12 @@ For example:
 
 [NOTE]
 ====
-Its not necessary to define all the exit codes in the `*.properties` file. Notifications will appear only for the exit
-codes defined in the `*.properties`.
+Its not necessary to define all the exit codes in the properties file. Notifications will appear only for the exit codes defined in the properties file.
 ====
 
 [IMPORTANT]
 ====
-The notification service only supports the `ISO 8859-1` (`LATIN 1`) character set in the `*.properties` file. If you want to
-use extended characters, please escape them using their Unicode code.
+The notification service only supports the `ISO 8859-1` (`LATIN 1`) character set in the properties file. If you want to use extended characters, please escape them using their Unicode code.
 ====
 
 == Types of exit codes
@@ -142,11 +140,10 @@ end up being converted into a different code which may cause showing a wrong not
 ====
 
 == Internationalization support
-It is possible to internationalize the notification messages by placing different `*.properties` on the same path as the
-`*.properties` file specified on the `appformer.git.hooks.bundle` system property. The name of the different localized
+It is possible to internationalize the notification messages by placing different properties on the same path as the properties file specified on the `appformer.git.hooks.bundle` system property. The name of the different localized
 files should be `<filename>_<lang>.properties`, and it should contain the same entries as the original one. For example:
 having specified the system property pointing to `Messages.properties`, you can create other files like
-`Messages_en.properties" for English, `Messages_fr.properties` for French, `Messages_it.properties` for Italian...
+`Messages_en.properties` for English, `Messages_fr.properties` for French, `Messages_it.properties` for Italian...
 
 The notification service will choose the one based on the user language, if there are no available translations
 for that language it will use the default ones specified on the `Messages.properties` file.
