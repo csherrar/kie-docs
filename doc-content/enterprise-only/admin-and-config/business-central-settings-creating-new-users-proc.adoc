@@ -5,9 +5,9 @@ User privileges and settings are controlled by the roles assigned to a user and 
 .Procedure
 . In {CENTRAL}, go to *Admin* -> *Users*.
 . Click *New user*, enter a user name, and then click *Next*.
-. If required, click the *Groups* tab, click *Add to groups*, and then select the groups that you want this user to belong to.
+. If required, click the *Groups* tab, click *Add to groups*, and then select the groups that you want the user to belong to.
 . Click *Add to selected groups*.
-. If required, click the *Roles* tab, click *Add roles*, and then select the roles that you want to give this user.
+. If required, click the *Roles* tab, click *Add roles*, and then select the roles that you want to give the user.
 . Click *Add to selected roles*.
 . Click *Create*.
 . Click *Yes* to set a password for the user, enter a desired password, and click *Change*.

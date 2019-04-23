@@ -13,13 +13,12 @@ Change the group and role of a user from the *Users* option in *Settings*. All u
 .. Click *Add to selected groups*.
 .. Click *Save* to apply changes.
 * To change the roles of a user:
-.. From *Roles* tab, click *Add roles*. The *Role selection for user* window opens.
+.. Click the *Roles* tab and click *Add roles*. The *Role selection for user* window opens.
 .. Select the roles you want to assign to the user.
 .. Click *Add to selected roles*.
 .. Click *Save* to apply changes.
 * To view user permissions:
 .. Click the *Permissions* tab and expand the attributes to view user permissions.
-.. Click *Save* to apply changes.
 * To change the password of a user:
 .. Click *Change Password*. The *Change password for user* window opens.
 .. Enter and confirm the new password and click *Change*.
