@@ -1,9 +1,0 @@
-[id='kie-server-configuring-environment-mode-proc']
-= Configuring the environment mode in {KIE_SERVER}
-
-You can configure the {KIE_SERVER} environment mode by setting the `org.kie.server.mode` system property.
-
-* To run in `deployment mode`, set `org.kie.server.mode=development`.
-+
-Note: `org.kie.server.mode=development` is the default setting.
-* To run in `production mode`, set `org.kie.server.mode=production`.

@@ -1,9 +1,0 @@
-[id='business-central-configuring-environment-mode-proc']
-= Configuring the environment mode in {CENTRAL}
-
-You can configure the deployment behavior for a project in {Central} by toggling the *Development Mode* option in the settings of that project.
-
-.Procedure
-. In {CENTRAL}, go to *Menu* -> *Design* -> *Projects* and click the project name you want to modify.
-. Click the project *Settings* tab
-. In the *General Settings* pane, under *Version*, toggle the *Development Mode* option.

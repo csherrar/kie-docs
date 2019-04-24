@@ -5,7 +5,7 @@ A data set is a collection of related sets of information. It can be stored in m
 
 For example, if data is stored in a database, a valid data set could contain the entire database or a subset of the database as a result of an SQL query. In both cases, the data is used as input for the reporting components of {CENTRAL} which then displays the information.
 
-To access a data set, you must create and register a data set definition. This data set definition specifies the location of the data set stored storage, ways to access it, read it, parse it, and the columns that it contains.
+To access a data set, you must create and register a data set definition. This data set definition specifies the location of the data set, the ways to access it, read it, and parse it, and the columns that it contains.
 
 [NOTE]
 ====

@@ -4,42 +4,22 @@
 You cannot change permissions for an individual user. However, you can change permissions for groups and roles. The changed permissions apply to users that have the role or belong to the group that you changed.
 
 .Procedure
-. In {CENTRAL}, go to *Admin*.
-. Perform any of the following tasks:
-* To change permissions for a role:
-.. Click *Roles*.
-.. From the *All roles* list, click the role you want to edit. All role details are displayed in the right pane.
-+
-In the *Settings* section for the role, you can set the *Home Page* and *Priority* of the role.
-+
-In the *Permissions* section, you can set the {CENTRAL}, page, editor, space, and project permissions.
+. In {CENTRAL}, select the *Admin* icon in the top-right corner of the screen.
+. Click *Roles* or *Groups*. The corresponding list is displayed.
+. From the list, click the role or group you want to edit. All details are displayed in the right pane.
+. Set the *Home Page* or *Priority* under the *Settings* section.
+. Set the {CENTRAL}, page, editor, space, and project permissions under the *Permissions* section.
 +
 You can expand the resource type whose permissions you want to change.
-.. Optional: Click *Add Exception* to add an item not listed, and then set the permissions as required.
+. Optional: To add an item not listed, click *Add Exception* and then set the permissions as required.
 +
 [NOTE]
 ====
-You cannot add an exception to {CENTRAL} resource type.
+You cannot add an exception to the {CENTRAL} resource type.
 ====
 +
 .. Click *Save*.
-* To change permissions for a group:
-.. Click *Groups*.
-.. From the *All groups* list, click the group you want to edit. All group details are displayed in the right pane.
-+
-In the *Settings* section for the group, you can set the *Home Page* and *Priority* of the group.
-+
-In the *Permissions* section, you can set the {CENTRAL}, page, editor, space, and project permissions.
-+
-You can expand the resource type whose permissions you want to change.
-.. Optional: Click *Add Exception* to add an item not listed, and then set the permissions as required.
-+
-[NOTE]
-====
-You cannot add an exception to {CENTRAL} resource type.
-====
-+
-.. Click *Save*.
+
 [NOTE]
 ====
 Any changes you make to roles or groups affect all of the users associated with that role or group.

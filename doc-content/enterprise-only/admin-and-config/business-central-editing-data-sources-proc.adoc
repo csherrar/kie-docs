@@ -9,8 +9,7 @@ From the *Data Source Authoring* page you can add data sources and database driv
 == Adding a data source to {CENTRAL}
 
 .Procedure
-. Log in to {CENTRAL}.
-. Go to *Admin* -> *Data Sources*. The *Data Sources Authoring* page opens.
+. In {CENTRAL}, select the *Admin* icon in the top-right corner of the screen and select *Data Sources*. The *Data Sources Authoring* page opens.
 . In the *DataSource Explorer* pane, click on *Add DataSource*. The *New data source* window opens.
 . In the *New data source* window, enter the *Name*, *Connection URL*, *User*, *Password*, and the *Driver* of the data source.
 . Click on *Test Connection* to verify the connection to the database.
@@ -20,8 +19,7 @@ From the *Data Source Authoring* page you can add data sources and database driv
 == Editing an existing data source
 
 .Procedure
-. Log in to {CENTRAL}.
-. Go to *Admin* -> *Data Sources*. The *Data Sources Authoring* page opens.
+. In {CENTRAL}, select the *Admin* icon in the top-right corner of the screen and select *Data Sources*. The *Data Sources Authoring* page opens.
 . In the *DataSource Explorer* pane, click on the data source you want to edit. The *Data Source Definition* pane will list the data source details.
 . In the *Data Source Definition* pane, make the necessary changes to the *Name*, *Connection URL*, *User*, *Password*, and the *Driver* fields.
 . Click on *Test Connection* to verify the connection to the database.
@@ -32,8 +30,7 @@ From the *Data Source Authoring* page you can add data sources and database driv
 == Deleting a data source
 
 .Procedure
-. Log in to {CENTRAL}.
-. Go to *Admin* -> *Data Sources*. The *Data Sources Authoring* page opens.
+. In {CENTRAL}, select the *Admin* icon in the top-right corner of the screen and select *Data Sources*. The *Data Sources Authoring* page opens.
 . In the *DataSource Explorer* pane, click on the data source you want to delete. The *Data Source Definition* pane will list the data source details.
 . Click *Remove*.
 . Click on *Delete* to confirm the deletion of the data source.
@@ -42,8 +39,7 @@ From the *Data Source Authoring* page you can add data sources and database driv
 == Adding a database driver to {CENTRAL}
 
 .Procedure
-. Log in to {CENTRAL}.
-. Go to *Admin* -> *Data Sources*. The *Data Sources Authoring* page opens.
+. In {CENTRAL}, select the *Admin* icon in the top-right corner of the screen and select *Data Sources*. The *Data Sources Authoring* page opens.
 . In the *DataSource Explorer* pane, click on *+Add Driver*. The *New driver* window opens.
 . In the *New driver* window, enter the *Name*, *Driver Class Name*, *Group Id*, *Artifact Id*, and the *Version* of the database driver.
 . Click *Finish* to add the driver to {CENTRAL}.
@@ -52,8 +48,7 @@ From the *Data Source Authoring* page you can add data sources and database driv
 == Editing an existing database driver
 
 .Procedure
-. Log in to {CENTRAL}.
-. Go to *Admin* -> *Data Sources*. The *Data Sources Authoring* page opens.
+. In {CENTRAL}, select the *Admin* icon in the top-right corner of the screen and select *Data Sources*. The *Data Sources Authoring* page opens.
 . In the *DataSource Explorer* pane, select the driver you want to edit. The *Driver Definition* pane will list the driver details.
 . In the *Driver Definition* pane, make the necessary changes to the *Name*, *Driver Class Name*, *Group Id*, *Artifact Id*, and the *Version* fields.
 . Click *Update*.
@@ -63,8 +58,7 @@ From the *Data Source Authoring* page you can add data sources and database driv
 == Deleting a database driver
 
 .Procedure
-. Log in to {CENTRAL}.
-. Go to *Admin* -> *Data Sources*. The *Data Sources Authoring* page opens.
+. In {CENTRAL}, select the *Admin* icon in the top-right corner of the screen and select *Data Sources*. The *Data Sources Authoring* page opens.
 . In the *DataSource Explorer* pane, select the driver you want to delete. The *Data Source Definition* pane will list the driver details.
 . Click *Remove*.
 . Click on *Delete* to confirm the deletion of the driver.

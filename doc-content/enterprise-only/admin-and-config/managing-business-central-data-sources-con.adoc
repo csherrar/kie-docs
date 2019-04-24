@@ -1,8 +1,7 @@
 [id='managing-business-central-data-sources-con']
+= Data source management
 
-= Managing data sources
-
-Business Central provides data source management, which allows you to define data sources for accessing a database. These data sources are then used by other Business Central components such as the data sets. A database driver, on the other hand, is used for enabling communication between a data source and the targeted database.
+Business Central provides data source management features that enable you to define data sources for accessing a database. These data sources are then used by other Business Central components such as the data sets. A database driver enables communication between a data source and the targeted database.
 
 From the *Data Source Authoring* page you can add data sources and database drivers to {CENTRAL}.
 
