@@ -26,7 +26,7 @@ For example:
 +
 [NOTE]
 ====
-It is not necessary to define all the possible exit codes in the ``*.properties` file. Notifications appear only for the exit codes defined in the *.properties file.
+It is not necessary to define all the possible exit codes in the *.properties file. Notifications appear only for the exit codes defined in the *.properties file.
 ====
 +
 [IMPORTANT]
