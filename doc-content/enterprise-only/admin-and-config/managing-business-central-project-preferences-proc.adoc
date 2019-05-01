@@ -3,7 +3,7 @@
 
 A project stores assets and is part of a space. A space can hold multiple projects.
 
-For example, an organization has many departments, such as HR, Payroll, Engineering, R&D, and so on. Each department maps to a space and every department can have their own projects.
+For example, an organization has many departments, such as HR, Payroll, Engineering, R&D, and so on. Each department maps to a space and every department can have its own projects.
 
 You can create a new project from scratch or clone projects from an existing Git repository.
 

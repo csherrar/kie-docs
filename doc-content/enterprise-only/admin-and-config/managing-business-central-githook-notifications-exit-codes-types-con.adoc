@@ -1,15 +1,15 @@
 [id='managing-business-central-githook-notifications-exit-codes-types-con']
 = Git hook notifications in {CENTRAL}
 
-You can view Git hook notifications in {CENTRAL}. There are three types of notification, one for each Git hook exit code type.
+You can view Git hook notifications in {CENTRAL}. There are three Git hook exit code notification types.
 
 .Git hook UI notification types
 [cols="1,4,1", options="header"]
 |===
-|Exit Code | Message | UI notification color
+|Exit code | Customized message | UI notification color
 |`0` |Success! All working as expected. |[Green]#Green#
-|`1..30` |Warning! Please check the logs and advise your admin. |[Orange]#Orange#
-|"Anything else" |Error! Please advise your admin immediately. |[Red]#Red#
+|`1 to 30` |Warning! Please check the logs and advise your admin. |[Orange]#Orange#
+|`31 to 255` |Error! Please advise your admin immediately. |[Red]#Red#
 |===
 
 [IMPORTANT]

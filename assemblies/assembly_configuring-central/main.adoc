@@ -10,11 +10,11 @@ include::_artifacts/document-attributes.adoc[]
 include::_artifacts/author-group.adoc[]
 
 // Purpose statement for the assembly
-As an administrator, you can customize the following items in the *Admin Settings*:
+As an administrator, you can customize the following in the *Admin Settings*:
 
 * *Roles*: Set the home page, priority, and permissions of a role.
 * *Groups*: Set the home page, priority, and permissions of a group as well as create and delete groups.
-* *Users*: Create and delete users, add or remove groups and roles from users, and view users' permissions.
+* *Users*: Create and delete users, add or remove groups and roles from users, and view user permissions.
 * *Artifacts*: View M2 repository artifacts, upload artifacts, view, and download JAR files.
 * *Data Sources*: Add, update, or delete data sources and database drivers.
 * *Data Sets*: Create, modify, or delete data sets.

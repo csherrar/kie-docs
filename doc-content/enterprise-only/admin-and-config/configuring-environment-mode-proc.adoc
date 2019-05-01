@@ -5,7 +5,7 @@ You can now set {KIE_SERVER} to run in `production` mode or in `development` mod
 
 In a development environment, you can click *Deploy* to deploy the built KJAR file to a {KIE_SERVER} without stopping any running instances (if applicable), or click *Redeploy* to deploy the built KJAR file and stop any running instances. The next time you deploy or redeploy the built KJAR, the previous deployment unit (KIE container) is automatically updated in the same target {KIE_SERVER}.
 
-In a production environment, the *Redeploy* option is disabled and you can click *Deploy* only to deploy the built KJAR file to a new deployment unit (KIE container) on a {KIE_SERVER}.
+In a production environment, the *Redeploy* option is disabled and you can click only *Deploy* to deploy the built KJAR file to a new deployment unit (KIE container) on a {KIE_SERVER}.
 
 .Procedure
 
