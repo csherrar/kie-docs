@@ -5,7 +5,7 @@ You cannot change permissions for an individual user. However, you can change pe
 
 .Procedure
 . In {CENTRAL}, select the *Admin* icon in the top-right corner of the screen.
-. Click *Roles* or *Groups*. The corresponding list is displayed.
+. Click *Roles* or *Groups* to open the corresponding list.
 . From the list, click the role or group you want to edit. All details are displayed in the right pane.
 . Set the *Home Page* or *Priority* under the *Settings* section.
 . Set the {CENTRAL}, page, editor, space, and project permissions under the *Permissions* section.

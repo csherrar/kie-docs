@@ -29,7 +29,7 @@ Use the HTTPS or Git protocol instead of a SCP-style SSH URL. {CENTRAL} does not
 
 You must have your public ssh key configured in your Git provider.
 
-The Git repository must be a KJAR project, containing only a single KJAR, and is compatible with the {PRODUCT} version. The KJAR content must be in the root of the repository.
+The Git repository must be a KJAR project, containing only a single KJAR that is compatible with the {PRODUCT} version. The KJAR content must be in the root of the repository.
 =====
 
 . In a command terminal, navigate to the repository folder:

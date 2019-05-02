@@ -31,7 +31,7 @@ It is not necessary to define all the possible exit codes in the *.properties fi
 +
 [IMPORTANT]
 ====
-The notification service only supports the `ISO 8859-1` (`LATIN 1`) character set in the properties file. If you want to use extended characters, please escape them using their Unicode code.
+The notification service only supports the `ISO 8859-1` (`LATIN 1`) character set in the properties file. If you want to use extended characters, please use their escaped Unicode character code sequences.
 ====
 
 . To enable Git hook notifications, specify the path to the file as the value of the `appformer.git.hooks.bundle` system property.

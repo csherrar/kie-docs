@@ -7,5 +7,5 @@ From the *Data Source Authoring* page you can add data sources and database driv
 
 [NOTE]
 ====
-{CENTRAL} provides a default data source that can be used but can not be edited or deleted.
+{CENTRAL} provides a default data source that can be used but cannot be edited or deleted.
 ====

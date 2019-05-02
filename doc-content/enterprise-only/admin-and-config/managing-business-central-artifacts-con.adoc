@@ -3,7 +3,7 @@
 
 You can manage artifacts from the *Artifacts* page in {CENTRAL}. The artifact repository is a local Maven repository and there is only one Maven repository for each installation. {CENTRAL} recommends using Maven repository solutions like _Sonatype Nexus(TM)_, _Apache Archiva(TM)_, or _JFrog Artifactory(TM)_.
 
-The *Artifacts* page lists all the artifacts in the Maven repository. You can click *Upload* to upload an artifact to the Maven repository.
+The *Artifacts* page lists all the artifacts in the Maven repository. You can upload artifacts to the Maven repository.
 
 [NOTE]
 =====

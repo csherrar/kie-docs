@@ -7,6 +7,8 @@ By default, {CENTRAL} detects duplicate GAVs. This feature can be disabled by us
 
 == Configuring GAV checks and child GAV edition
 
+This procedure describes how to configure GAV checks in {CENTRAL}.
+
 .Procedure
 . In {CENTRAL}, go to *Menu* -> *Design* -> *Projects* and click the project name.
 . In the project window, click the *Settings* tab.
@@ -24,7 +26,9 @@ You can click *Reset* to undo all changes.
 
 NOTE: Duplicate GAV detection is disabled for projects in *Development Mode*. To enable duplicate GAV detection in {CENTRAL}, go to project *Settings* -> *General Settings* -> *Version* and toggle the *Development Mode* option to *OFF* (if applicable).
 
-== Configuring Gav checks for all projects
+== Configuring GAV checks for all projects
+
+This procedure describes how to configure GAV checks for all projects in {CENTRAL}. You can also disable GAV checks at system startup.
 
 .Procedures
 

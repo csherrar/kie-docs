@@ -1,7 +1,7 @@
 [id='configuring-environment-mode-proc']
 = Configuring the environment mode in {KIE_SERVER} and {CENTRAL}
 
-You can now set {KIE_SERVER} to run in `production` mode or in `development` mode. Development mode provides a flexible deployment policy that enables you to update existing deployment units (KIE containers) while maintaining active process instances for small changes, or to reset the deployment unit state before updating active process instances for bigger changes. Production mode is optimal for production environments, where each deployment creates a new deployment unit, as in previous releases.
+You can set {KIE_SERVER} to run in `production` mode or in `development` mode. Development mode provides a flexible deployment policy that enables you to update existing deployment units (KIE containers) while maintaining active process instances for small changes. It also enables you to reset the deployment unit state before updating active process instances for larger changes. Production mode is optimal for production environments, where each deployment creates a new deployment unit.
 
 In a development environment, you can click *Deploy* to deploy the built KJAR file to a {KIE_SERVER} without stopping any running instances (if applicable), or click *Redeploy* to deploy the built KJAR file and stop any running instances. The next time you deploy or redeploy the built KJAR, the previous deployment unit (KIE container) is automatically updated in the same target {KIE_SERVER}.
 
