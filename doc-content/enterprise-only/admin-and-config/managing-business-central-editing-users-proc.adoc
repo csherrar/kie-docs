@@ -1,7 +1,7 @@
 [id='managing-business-central-editing-users-proc']
 = Editing users
 
-Change the group and role of a user using the *Users* option on the {CENTRAL} *Settings* page. All user permissions are based on the group and role permissions of the user. You can view the user permissions from the *Permissions* tab.
+You can change the group and role of a user using the *Users* option on the {CENTRAL} *Settings* page. All user permissions are based on the group and role permissions of the user. You can view the user permissions from the *Permissions* tab.
 
 .Procedure
 . In {CENTRAL}, select the *Admin* icon in the top-right corner of the screen and select *Users*.

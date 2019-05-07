@@ -10,7 +10,7 @@ include::_artifacts/document-attributes.adoc[]
 include::_artifacts/author-group.adoc[]
 
 // Purpose statement for the assembly
-As an administrator, you can customize the following in the *Admin Settings*:
+As an administrator, you can customize the following on the admin *Settings* page:
 
 * *Roles*: Set the home page, priority, and permissions of a role.
 * *Groups*: Set the home page, priority, and permissions of a group as well as create and delete groups.
