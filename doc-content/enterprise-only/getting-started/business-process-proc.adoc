@@ -2,14 +2,14 @@
 
 = Creating a new *MortgageApprovalProcess* business process application
 
-The following procedures guide you through the creation of each task, connection and gateway that comprise the *MortgageApprovalProcess* business process.
+The following procedures guide you through the creation of tasks, connections, and gateways that make up the *MortgageApprovalProcess* business process.
 
 {PRODUCT} contains a predefined selection of node types to simplify business process creation. The predefined node panel is located on the left side of the diagram editor.
 
 image:getting-started/node_panel.png[]
 
 == Creating the initial mortgage business process
-The mortgage validation business process determines whether a mortgage application contains the required data before proceeding. If all of the specified data requirements are met, the application moves on to the mortgage calculation business process.
+The mortgage validation business process determines whether a mortgage application contains the required data before the application proceeds. If all of the specified data requirements are met, the application moves on to the mortgage calculation business process.
 
 .Procedure
 . In {CENTRAL}, go to *Menu* -> *Design* -> *Projects* -> *Mortgage_Process*.
@@ -53,25 +53,25 @@ image::getting-started/bus-rule-task.png[]
 . Configure the business rule task:
 
 .. Click the business rules task.
-.. If the *Diagram properties* panel is not open, in the upper-right corner, click the *Diagram properties* image:getting-started/diagram_properties.png[] icon.
+.. If the *Diagram properties* panel is not open, in the upper-right corner click the *Diagram properties* image:getting-started/diagram_properties.png[] icon.
 .. In the *Diagram properties* panel, enter `Validation` in the *Name* field.
-.. Expand *Implementation/Execution* and from the *Rule Flow Group* list, select *validation*.
+.. Expand *Implementation/Execution* and from the *Rule Flow Group* list select *validation*.
 .. In the *On Exit Action* field, enter the following Java expression:
 +
 [source,java]
 ----
 System.out.println(application.getProperty());
 ----
-.. Expand *Data Assignments*, and click image:getting-started/btn_assign.png[] next to *Assignments*.
+.. Expand *Data Assignments* and click image:getting-started/btn_assign.png[] next to *Assignments*.
 .. In the *Validation Data I/O* window, click *Add* and create the following assignments:
 +
 image::getting-started/val-data-io.png[]
 
 .. Click *Save*.
-. In the diagram editor, click *Save*, and then *Save* to confirm your changes.
+. In the diagram editor, click *Save* and click *Save* again to confirm your changes.
 
 == Defining the validation data
-This section shows you how to define the validation data that determines whether the application data is correct, contains an error or has missing information.
+This section shows you how to define the validation data that determines whether the application data is correct, contains an error, or has missing information.
 
 .Procedure
 
@@ -86,7 +86,7 @@ image::getting-started/exclusive_gateway.png[]
 .. Hover over the image:getting-started/config-icon.png[] icon of the task and click the *Convert into Business Rule* icon.
 +
 image::getting-started/new_br_task.png[]
-.. If the *Diagram properties* panel is not open, in the upper-right corner, click the *Diagram properties* image:getting-started/diagram_properties.png[] icon.
+.. If the *Diagram properties* panel is not open, in the upper-right corner click the *Diagram properties* image:getting-started/diagram_properties.png[] icon.
 .. In the *Diagram properties* panel, enter `Retract Validation` in the *Name* field.
 .. Expand *Implementation/Execution* and enter `error` in the *Rule Flow Group* field.
 
@@ -94,7 +94,7 @@ image::getting-started/new_br_task.png[]
 .. Click the connection.
 +
 image::getting-started/created-connection.png[]
-.. If the *Diagram properties* panel is not open, in the upper-right corner, click the *Diagram properties* image:getting-started/diagram_properties.png[] icon.
+.. If the *Diagram properties* panel is not open, in the upper-right corner click the *Diagram properties* image:getting-started/diagram_properties.png[] icon.
 .. In the *Diagram properties* panel, enter `Invalid` in the *Name* field.
 .. Expand *Implementation/Execution* and select *Expression* in the *Condition Expression* section.
 .. Enter `ValidationErrorDO()` in the drools expression field.
@@ -104,7 +104,7 @@ image::getting-started/created-connection.png[]
 .. Hover over the image:getting-started/config-icon.png[] icon of the task and click the *Convert into User* icon.
 +
 image::getting-started/user_task.png[]
-.. If the *Diagram properties* panel is not open, in the upper-right corner, click the *Diagram properties* image:getting-started/diagram_properties.png[] icon.
+.. If the *Diagram properties* panel is not open, in the upper-right corner click the *Diagram properties* image:getting-started/diagram_properties.png[] icon.
 .. In the *Diagram properties* panel, enter `Correct Data` in the *Name* field.
 .. Expand *Implementation/Execution* and enter the following values:
 * *Task Name*: `CorrectData`
