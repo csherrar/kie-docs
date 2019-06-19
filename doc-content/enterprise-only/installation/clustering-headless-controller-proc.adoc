@@ -33,6 +33,8 @@ WARNING: Ensure that the names of the {HEADLESS_CONTROLLER} deployments you copy
 </system-properties>
 ----
 +
+Template files contain default configurations for specific deployment scenarios.
++
 If the value of the `org.kie.server.controller.templatefile.watcher.enabled` property is set to true, a separate thread is started to watch for modifications of the template file. The default interval for these checks is 30000 milliseconds and can be further controlled by the `org.kie.server.controller.templatefile.watcher.interval` system property. If the value of this property is set to false, changes to the template file are detected only when the server restarts.
 
 . To start the {HEADLESS_CONTROLLER}, navigate to `__EAP_HOME__/bin` and enter the following command:
