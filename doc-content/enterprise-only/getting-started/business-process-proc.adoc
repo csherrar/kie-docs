@@ -97,7 +97,7 @@ image::getting-started/created-connection.png[]
 .. If the *Diagram properties* panel is not open, in the upper-right corner click the *Diagram properties* image:getting-started/diagram_properties.png[] icon.
 .. In the *Diagram properties* panel, enter `Invalid` in the *Name* field.
 .. Expand *Implementation/Execution* and select *Expression* in the *Condition Expression* section.
-.. Enter `ValidationErrorDO()` in the drools expression field.
+.. From the drop-down list, select *drools* and enter `ValidationErrorDO()` in the *Condition Expression* field.
 
 . Create an outgoing connection from the *Retract Validation* task to a new user task:
 .. Click the *Retract Validation* task and click the *Create Task* icon.
