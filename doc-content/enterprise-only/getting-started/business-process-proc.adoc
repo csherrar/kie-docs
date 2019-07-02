@@ -9,7 +9,7 @@ The following procedures guide you through the creation of tasks, connections, a
 image:getting-started/node_panel.png[]
 
 == Creating the initial mortgage business process
-The mortgage validation business process determines whether a mortgage application contains the required data before the application proceeds. If all of the specified data requirements are met, the application moves on to the mortgage calculation business process.
+The mortgage validation business process determines whether a mortgage application contains all required data. If the specified data requirements are met, the application proceeds on to the mortgage calculation business process.
 
 .Procedure
 . In {CENTRAL}, go to *Menu* -> *Design* -> *Projects* -> *Mortgage_Process*.
@@ -30,12 +30,12 @@ The *Package* specifies the location inside the existing project where the asset
 * *Data Type*: `Application [com.myspace.mortgage_app]`
 
 == Creating outgoing connections and exclusive gateways
-This section shows you how to create outgoing connections, exclusive gateways, and business rule tasks. Exclusive gateways are used to make decisions and react to events based on the available data.
+This section shows you how to create outgoing connections, exclusive gateways, and business rule tasks. Use exclusive gateways to make decisions and react to events based on the available data.
 
 .Procedure
 
 . Create an outgoing connection from the start event to an exclusive gateway:
-.. Click the start event and click the *Create Parallel* icon.
+.. On the canvas, click the start event node and click the *Create Parallel* icon.
 +
 image::getting-started/create-parallel.png[]
 .. Hover over the image:getting-started/config-icon.png[] icon of the parallel and click the *Convert into Exclusive* icon.
@@ -43,7 +43,7 @@ image::getting-started/create-parallel.png[]
 image::getting-started/exclusive-gateway.png[]
 
 . Create an outgoing connection from the exclusive gateway to a business rule task:
-.. Click the exclusive gateway and click the *Create Task* icon.
+.. On the canvas, click the exclusive gateway and click the *Create Task* icon.
 +
 image::getting-started/create-task.png[]
 .. Hover over the image:getting-started/config-icon.png[] icon of the task and click the *Convert into Business Rule* icon.
@@ -97,7 +97,7 @@ image::getting-started/created-connection.png[]
 .. If the *Diagram properties* panel is not open, in the upper-right corner click the *Diagram properties* image:getting-started/diagram_properties.png[] icon.
 .. In the *Diagram properties* panel, enter `Invalid` in the *Name* field.
 .. Expand *Implementation/Execution* and select *Expression* in the *Condition Expression* section.
-.. From the drop-down list, select *drools* and enter `ValidationErrorDO()` in the *Condition Expression* field.
+.. From the list, select *drools* and enter `ValidationErrorDO()` in the *Condition Expression* field.
 
 . Create an outgoing connection from the *Retract Validation* task to a new user task:
 .. Click the *Retract Validation* task and click the *Create Task* icon.

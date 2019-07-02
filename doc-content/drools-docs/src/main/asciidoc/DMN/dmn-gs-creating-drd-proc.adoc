@@ -10,17 +10,17 @@ image::dmn/dmn-traffic-violations-drd.png[]
 * You have created the traffic violations project in {CENTRAL}.
 
 .Procedure
-. On the *traffic-violation* project's home screen, click *Add Asset*.
-. On the *Add Asset* page, click *DMN Decision*. The *Create new DMN* window is displayed.
+. On the *traffic-violation* project's home page, click *Add Asset*.
+. On the *Add Asset* page, click *DMN Decision*. The *Create new DMN* window is opened.
 .. In the *Create new DMN* window, enter `Traffic Violation` in the *DMN* name field.
 .. From the *Package* list, select `org.kie.example.traffic.traffic_violation`.
-.. Click *Ok*. The DMN asset in the DMN designer is displayed.
-. In the DMN designer canvas, drag two *DMN Input Data* input nodes to the canvas.
+.. Click *Ok*. The DMN asset in the DMN designer is opened.
+. In the DMN designer canvas, drag two *DMN Input Data* input nodes on to the canvas.
 . Double-click each input node and rename one to `Driver` and the other to `Violation`.
-. Drag a *DMN Decision* decision node to the canvas.
+. Drag a *DMN Decision* decision node on to the canvas.
 . Double-click the decision node and rename it to `Fine`.
 . Click the *Violation* input node, select the *Create DMN Information Requirement* icon and click on the `Fine` decision node to link the two nodes.
-. Drag a *DMN Decision* decision node to the canvas.
+. Drag a *DMN Decision* decision node on to the canvas.
 . Double-click the decision node and rename it to `Should the driver be suspended?`.
 . Click the *Driver* input node, select the *Create DMN Information Requirement* icon and click on the *Should the driver be suspended?* decision node to link the two nodes.
 . Click the *Fine* decision node, select the *Create DMN Information Requirement* icon, and select the *Should the driver be suspended?* decision node.
