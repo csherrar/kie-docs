@@ -37,6 +37,7 @@ include::{enterprise-dir}/installation/clustering-headless-controller-proc.adoc[
 ifdef::PAM[]
 include::{enterprise-dir}/installation/clustering-smartrouter-install-proc.adoc[leveloffset=+2]
 endif::PAM[]
+include::{enterprise-dir}/installation/clustering-quartz-proc.adoc[leveloffset=+2]
 
 == Additional resources
 * {URL_INSTALLING_ON_EAP}[_{INSTALLING_ON_EAP}_]
