@@ -1,5 +1,5 @@
 [id='clustering-quartz-proc_{context}']
-=== Configuring Quartz timer service
+= Configuring Quartz timer service
 
 When you run {KIE_SERVER} in a cluster you must configure the Quartz timer service.
 
