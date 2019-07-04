@@ -1,0 +1,103 @@
+[id='clustering-quartz-proc_{context}']
+=== Configuring Quartz timer service
+
+When you run {KIE_SERVER} in a cluster you must configure the Quartz timer service.
+
+Before you configure a database on your application server, you must prepare the database for Quartz to create Quartz tables, which will hold the timer data, and the Quartz definition file.
+
+.Prerequisites
+
+* A supported non-JTA data source is available. For example, a PostgreSQL data source.
+
+* The database must be connected to your application server.
+
+.Procedure
+
+. Create Quartz tables in your database to allow timer events synchronization using the DDL script for your database.
++
+The DDL script is available in the extracted supplementary ZIP archive in `_QUARTZ_HOME_/docs/dbTables`.
+
+. Create the Quartz configuration file `quartz-definition.properties` in the `_JBOSS_HOME_/_MODE_/configuration/` directory and add the following example content:
++
+ifdef::PAM[]
+[source, bash]
+----
+#============================================================================
+# Configure Main Scheduler Properties
+#============================================================================
+org.quartz.scheduler.instanceName = jBPMClusteredScheduler
+org.quartz.scheduler.instanceId = AUTO
+#============================================================================
+# Configure ThreadPool
+#============================================================================
+org.quartz.threadPool.class = org.quartz.simpl.SimpleThreadPool
+org.quartz.threadPool.threadCount = 5
+org.quartz.threadPool.threadPriority = 5
+#============================================================================
+# Configure JobStore
+#============================================================================
+org.quartz.jobStore.misfireThreshold = 60000
+org.quartz.jobStore.class=org.quartz.impl.jdbcjobstore.JobStoreCMT
+org.quartz.jobStore.driverDelegateClass=org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+org.quartz.jobStore.useProperties=false
+org.quartz.jobStore.dataSource=managedDS
+org.quartz.jobStore.nonManagedTXDataSource=notManagedDS
+org.quartz.jobStore.tablePrefix=QRTZ_
+org.quartz.jobStore.isClustered=true
+org.quartz.jobStore.clusterCheckinInterval = 20000
+#============================================================================
+# Configure Datasources
+#============================================================================
+org.quartz.dataSource.managedDS.jndiURL=jboss/datasources/psbpmsDS
+org.quartz.dataSource.notManagedDS.jndiURL=jboss/datasources/quartzNotManagedDS
+# Note the configured data sources that accommodate the two Quartz schemes at the very end of the file.
+----
+endif::PAM[]
+ifdef::DM[]
++
+[source, bash]
+----
+#============================================================================
+# Configure Main Scheduler Properties
+#============================================================================
+org.quartz.scheduler.instanceName = jBPMClusteredScheduler
+org.quartz.scheduler.instanceId = AUTO
+#============================================================================
+# Configure ThreadPool
+#============================================================================
+org.quartz.threadPool.class = org.quartz.simpl.SimpleThreadPool
+org.quartz.threadPool.threadCount = 5
+org.quartz.threadPool.threadPriority = 5
+#============================================================================
+# Configure JobStore
+#============================================================================
+org.quartz.jobStore.misfireThreshold = 60000
+org.quartz.jobStore.class=org.quartz.impl.jdbcjobstore.JobStoreCMT
+org.quartz.jobStore.driverDelegateClass=org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+org.quartz.jobStore.useProperties=false
+org.quartz.jobStore.dataSource=managedDS
+org.quartz.jobStore.nonManagedTXDataSource=notManagedDS
+org.quartz.jobStore.tablePrefix=QRTZ_
+org.quartz.jobStore.isClustered=true
+org.quartz.jobStore.clusterCheckinInterval = 20000
+#============================================================================
+# Configure Datasources
+#============================================================================
+org.quartz.dataSource.managedDS.jndiURL=jboss/datasources/psbrmsDS
+org.quartz.dataSource.notManagedDS.jndiURL=jboss/datasources/quartzNotManagedDS
+# Note the configured data sources that accommodate the two Quartz schemes at the very end of the file.
+----
+endif::DM[]
++
+[IMPORTANT]
+====
+The recommended interval for cluster discovery is 20 seconds and is set in the `org.quartz.jobStore.clusterCheckinInterval` of the `quartz-definition.properties` file. Depending on your set up consider the performance impact and modify the setting as necessary.
++
+The `org.quartz.jobStore.driverDelegateClass` property that defines the database dialect. If you use Oracle, set it to `org.quartz.impl.jdbcjobstore.oracle.OracleDelegate`.
+====
+
+. Provide the absolute path to your `quartz-definition.properties` file in the `org.quartz.properties` property.
+
+. Optional: To configure the number of retries and delay for the Quartz trigger, update the following system properties:
+* `org.jbpm.timer.quartz.retries` (default value is 5)
+* `org.jbpm.timer.quartz.delay` in milliseconds  (default value is 1000)
