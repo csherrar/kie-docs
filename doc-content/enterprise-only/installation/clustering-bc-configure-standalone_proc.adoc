@@ -34,7 +34,7 @@ These steps describe a basic cluster configuration. For more complex configurati
   <property name="org.appformer.ext.metadata.infinispan.port"
      value="11222"/>
   <property name="org.appformer.ext.metadata.infinispan.host"
-     value="127.0.0.1"/>
+     value="<INFINISPAN_NODE_IP>"/>
   <property name="org.appformer.ext.metadata.infinispan.realm"
      value="ApplicationRealm"/>
   <property name="org.appformer.ext.metadata.infinispan.username"
