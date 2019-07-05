@@ -1,6 +1,6 @@
 [id='clustering-bc-configure-domain-proc']
 = Configuring a {EAP} {EAP_VERSION} domain-mode cluster for {CENTRAL}
-Configure the {CENTRAL} cluster in domain mode with {DATAGRID} and the JMS broker resource adapter integrated with {EAP}. By using domain mode with a cluster, you can centrally manage and publish configurations of your servers.
+Configure the {CENTRAL} cluster in domain mode with {DATAGRID} and the JMS broker resource adapter integrated with {EAP}. By using domain mode with a cluster, you can centrally manage and publish your server configurations.
 
 [NOTE]
 ====
