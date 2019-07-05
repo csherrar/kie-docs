@@ -52,7 +52,7 @@ include::{enterprise-dir}/admin-and-config/execution-error-management-con.adoc[l
 include::{enterprise-dir}/admin-and-config/view-process-instance-errors-proc.adoc[leveloffset=+2]
 include::{enterprise-dir}/admin-and-config/manage-execution-errors-proc.adoc[leveloffset=+2]
 include::{enterprise-dir}/admin-and-config/filtering-errors-proc.adoc[leveloffset=+2]
-
+include::{enterprise-dir}/processes/process-instance-migration-proc.adoc[leveloffset=+1]
 //Reused modules
 //include::{enterprise-dir}/admin-and-config/managing-business-central-data-sources-con.adoc[]
 //include::{enterprise-dir}/processes/interacting-with-processes-viewing-process-instance-history-log-proc.adoc[]
