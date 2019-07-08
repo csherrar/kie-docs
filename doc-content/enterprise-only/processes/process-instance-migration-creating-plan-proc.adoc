@@ -1,19 +1,15 @@
 [id='process-instance-migration-creating-plan-proc']
 = Creating a migration plan
 
-You can use the process instance migration service to define the migration between two different process definitions, known as a migration plan.
+You can define the migration between two different process definitions, known as a migration plan, in the process instance migration (PIM) service web UI.
 
 .Prerequisites
-* You have defined processes in a backuped {PRODUCT} development environment.
+* You have defined processes in a backup-ed {PRODUCT} development environment.
 * The process instance migration service is running.
 
 .Procedure
-. Open the following address in a web browser:
-+
-----
-localhost:3000
-----
-. Log in to the Process Instance Migration service.
+. Enter `http://localhost:3300` in a web browser.
+. Log in to the PIM service.
 . In the upper right corner of the *Process Instance Migration* page, from the KIE Service list select the KIE Service you want to add a migration plan for.
 . Click *Add Plan*. The *Add Migration Plan Wizard* window opens.
 . In the *Name* field, enter a name for the migration plan.
@@ -23,7 +19,7 @@ localhost:3000
 . In the *Source ProcessId* field, enter the source process ID.
 . Click *Copy Source To Target*.
 . In the *Target ContainerID* field, update the target container ID.
-. Click *Retrieve Definition from backend*, and click *Next*.
+. Click *Retrieve Definition from backend* and click *Next*.
 +
 image::processes/pim-migration-wizard.png[align="center"]
 
@@ -31,7 +27,7 @@ image::processes/pim-migration-wizard.png[align="center"]
 . From the *Target Nodes* list, select the target node you want to map.
 . If the *Source Process Definition Diagram* pane is not displayed, click *Show Source Diagram*.
 . If the *Target Process Definition Diagram* pane is not displayed, click *Show Target Diagram*.
-. Optionally, to modify the view in the diagram panes, do any of the following tasks:
+. Optional: To modify the view in the diagram panes, perform any of the following tasks:
 * To select text, select the image:processes/pim-selection-icon.png[] icon.
 * To pan, select the image:processes/pim-pan-icon.png[] icon.
 * To zoom in, select the image:processes/pim-zoom-in-icon.png[] icon.

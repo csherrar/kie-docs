@@ -1,10 +1,10 @@
 [id='process-instance-migration-installing-service-proc']
 = Installing the process instance migration service
 
-You can test the process instance migration service by cloning the GitHub repo, running the service, and accessing the service bin a browser.
+You can use the process instance migration (PIM) service to create, backup and execute migration plans. The PIM service is provided through a GitHub repository. To install the PIM service, clone the GitHub repository, then run the service and access it in a web browser.
 
 .Prerequisites
-* You have defined processes in a backuped {PRODUCT} development environment.
+* You have defined processes in a backup-ed {PRODUCT} development environment.
 
 .Procedure
 . Clone the https://github.com/kiegroup/droolsjbpm-integration[Drools and jBPM integration repository] from GitHub to your system:
@@ -27,7 +27,7 @@ $ git checkout 7.23.x
 ----
 $ cd process-migration-service/frontend
 ----
-. Launch the process instance migration service:
+. Start the PIM service:
 +
 ----
 $ npm start
@@ -41,8 +41,4 @@ If required, install `npm`:
 $ npm install
 ----
 ====
-. Once the service is up and running, open the following address in a web browser:
-+
-----
-localhost:3000
-----
+. After the PIM service is up and running, enter `http://localhost:3300` in a web browser.
