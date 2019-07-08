@@ -1,7 +1,7 @@
 [id='process-instance-migration-installing-service-proc']
 = Installing the process instance migration service
 
-You can use the process instance migration (PIM) service to create, backup and execute migration plans. The PIM service is provided through a GitHub repository. To install the PIM service, clone the GitHub repository, then run the service and access it in a web browser.
+You can use the process instance migration (PIM) service to create, export and execute migration plans. The PIM service is provided through a GitHub repository. To install the PIM service, clone the GitHub repository, then run the service and access it in a web browser.
 
 .Prerequisites
 * You have defined processes in a backup-ed {PRODUCT} development environment.
