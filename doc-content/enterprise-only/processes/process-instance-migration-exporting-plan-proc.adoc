@@ -1,0 +1,18 @@
+[id='process-instance-migration-exporting-plan-proc']
+= Exporting a migration plan
+
+You can export the process instance migration plan.
+
+.Prerequisites
+* You have defined processes in a backuped {PRODUCT} development environment.
+* The process instance migration service is running.
+
+.Procedure
+. Open the following address in a web browser:
++
+----
+localhost:3000
+----
+. Log in to the Process Instance Migration service.
+. On the *Process Instance Migration* page, select the *Export Migration Plan* image:processes/pim-export-icon.png[] icon on the row of the migration plan you want to execute. The *Export Migration Plan* window opens.
+. Review and click *Export*.

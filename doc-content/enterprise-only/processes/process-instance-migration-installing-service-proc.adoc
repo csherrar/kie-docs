@@ -1,0 +1,48 @@
+[id='process-instance-migration-installing-service-proc']
+= Installing the process instance migration service
+
+You can test the process instance migration service by cloning the GitHub repo, running the service, and accessing the service bin a browser.
+
+.Prerequisites
+* You have defined processes in a backuped {PRODUCT} development environment.
+
+.Procedure
+. Clone the https://github.com/kiegroup/droolsjbpm-integration[Drools and jBPM integration repository] from GitHub to your system:
++
+----
+$ git clone git@github.com:kiegroup/droolsjbpm-integration.git
+----
+. Navigate to the cloned directory:
++
+----
+$ cd droolsjbpm-integration
+----
+. Checkout the `7.23.x` branch of the repository:
++
+----
+$ git checkout 7.23.x
+----
+. Navigate to `process-migration-service/frontend`:
++
+----
+$ cd process-migration-service/frontend
+----
+. Launch the process instance migration service:
++
+----
+$ npm start
+----
++
+[NOTE]
+====
+If required, install `npm`:
++
+----
+$ npm install
+----
+====
+. Once the service is up and running, open the following address in a web browser:
++
+----
+localhost:3000
+----

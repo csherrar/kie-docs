@@ -1,0 +1,23 @@
+[id='process-instance-migration-editing-plan-proc']
+= Editing a migration plan
+
+You can edit a process instance migration plan.
+
+.Prerequisites
+* You have defined processes in a backuped {PRODUCT} development environment.
+* The process instance migration service is running.
+
+.Procedure
+. Open the following address in a web browser:
++
+----
+localhost:3000
+----
+. Log in to the Process Instance Migration service.
+. On the *Process Instance Migration* page, select the *Edit Migration Plan* image:processes/pim-edit-icon.png[] icon on the row of the migration plan you want to edit. The *Edit Migration Plan* window opens.
+. On each tab, modify the details you want to change.
+. Click *Next*.
+. Optional: To export as a `JSON` file, click *Export*.
+. In the *Review & Submit* tab, review the plan and click *Submit Plan*.
+. Optional: To export as a `JSON` file, click *Export*.
+. Review the response and click *Close*.

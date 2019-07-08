@@ -1,0 +1,27 @@
+[id='process-instance-migration-executing-plan-proc']
+= Executing a migration plan
+
+You can execute the process instance migration plan.
+
+.Prerequisites
+* You have defined processes in a backuped {PRODUCT} development environment.
+* The process instance migration service is running.
+
+.Procedure
+. Open the following address in a web browser:
++
+----
+localhost:3000
+----
+. Log in to the Process Instance Migration service.
+. On the *Process Instance Migration* page, select the *Execute Migration Plan* image:processes/pim-execute-icon.png[] icon on the row of the migration plan you want to execute. The *Execute Migration Plan Wizard* window opens.
+. From the migration plan table, select the check box on the row of each running process instance you want to migrate, and click *Next*.
+. In the *Callback URL* field, enter the callback URL.
+. To the right of *Run migration*, perform one of the following tasks:
+* To execute the migration immediately, select *Now*.
+* To schedule the migration, select *Schedule* and in the text field, enter the date and time, for example `06/20/2019 10:00 PM`.
+. Click *Next*.
+. Optional: To export as a `JSON` file, click *Export*.
+. Click *Execute Plan*.
+. Optional: To export as a `JSON` file, click *Export*.
+. Check the response and click *Close*.

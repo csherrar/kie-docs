@@ -1,0 +1,18 @@
+[id='process-instance-migration-deleting-plan-proc']
+= Deleting a migration plan
+
+You can delete a process instance migration plan.
+
+.Prerequisites
+* You have defined processes in a backuped {PRODUCT} development environment.
+* The process instance migration service is running.
+
+.Procedure
+. Open the following address in a web browser:
++
+----
+localhost:3000
+----
+. Log in to the Process Instance Migration service.
+. On the *Process Instance Migration* page, select the *Delete* image:processes/pim-delete-icon.png[] icon on the row of the migration plan you want to delete. The *Delete Migration Plan* window opens.
+. Click *Delete* to confirm deletion.
