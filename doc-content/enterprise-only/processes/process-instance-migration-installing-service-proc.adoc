@@ -54,7 +54,8 @@ kieservers:
 ----
 . Start the PIM service:
 +
+[source,subs="attributes+"]
 ----
-$ java -jar rhpam-7.4-process-migration-service-standalone.jar -s./config.yml
+$ java -jar {PRODUCT_FILE}-process-migration-service-standalone.jar -s./config.yml
 ----
 . After the PIM service is up and running, enter `http://localhost:8080` in a web browser.
