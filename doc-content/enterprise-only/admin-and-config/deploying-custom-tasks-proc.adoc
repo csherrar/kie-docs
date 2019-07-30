@@ -1,0 +1,7 @@
+[id='_deploying-custom-tasks-{context}']
+= Deploying custom tasks
+
+The quick brown fox jumps over the lazy dog.
+
+.Procedure
+. In {CENTRAL}, go to *Menu* -> *Manage*.

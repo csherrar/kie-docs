@@ -1,0 +1,58 @@
+[id='_creating-work-item-handler-projects-{context}']
+= Creating work item handler projects
+
+Creating a work item handler is possible from scratch, but it is much simpler to use a Maven archetype to create an example project. {PRODUCT| provides the `jbpm-workitems-archetype` from the Red Hat Maven repository for this purpose.
+
+.Procedure
+. In {CENTRAL}, go to *Menu* -> *Manage*.
+
+Open a command line which has access to run Maven.
+
+Within that command line, create a directory where you will build your work item handler. This directory will be referred to as `workitem-home`.
+
+Check your Maven settings to ensure that Red Hat’s Maven repository is included in the repository list. While setting up Maven is outside the scope of this guide, the below example shows what it looks like to have the online Red Hat Maven repository added to your Maven `settings.xml`:
+  <settings>
+    <profiles>
+      <profile>
+        <id>my-profile</id>
+        <activation>
+          <activeByDefault>true</activeByDefault>
+        </activation>
+        <repositories>
+          <repository>
+            <id>redhat-ga</id>
+            <url>http://maven.repository.redhat.com/ga/</url>
+            <snapshots>
+              <enabled>false</enabled>
+            </snapshots>
+            <releases>
+              <enabled>true</enabled>
+            </releases>
+          </repository>
+          ...
+        </repositories>
+      </profile>
+    </profiles>
+    ...
+  </settings>
+
+
+It will be important to know the Red Hat library version you are using, as Maven will use it to determine the correct archetype project. To find the Red Hat library version, you can refer to the Red Hat article [What is the mapping between Red Hat Process Automation Manager and the Maven library version?](https://access.redhat.com/solutions/3405361). If an “offline” option to find the version is needed, it is possible to find the library version within your downloaded artifact for PRODUCT via the following methods:
+For Business Central, examine the file `business-central.war/META-INF/MANIFEST.MF`. The line `Implementation-Version` will be the Red Hat library version
+For KIE Server, examine the file `kie-server.war/META-INF/MANIFEST.MF`. The line `Implementation-Version` will be the Red Hat library version
+Within the `workitem-home` directory, run the following command:
+```mvn archetype:generate -DarchetypeGroupId=org.jbpm -DarchetypeArtifactId=jbpm-workitems-archetype -DarchetypeVersion=<redhat-library-version> -Dversion=1.0.0-SNAPSHOT -DgroupId=com.redhat -DartifactId=myworkitem -DclassPrefix=MyWorkItem```
+The following parameters are specific to the archetype, and must remain unchanged:
+-DarchetypeGroupId
+-DarchetypeArtifactId
+The remaining parameters are explained as follows:
+-DarchetypeVersion
+This is the Red Hat library version that will be searched for when Maven attempts to download the `jbpm-workitems-archetype` artifact
+-Dversion
+This is the version of your specific project. In this guide it has been set to `1.0.0-SNAPSHOT`
+-DgroupId
+This is the Maven group of your specific project. In this guide it has been set to `com.redhat`
+-DartifactId
+This is the Maven ID of your specific project. In this guide it has been set to `myworkitem`
+-DclassPrefix
+When Maven generates the classes, it looks for a string to add to the beginning of Java classes for easier identification. In this guide the string has been set to `MyWorkItem`
