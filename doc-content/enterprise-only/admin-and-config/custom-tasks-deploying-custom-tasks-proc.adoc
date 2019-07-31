@@ -3,7 +3,7 @@
 
 Work item handlers, as custom code, are created outside of {PRODUCT}. To use the code in your custom task, the code must be deployed to the server. Work item handler projects must be Java JAR files that can be placed into a Maven repository.
 
-In {PRODUCT} you can deploy custom tasks using three method:
+In {PRODUCT} you can deploy custom tasks using three methods:
 
 * Within {CENTRAL} where both the legacy and current editors allow uploading the work item handler JAR to the {CENTRAL} Maven repository as an artifact.
 * Within {CENTRAL} where the legacy editor allows adding service repositories to import and register work item handlers from remote sources.
@@ -31,8 +31,16 @@ Service repositories are collections of one or more work item handlers that can 
 . Create or open a business process asset that is a *Business Process (legacy)* type.
 . In the diagram editor, click the cylinder *Connect to a Service Repository* icon.
 . In the *Service Repository Connection* window, in the field enter a location for the service repository:
-* For remote repositories, use the format `http://<valid URL>`.
-* For local repositories, use the format `file:///<valid filesystem path>`.
+* For remote repositories, use the format:
++
+----
+http://<valid URL>
+----
+* For local repositories, use the format:
++
+----
+file:///<valid filesystem path>
+----
 . Click *Connect*.
 +
 A list of work items is displayed.
@@ -62,7 +70,7 @@ This method registers the specified work item definitions globally, allowing any
 
 == Manually copying work item definitions to {CENTRAL} Maven repository
 
-{CENTRAL} automatically creates or reuses the Maven repository folder. By default the location is based on the location of the user launched EAP. For example, the full default path would be `<startup location>/repositories/kie/global`. It is possible to replicate a standard Maven repository folder layout of `<groupId>/<artifactId>/<versionId>/` in this folder and copy work item handler JAR files to this location. For example:
+{CENTRAL} automatically creates or reuses the Maven repository folder. By default the location is based on the location of the user launched {EAP}. For example, the full default path would be `<startup location>/repositories/kie/global`. It is possible to replicate a standard Maven repository folder layout of `<groupId>/<artifactId>/<versionId>/` in this folder and copy work item handler JAR files to this location. For example:
 ----
 <startup location>/repositories/kie/global/com/redhat/myworkitem/1.0.0-SNAPSHOT/myworkitems-1.0.0-SNAPSHOT.jar
 ----

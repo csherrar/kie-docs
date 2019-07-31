@@ -5,7 +5,8 @@
 
 NOTE: Registering a custom task is not necessary when using a service repository because the import process registers the custom task.
 
-For non-Service Repository deployments, work item handlers can be registered in two ways:
+For non-service repository deployments, work item handlers can be registered in two ways:
+
 * Registering using the deployment descriptor.
 * Registering using the spring component registration.
 
@@ -14,11 +15,11 @@ For non-Service Repository deployments, work item handlers can be registered in 
 You can register a custom task work item with the work item handler using the deployment descriptor in {CENTRAL}.
 
 .Procedure
-. In {CENTRAL}, go to *Menu* -> *Design* -> *Projects* and click the project name.
+. In {CENTRAL}, go to *Menu* -> *Design* -> *Projects* and select the project name.
 . In the project pane, select *Settings* -> *Deployments* -> *Work Item Handlers*.
 . Click *Add Work Item Handler*.
 . In the *Name* field, enter the display name for the custom task.
-. From the *Resolver* list select *MVEL*, *Reflection* or *Spring*.
+. From the *Resolver* list, select *MVEL*, *Reflection* or *Spring*.
 . In the *Value* field, enter the value based on the resolver type:
 * For MVEL, use the format `new <full Java package>.<Java work item handler class name>()`
 +

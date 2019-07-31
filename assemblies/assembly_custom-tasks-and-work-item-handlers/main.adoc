@@ -17,7 +17,7 @@ In {CENTRAL}, each task in a process diagram has a `WorkItem` Java class with an
 The Java code of the work item handler is executed when the task is triggered. You can customize and register a work item handler to execute your own Java code in custom tasks.
 
 .Prerequisites
-* {CENTRAL} is deployed and is running on a web/application server.
+* {CENTRAL} is deployed and is running on a web or application server.
 * You are logged in to {CENTRAL}.
 * Maven is installed.
 * The host has access to the Internet. The build process uses the Internet for downloading Maven packages from external repositories.
