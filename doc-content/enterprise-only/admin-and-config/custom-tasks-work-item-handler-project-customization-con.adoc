@@ -1,25 +1,23 @@
 [id='_custom-tasks-work-item-handler-project-customization-con-{context}']
 = Work item handler project customization
 
-You can customize the code of a work item handler project.
+You can customize the code of a work item handler project. There are two Java methods required by a work item handler, `executeWorkItem` and `abortWorkItem`.
 
-There are two Java methods required by a work item handler:
-+
 .Java method descriptions
 [cols="40%,60%a", frame="all", options="header"]
 |===
 |Java Method
 |Description
-|``executeWorkItem(WorkItem workItem, WorkItemManager manager)``
+|`executeWorkItem(WorkItem workItem, WorkItemManager manager)`
 |Executed by default when the work item handler is run.
 |`abortWorkItem(WorkItem workItem, WorkItemManager manager)`
 |Executed when the work item is aborted.
 |===
-+
+
 In both methods, the `WorkItem` parameter contains any of the parameters entered into the custom task via a GUI or API call, and the `WorkItemManager` parameter is responsible for tracking the state of the custom task.
 
-Example code structure:
-+
+.Example code structure
+[source,java,options="nowrap"]
 ----
 public class MyWorkItemWorkItemHandler extends AbstractLogOrThrowWorkItemHandler {
 
@@ -40,7 +38,7 @@ public class MyWorkItemWorkItemHandler extends AbstractLogOrThrowWorkItemHandler
       manager.completeWorkItem(workItem.getId(), results);
     } catch(Throwable cause) {
       handleException(cause);
-    	}
+    }
 	}
 
 	@Override
@@ -68,5 +66,5 @@ public class MyWorkItemWorkItemHandler extends AbstractLogOrThrowWorkItemHandler
 |`abortWorkItem()`
 |Aborts the custom Java code. May be left blank if the work item is not designed to be aborted
 |===
-+
+
 NOTE: {PRODUCT} includes a limited set of supported custom tasks. Custom tasks that are not included in {PRODUCT} are not supported.

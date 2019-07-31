@@ -37,7 +37,7 @@ You can register a custom task work item with the work item handler using the de
 
 .Procedure
 . Open the file `src/main/resources/META-INF/kie-deployment-descriptor.xml`.
-. Add the following content based on the resolver type under `<work-item-handlers`:
+. Add the following content based on the resolver type under `<work-item-handlers>`:
 * For MVEL, add the following:
 +
 ----
@@ -70,11 +70,8 @@ You can register a custom task work item with the work item handler using the de
 ----
 +
 [NOTE]
-===
+====
 If you are using Spring to discover and configure Spring beans, it is possible to use an annotation of the `org.springframework.stereotype.Component` class to automatically register work item handlers.
-Within a work item handler, add the annotation `@Component(“<Name>”)` before the declaration of the work item handler class. For example:
-----
-@Component(“MyWorkItem”)
-  public class MyWorkItemWorkItemHandler extends AbstractLogOrThrowWorkItemHandler {
-----
-===
+
+Within a work item handler, add the annotation `@Component(“<Name>”)` before the declaration of the work item handler class. For example: `@Component(“MyWorkItem”) public class MyWorkItemWorkItemHandler extends AbstractLogOrThrowWorkItemHandler {`
+====

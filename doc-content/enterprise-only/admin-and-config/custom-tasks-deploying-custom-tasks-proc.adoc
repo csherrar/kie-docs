@@ -4,6 +4,7 @@
 Work item handlers, as custom code, are created outside of {PRODUCT}. To use the code in your custom task, the code must be deployed to the server. Work item handler projects must be Java JAR files that can be placed into a Maven repository.
 
 In {PRODUCT} you can deploy custom tasks using three method:
+
 * Within {CENTRAL} where both the legacy and current editors allow uploading the work item handler JAR to the {CENTRAL} Maven repository as an artifact.
 * Within {CENTRAL} where the legacy editor allows adding service repositories to import and register work item handlers from remote sources.
 * Outside of {CENTRAL}, you can manually copy the JAR files into the Maven repository.

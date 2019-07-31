@@ -1,7 +1,0 @@
-[id='_customizing-work-item-handler-projects-{context}']
-= Customizing work item handler projects
-
-The quick brown fox jumps over the lazy dog.
-
-.Procedure
-. In {CENTRAL}, go to *Menu* -> *Manage*.
