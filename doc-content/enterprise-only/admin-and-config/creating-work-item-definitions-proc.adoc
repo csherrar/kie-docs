@@ -1,0 +1,7 @@
+[id='_creating_work_item_definitions-{context}']
+= Creating work item definitions
+
+The quick brown fox jumps over the lazy dog.
+
+.Procedure
+. In {CENTRAL}, go to *Menu* -> *Manage*.
