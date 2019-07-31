@@ -1,9 +1,12 @@
-[id='_custom-tasks-{context}']
+[id='_custom-tasks-con-{context}']
 = Custom tasks
 
 You can use custom tasks to develop operations that {PRODUCT} does not directly provide and include them in process diagrams.
 
+In {CENTRAL}, each task in a process diagram has a `WorkItem` Java class with an associated `WorkItemHandler` Java class. The work item handler contains Java code registered with {CENTRAL} and implements `org.kie.api.runtime.process.WorkItemHandler`. The Java code of the work item handler is executed when the task is triggered. You can customize and register a work item handler to execute your own Java code in custom tasks.
 
-In {CENTRAL}, each task in a process diagram has a `WorkItem` Java class with an associated `WorkItemHandler` Java class. The work item handler contains Java code registered with {CENTRAL} and implements `org.kie.api.runtime.process.WorkItemHandler`. The Java code of the work item handler is executed when the task is triggered.
+.Prerequisites
 
-You can customize and register a work item handler to execute your own Java code in custom tasks.
+* {Product} is installed in a {EAP} {EAP_VERSION} server instance.
+* Maven is installed
+* Your system has access to the Red Hat Maven repository either locally or online

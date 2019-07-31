@@ -1,7 +1,0 @@
-[id='_registering-custom-tasks-{context}']
-= Registering custom tasks
-
-The quick brown fox jumps over the lazy dog.
-
-.Procedure
-. In {CENTRAL}, go to *Menu* -> *Manage*.

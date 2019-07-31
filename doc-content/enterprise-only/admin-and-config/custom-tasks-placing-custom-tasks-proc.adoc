@@ -1,0 +1,10 @@
+[id='_custom-tasks-placing-custom-tasks-proc-{context}']
+= Placing custom tasks
+
+When a custom task is created and deployed in {PRODUCT} it appears in the process designer palette. The custom task is named and categorized according to the entries in its corresponding WID file.
+
+.Procedure
+. In {CENTRAL}, go to *Menu* -> *Design* -> *Projects* and click a project.
+. Select the business process you want to add a custom task to.
+. Click on the custom task from the palette and drag it to the BPMN2 diagram.
+. Optional: You can change the custom task attributes including data output and input from the corresponding WID file.

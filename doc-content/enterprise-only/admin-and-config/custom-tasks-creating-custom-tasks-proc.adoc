@@ -1,4 +1,4 @@
-[id='_creating_custom_tasks-{context}']
+[id='_custom-tasks-creating_custom_tasks-proc-{context}']
 = Creating custom tasks
 
 To create a custom task, you must ensure the software project contains all the necessary configurations, mappings and executable code for the custom task.
@@ -7,7 +7,6 @@ In the software project, you must insert the custom code to perform business log
 
 When the custom task is created and configured, you can place the custom task just like any other task.
 
-
-When creating custom tasks, the task should be declaritive and high level while the custom work handler should be procedural and low-level.
+When creating custom tasks, the task should be declarative and high level while the custom work handler should be procedural and low-level.
 
 Ensure that your work item handlers are generic and configurable. Specific data like URLs or specific data sources should be passed in as parameters whenever possible.
