@@ -4,6 +4,8 @@
 
 Service tasks (work items) are tasks that you can customize and reuse across multiple business processes or across all projects in {CENTRAL}. {PRODUCT} provides a set of service tasks within the service task repository in {CENTRAL}. You can enable or disable the default service tasks and upload custom service tasks into {CENTRAL} to implement the tasks in the relevant processes.
 
+NOTE: {PRODUCT} includes a limited set of supported custom tasks. Custom tasks that are not included in {PRODUCT} are not supported.
+
 .Procedure
 . In {CENTRAL}, select the *Admin* icon in the top-right corner of the screen and select *Service Tasks Administration*.
 +
