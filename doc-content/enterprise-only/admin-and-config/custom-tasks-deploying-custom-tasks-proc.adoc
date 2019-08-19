@@ -5,9 +5,13 @@ Work item handlers, as custom code, are created outside of {PRODUCT}. To use the
 
 In {PRODUCT} you can deploy custom tasks using three methods:
 
-* Within {CENTRAL} where both the legacy and current editors allow uploading the work item handler JAR to the {CENTRAL} Maven repository as an artifact.
-* Within {CENTRAL} where the legacy editor allows adding service repositories to import and register work item handlers from remote sources.
+* Within a {CENTRAL} service task repository. For more information, see <<manage-service-tasks-proc_custom-tasks>>.
+* Within {CENTRAL} where you can use both the legacy and current editors to upload the work item handler JAR to the {CENTRAL} Maven repository as an artifact.
 * Outside of {CENTRAL}, you can manually copy the JAR files into the Maven repository.
+
+== Using a {CENTRAL} service task repository
+
+You can enable, disable, and deploy service tasks within a {CENTRAL} service task repository. For more information, see <<manage-service-tasks-proc_custom-tasks>>.
 
 == Uploading JAR Artifact to {CENTRAL}
 
@@ -21,52 +25,52 @@ You can upload the work item handler JAR to the {CENTRAL} Maven repository as an
 . In the pop-up dialog, click the *Upload* icon.
 +
 The artifact is uploaded and can now be viewed on the *Artifacts* page and referenced.
-
-== Adding service repositories to import work item handlers
-
-Service repositories are collections of one or more work item handlers that can be accessed remotely. You can add service repositories in {CENTRAL} by using the legacy editor. You can use service repositories in both editors if they are configured as a startup parameter of {PRODUCT}.
-
-.Procedure
-. In {CENTRAL}, go to *Menu* -> *Design* -> *Projects* and click a project.
-. Create or open a business process asset that is a *Business Process (legacy)* type.
-. In the diagram editor, click the cylinder *Connect to a Service Repository* icon.
-. In the *Service Repository Connection* window, in the field enter a location for the service repository:
-* For remote repositories, use the format:
-+
-----
-http://<valid URL>
-----
-* For local repositories, use the format:
-+
-----
-file:///<valid filesystem path>
-----
-. Click *Connect*.
-+
-A list of work items is displayed.
-. To import a work item, click the wrench icon of the work item.
-+
-The work item is displayed under the *Service Tasks* menu of the palette in the process designer.
-
-== Adding work item definitions using the startup parameter
-
-It is possible to use the server parameters that host {PRODUCT} to pre-register work items from a service repository. For example:
-----
--Dorg.jbpm.service.repository=file:///eap_home_folder
--Dorg.jbpm.service.servicetasknames=MyWorkItemDefinitions
-----
-.Startup sever parameter descriptions
-[cols="40%,60%a", frame="all", options="header"]
-|===
-|Parameter
-|Description
-|`org.jbpm.service.repository`
-|The repository to connect to.
-|`org.jbpm.service.servicetasknames`
-|A comma-separated list of names given for each work item definition to be imported.
-|===
-
-This method registers the specified work item definitions globally, allowing any project to use them.
+//
+// == Adding service repositories to import work item handlers
+//
+// Service repositories are collections of one or more work item handlers that can be accessed remotely. You can add service repositories in {CENTRAL} by using the legacy editor. You can use service repositories in both editors if they are configured as a startup parameter of {PRODUCT}.
+//
+// .Procedure
+// . In {CENTRAL}, go to *Menu* -> *Design* -> *Projects* and click a project.
+// . Create or open a business process asset that is a *Business Process (legacy)* type.
+// . In the diagram editor, click the cylinder *Connect to a Service Repository* icon.
+// . In the *Service Repository Connection* window, in the field enter a location for the service repository:
+// * For remote repositories, use the format:
+// +
+// ----
+// http://<valid URL>
+// ----
+// * For local repositories, use the format:
+// +
+// ----
+// file:///<valid filesystem path>
+// ----
+// . Click *Connect*.
+// +
+// A list of work items is displayed.
+// . To import a work item, click the wrench icon of the work item.
+// +
+// The work item is displayed under the *Service Tasks* menu of the palette in the process designer.
+//
+// == Adding work item definitions using the startup parameter
+//
+// It is possible to use the server parameters that host {PRODUCT} to pre-register work items from a service repository. For example:
+// ----
+// -Dorg.jbpm.service.repository=file:///eap_home_folder
+// -Dorg.jbpm.service.servicetasknames=MyWorkItemDefinitions
+// ----
+// .Startup sever parameter descriptions
+// [cols="40%,60%a", frame="all", options="header"]
+// |===
+// |Parameter
+// |Description
+// |`org.jbpm.service.repository`
+// |The repository to connect to.
+// |`org.jbpm.service.servicetasknames`
+// |A comma-separated list of names given for each work item definition to be imported.
+// |===
+//
+// This method registers the specified work item definitions globally, allowing any project to use them.
 
 == Manually copying work item definitions to {CENTRAL} Maven repository
 
