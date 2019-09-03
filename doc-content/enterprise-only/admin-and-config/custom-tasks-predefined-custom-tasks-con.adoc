@@ -1,0 +1,35 @@
+[id='_custom-tasks-predefined-custom-tasks-con-{context}']
+= Predefined custom tasks
+
+{PRODUCT} {CENTRAL} contains 7 predefined custom tasks.
+
+.Predefined custom task descriptions
+[cols="20%,40%a,40%a", frame="all", options="header"]
+|===
+|Predefined custom task
+|Handler implementation
+|Description
+|*REST*
+|`RestWorkItemHandler`
+|Performs a REST call and outputs responses as objects
+|*Email*
+|`EmailWorkItemHandler`
+|Sends an email based on task properties
+|*WebService*
+|`WebServiceWorkItemHandler`
+|Invokes a remote WebService call
+|*Log*
+|`LogWorkItemHandler`
+|Logs a message based on events
+|*DecisionTask*
+|`DecisionTaskWorkItemHandler`
+|Executes a DMN diagram
+|*BusinessRuleTask*
+|`BusinessRuleTaskWorkItemHandler`
+|Executes a business rule task
+|*JMSSendTask*
+|`JMSSendTaskWorkItemHandler`
+|Sends a JMS message
+|===
+
+//comment: add link to this from {URL_MODEL_AND_NOTATION_REF}/bpmn-tasks-overview-con-overview-con[_BPMN2 tasks in process designer_] in {MODEL_AND_NOTATION_REF}.

@@ -1,0 +1,7 @@
+[id='_custom-tasks-email-tasks-con-{context}']
+
+= Email tasks
+
+The Email task sends an email based on the task properties.
+
+The work item handler for Email tasks is the `EmailWorkItemHandler` class. The email task is contained in the work item definition file by default.

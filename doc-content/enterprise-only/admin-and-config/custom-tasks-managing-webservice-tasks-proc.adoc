@@ -1,0 +1,29 @@
+[id='_custom-tasks-managing-webservice-tasks-proc-{context}']
+
+= Managing WebService tasks
+
+The WebService task serves as a web service client with the web service response stored as a string. To invoke a web service task from a BPMN process, the correct task type must be used.
+
+The work item handler for WebService tasks is the `WebServiceWorkItemHandler` class.
+
+= Creating WebService tasks with multiple parameters
+
+You can use the WebService task to invoke a web service method with multiple parameters. To do so, you must change the BPMN2 process definitions.
+
+.Procedure
+
+. In {CENTRAL}, go to *Menu* -> *Design* -> *Projects* and click a project.
+. Select the business process that you want to modify the BPMN2 process definitions for.
+. Select the *Diagram properties* icon. The *Diagram properties* pane is displayed.
+. In the *Diagram properties* pane, click *Process Data* and from the *Process Variables* table select the plus icon. In the *Process Variables* table, a new row is created.
+. In the *Name* field of the new row, enter `pVar` and from the *Data Type* list, select *Object*.
+. From the Process Designer canvas, select a web service task and select the *Diagram properties* icon. The *Diagram properties* pane is displayed.
+. Select *Data Assignments* and click the *Assignments* table. The *Data I/O* window is displayed.
+. From the *Data Type* list on the *Parameter* row, select *Custom*.
+. From the *Source* list on the *Parameter* row, select *pVar* and click *Save*.
+. Select *ExecutionSet* and in the *On Entry Action* field, enter the following:
++
+----
+Object[] params = {"firstParam", "secondParam"}; kcontext.setVariable("pVar", params);
+----
+. Click *Save*.

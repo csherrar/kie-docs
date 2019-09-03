@@ -1,0 +1,12 @@
+[id='_custom-tasks-rest-tasks-con-{context}']
+
+= REST tasks
+
+The REST task performs REST calls and outputs the responses as objects.
+
+The work item handler for REST tasks is the `RestWorkItemHandler` class and this is capable of interacting with the REST service and supports the following:
+
+* Authentication type: Secured or open
+* Authentication method: Basic or form-based
+
+You can specify the authentication information during handler initialization. This can be overridden using work item parameters. Other configuration options must be specified in the work item parameters map.
