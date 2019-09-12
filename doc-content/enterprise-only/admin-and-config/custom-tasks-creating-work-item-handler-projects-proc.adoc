@@ -57,8 +57,8 @@ For example, to add the online Red Hat Maven repository to your Maven `settings.
 +
 ----
 $ mvn archetype:generate
--DarchetypeGroupId=org.jbpm -DarchetypeArtifactId=jbpm
--workitems-archetype
+-DarchetypeGroupId=org.jbpm
+-DarchetypeArtifactId=jbpm-workitems-archetype
 -DarchetypeVersion=<redhat-library-version>
 -Dversion=1.0.0-SNAPSHOT
 -DgroupId=com.redhat
