@@ -47,14 +47,14 @@ The `@Wid` annotation is automatically created when you generate a work item han
 |`displayName`
 |Displayed name of the custom task. This name is displayed in the palette in {CENTRAL}.
 |`icon`
-|Path from `src/main/resources/` to an icon located in the current project. The icon is displayed in the palette in {CENTRAL}. {PRODUCT} requires that the icon, if specified, be a PNG or GIF file and to be 16x16 pixels. This value can be left blank to use a default “Service Task” icon.
+|Path from `src/main/resources/` to an icon located in the current project. The icon is displayed in the palette in {CENTRAL}. The icon, if specified, must be a PNG or GIF file and 16x16 pixels. This value can be left blank to use a default “Service Task” icon.
 |`description`
 |Description of the custom task.
 |`defaultHandler`
 |The work item handler Java class that is linked to the custom task. This entry is in the format `<language> : <class>`. {PRODUCT} recommends using `mvel` as the language value for this attribute but `java` can also be used. For more information about mvel, see http://mvel.documentnode.com/[MVEL Documentation].
 |`documentation`
 |Path to a HTML file in the current project that contains a description of the custom task.
-|`@WidParameters`
+|`@WidParameter`
 |Child annotation of `@Wid`. Specifies values that will be populated in the {CENTRAL} GUI or expected by API calls as data inputs for the custom task. More than one parameter can be specified:
 +
 `name` - A name for the parameter.
@@ -116,7 +116,7 @@ The file is structured as a plain-text file using a JSON-like structure. The fil
 |`displayName`
 |Displayed name of the custom task. This name is displayed in the palette in {CENTRAL}.
 |`icon`
-|Path from `src/main/resources/` to an icon located in the current project. The icon is displayed in the palette in {CENTRAL}. {PRODUCT} requires that the icon, if specified, be a PNG or GIF file and to be 16x16 pixels. This value can be left blank to use a default “Service Task” icon.
+|Path from `src/main/resources/` to an icon located in the current project. The icon is displayed in the palette in {CENTRAL}. The icon, if specified, must be a PNG or GIF file and 16x16 pixels. This value can be left blank to use a default “Service Task” icon.
 |`category`
 |Name of a category within the {CENTRAL} palette under which this custom task is displayed.
 |`description`

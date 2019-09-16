@@ -56,13 +56,13 @@ For example, to add the online Red Hat Maven repository to your Maven `settings.
 . In the `workitem-home` directory, execute the following command:
 +
 ----
-$ mvn archetype:generate
--DarchetypeGroupId=org.jbpm
--DarchetypeArtifactId=jbpm-workitems-archetype
--DarchetypeVersion=<redhat-library-version>
--Dversion=1.0.0-SNAPSHOT
--DgroupId=com.redhat
--DartifactId=myworkitem
+$ mvn archetype:generate \
+-DarchetypeGroupId=org.jbpm \
+-DarchetypeArtifactId=jbpm-workitems-archetype \
+-DarchetypeVersion=<redhat-library-version> \
+-Dversion=1.0.0-SNAPSHOT \
+-DgroupId=com.redhat \
+-DartifactId=myworkitem \
 -DclassPrefix=MyWorkItem
 ----
 +
@@ -123,13 +123,13 @@ pom.xml
   <scope>test</scope>
 </dependency>
 ----
-* Include the `-Dmaven.test.skip=true` variable when executing Maven builds.
+* Include the `-Dmaven.test.skip=true` variable when executing Maven builds. For example, `$ mvn clean package -Dmaven.test.skip=true`.
 +
 NOTE: This is generally not recommended but is necessary to workaround the bug. For more information about the bug, see https://issues.jboss.org/browse/RHPAM-1772[Generating Maven jbpm-workitems-archetype fails due to missing "tests" jar].
 
 . Add any Maven dependencies required by the work item handler class to the `pom.xml` file.
 
-. To create a deployable JAR for this project, execute the following command:
+. To create a deployable JAR for this project, in the parent project folder where the pom.xml file is located, execute the following command:
 +
 ----
 $ mvn clean package -Dmaven.test.skip=true

@@ -35,6 +35,7 @@ The required parameters for the service task depend on the type of task. For exa
 .Install service tasks for use in processes
 image::admin-and-config/manage-service-tasks-project.png[Project-level service task settings]
 --
+. Click *Save*.
 . Return to the project page, select or add a business process in the project, and in the process designer palette, select the *Service Tasks* option to view the available service tasks that you enabled and installed:
 +
 .Access installed service tasks in process designer
