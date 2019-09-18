@@ -16,7 +16,8 @@ To configure an NFS server with a mounted partition, perform the following steps
 . To add the shared folder, enter the following command:
 +
 ----
-# vi /etc/exports /data/shared * (rw,sync,no_root_squash)
+# vi /etc/exports
+/data/shared *(rw,sync,no_root_squash)
 ----
 +
 Where `/data/shared` is the shared folder, `*` are the IP addresses allowed to connect to the NFS server, and `(rw,sync,no_root_squash)` are the minimum options required for NFS.
