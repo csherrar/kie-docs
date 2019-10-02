@@ -1,0 +1,35 @@
+[id='managing-business-central-importing-remote-repository-proc']
+= Importing a remote repository
+
+You can import a remote Git repository for a project into {CENTRAL} and create a post-commit Git hook in the project repository.
++
+NOTE: If you import an existing remote Git repository to {Central} the Git configuration is preserved and the post-commit Git hook uses this as the source.
+
+* Create a post-commit Git hook locally and execute {CENTRAL} with the `-Dorg.uberfire.nio.git.hooks` environment variable pointing to the post-commit Git hook. For example:
++
+----
+$ ./standalone.sh -c standalone-full.xml -Dorg.uberfire.nio.git.hooks=_EAP_HOME_/hooks
+----
++
+NOTE: If you specify the `-Dorg.uberfire.nio.git.hooks` environment variable, all {CENTAL} internal repositories and project repositories use the post-commit Git hook. You should only use fully qualified paths in your script.
+
+Need rewrite
+You can configure post-commit Git hooks to integrate remote Git repositories with {CENTRAL} by using one of the following methods:
+
+* Use an existing project in {CENTRAL} or import a project from a remote Git repository to {CENTRAL} and create a post-commit Git hook in the project repository.
++
+NOTE: If you import an existing remote Git repository to {Central} the Git configuration is preserved and the post-commit Git hook uses this as the source.
+
+* Create a post-commit Git hook locally, specify the directory containing the hook file as the value of the `org.uberfire.nio.git.hooks` environment variable and execute {CENTRAL}. For example:
++
+----
+$ ./standalone.sh -c standalone-full.xml -Dorg.uberfire.nio.git.hooks=_EAP_HOME_/hooks
+----
++
+NOTE: If you specify the `-Dorg.uberfire.nio.git.hooks` environment variable, all {CENTAL} internal repositories and project repositories use the post-commit Git hook. You should only use fully qualified paths in your script.
+
+
+
+If you do not have an existing Git repository project or if you want to apply post-commit Git hooks to a large number of project repositories you can specify a directory containing a hook file for the value of the `org.uberfire.nio.git.hooks` system property.
+
+NOTE: If you specify the `org.uberfire.nio.git.hooks` system property, all {CENTAL} internal repositories and project repositories use the post-commit Git hook. You should only use fully qualified paths in your script.

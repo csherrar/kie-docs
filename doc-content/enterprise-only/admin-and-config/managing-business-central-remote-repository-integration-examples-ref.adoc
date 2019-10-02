@@ -1,0 +1,4 @@
+[id='_managing-business-central-remote-repository-integration-examples-ref-{context}']
+= Remote repository integration examples
+
+{PRODUCT}
