@@ -117,9 +117,11 @@ include::{enterprise-dir}/admin-and-config/managing-business-central-git-hooks-c
 
 include::{enterprise-dir}/admin-and-config/managing-business-central-creating-git-hooks-proc.adoc[leveloffset=+2]
 
-include::{enterprise-dir}/admin-and-config/managing-business-central-configuring-git-hooks-system-property-proc.adoc[leveloffset=+2]
+include::{enterprise-dir}/admin-and-config/managing-business-central-importing-remote-git-repositories-proc.adoc[leveloffset=+2]
 
-include::{enterprise-dir}/admin-and-config/managing-business-central-configuring-git-hooks-existing-remote-repository-proc.adoc[leveloffset=+2]
+include::{enterprise-dir}/admin-and-config/managing-business-central-configuring-git-hooks-existing-remote-git-repositories-proc.adoc[leveloffset=+2]
+
+include::{enterprise-dir}/admin-and-config/managing-business-central-configuring-git-hooks-system-property-proc.adoc[leveloffset=+2]
 
 include::{enterprise-dir}/admin-and-config/managing-business-central-git-hook-exit-codes-con.adoc[leveloffset=+2]
 

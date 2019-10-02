@@ -11,7 +11,9 @@ NOTE: If you specify the `org.uberfire.nio.git.hooks` system property, all {CENT
 
 .Procedure
 
-. Create a post-commit Git hook in a directory on your local system. For more information about creating post-commit Git hooks, see <<managing-business-central-creating-git-hooks-proc-configuring-central>>.
+. Create a post-commit Git hook in a directory on your local system.
++
+For more information about creating post-commit Git hooks, see <<managing-business-central-creating-git-hooks-proc-configuring-central>>.
 
 . To specify the directory with the hook file for the value of the `org.uberfire.nio.git.hooks` system property, do one of the following tasks:
 +
