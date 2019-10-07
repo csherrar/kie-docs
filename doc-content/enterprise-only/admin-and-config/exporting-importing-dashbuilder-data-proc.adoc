@@ -9,7 +9,7 @@ Dashbuilder is a dashboard and reporting tool integrated in {CENTRAL} and is use
 
 You can import and export Dashbuilder data as ZIP files in {CENTRAL}.
 
-NOTE: This feature can only be accessed by administrator users.
+IMPORTANT: This feature is only accessible by administrator users.
 
 == Exporting Dashbuilder data
 
