@@ -1,5 +1,5 @@
-[id='managing-business-central-example-remote-git-repository-integration-ref-{context}']
-= Example remote Git repository integration
+[id='managing-business-central-integrating-remote-git-repositories-proc-{context}']
+= Integrating remote Git repositories
 
 In the following example, you use a post-commit Git hook and Java code to integrate {CENTRAL} with a remote Git repository. For the Java code example, see https://github.com/kiegroup/bc-git-integration-push[_{CENTRAL} post-commit Git Hooks Integration_]. The example provides the following functionality:
 
@@ -136,7 +136,6 @@ $ ./standalone.sh -c standalone-full.xml -Dorg.uberfire.nio.git.hooks=_EAP_HOME_
 To use post-commit Git hooks that execute Java code, you must use the following Java libraries:
 
 * https://www.eclipse.org/jgit/[JGit]: Used to interact with internal {CENTRAL} Git repositories.
-* http://github-api.kohsuke.org/[GitHub API for Java]: Used to communicate with GitHub.`t repositories.
 * http://github-api.kohsuke.org/[GitHub API for Java]: Used to communicate with GitHub.
 ====
 

@@ -123,7 +123,7 @@ include::{enterprise-dir}/admin-and-config/managing-business-central-configuring
 
 include::{enterprise-dir}/admin-and-config/managing-business-central-configuring-git-hooks-system-property-proc.adoc[leveloffset=+2]
 
-include::{enterprise-dir}/admin-and-config/managing-business-central-example-remote-git-repository-integration-ref.adoc[leveloffset=+2]
+include::{enterprise-dir}/admin-and-config/managing-business-central-integrating-remote-git-repositories-proc.adoc[leveloffset=+2]
 
 include::{enterprise-dir}/admin-and-config/managing-business-central-git-hook-exit-codes-con.adoc[leveloffset=+2]
 
