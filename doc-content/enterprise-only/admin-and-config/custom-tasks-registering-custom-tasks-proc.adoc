@@ -5,6 +5,8 @@
 
 NOTE: Service repositories contain domain-specific services that provide integration of your processes with different types of systems. Registering a custom task is not necessary when using a service repository because the import process registers the custom task.
 
+{PRODUCT} creates a WID file by default for projects that contain at least one business process. You can create a WID file when registering a work item handler or edit the default WID file. For more information about WID file locations or formatting, see <<custom-tasks-work-item-definitions-con-custom-tasks>>.
+
 For non-service repository deployments, work item handlers can be registered in two ways:
 
 * Registering using the deployment descriptor.
