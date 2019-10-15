@@ -55,7 +55,7 @@ In addition to primitive object types, the WebService task can use custom object
 
 To use custom objects:
 
-. Create a custom model object using either the Data Modeler in Business Central, or using an external tool, like Red Hat CodeReady Studio.
+. Create a custom model object using either the Data Modeler in {CENTRAL}, or using an external tool, like Red Hat CodeReady Studio.
 . Use this custom model class in one of the *WS* tasks.
 . Generate WSDL for this web service.
 . Use Red Hat CodeReady Studio to generate Java classes from the WSDL.
