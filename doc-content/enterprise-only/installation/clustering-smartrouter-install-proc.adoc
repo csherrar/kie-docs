@@ -78,3 +78,14 @@ org.kie.server.controller=http://<HOST>:<PORT>/controller/rest/controller
 ----
 +
 `org.kie.server.router.config.watcher.enabled` is an optional setting to enable the watcher service system property.
+
+. To start Smart Router with HTTPS enabled, use the TLS keystore properties, for example:
++
+----
+org.kie.server.router.tls.keystore = <KEYSTORE_PATH>
+org.kie.server.router.tls.keystore.password = <KEYSTORE_PWD>
+org.kie.server.router.tls.keystore.keyalias = <KEYSTORE_ALIAS>
+-jar kie-server-router-proxy-7.10.0-SNAPSHOT.jar
+----
++
+`org.kie.server.router.tls.port` is an optional setting to configure the HTTPS port. The default HTTPS port value is `9443`.
