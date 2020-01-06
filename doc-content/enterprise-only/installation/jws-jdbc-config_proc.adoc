@@ -197,9 +197,9 @@ endif::[]
 +
 [source]
 ----
-CATALINA_OPTS=”-Xmx1024m
+CATALINA_OPTS="-Xmx1024m
 -Dorg.jboss.logging.provider=jdk
 -Dorg.kie.server.persistence.ds=java:comp/env/poolingXaDs
 -Dorg.kie.server.persistence.tm=JBossTS
--Dorg.kie.server.persistence.dialect=${<hibernate.dialect>}”
+-Dorg.kie.server.persistence.dialect=${<hibernate.dialect>}"
 ----
