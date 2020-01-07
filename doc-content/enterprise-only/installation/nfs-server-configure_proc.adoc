@@ -30,11 +30,12 @@ You can use another share name instead of '/opt/kie/data'. In this case, you mus
 . On each client node, mount the shared folder in an existing directory:
 +
 ----
-# mount <SERVER_IP>:/opt/kie/data /opt/kie/niogit
+# mount <SERVER_IP>:/opt/kie/data /opt/kie/data/niogit
 ----
 
-. Add the following property to the `standalone-full-ha.xml` file to bind the `.niogit` directory as the nfs shared folder:
+. Add the following properties to the `standalone-full-ha.xml` file to bind the `.niogit` and `maven-repository` directories as nfs shared folders:
 +
 ----
-<property name="org.uberfire.nio.git.dir" value="/opt/kie/niogit"/>
+<property name="org.uberfire.nio.git.dir" value="/opt/kie/data/niogit"/>
+<property name="org.guvnor.m2repo.dir" value="/opt/kie/data/maven-repository"/>
 ----
