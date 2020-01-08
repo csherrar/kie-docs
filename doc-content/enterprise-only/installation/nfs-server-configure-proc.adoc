@@ -1,4 +1,5 @@
-[id='nfs-server-configure_{context}']
+[id='nfs-server-configure-proc']
+
 = Configuring an NFS server
 
 You must deploy and configure an NFS server to provide the shared file system necessary for a {CENTRAL} clustered environment and each node client must have access to the shared file system.
