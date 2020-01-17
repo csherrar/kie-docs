@@ -17,6 +17,8 @@ As a business rules developer, you can use an IDE to build, run, and modify the 
 * You use an integrated development environment, such as Red Hat CodeReady Studio or IntelliJ IDEA.
 * You have an understanding of the Java language.
 * You have an understanding of React and TypeScript. This requirement is necessary to develop the OptaWeb UI.
+* More Requirements
+* All-the-many-requirements
 
 
 // Modules - concepts, procedures, refs, etc.
