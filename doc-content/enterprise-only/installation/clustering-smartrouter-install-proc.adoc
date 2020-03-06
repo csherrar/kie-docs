@@ -1,21 +1,9 @@
 [id='clustering-smartrouter-install-proc']
 = Clustering {KIE_SERVERS} with Smart Router
 
-You can use Smart Router to aggregate multiple independent {KIE_SERVER} instances as though they are a single server. It performs the role of an intelligent load balancer because it can route requests to individual {KIE_SERVERS} and aggregate data from different {KIE_SERVERS}. Smart Router uses aliases to perform as a proxy. Smart Router performs the following tasks:
-
-* Collects information from various server instances in a single client request
-* Finds the correct server for a specific request
-* Aggregates responses from different servers
-* Provides efficient load balancing
-* Manages changing environments, for example adding and removing server instances
-* Manages registration with the {CONTROLLER}
+You can use Smart Router to aggregate multiple independent {KIE_SERVER} instances as though they are a single server. It performs the role of an intelligent load balancer because it can route requests to individual {KIE_SERVERS} and aggregate data from different {KIE_SERVERS}. Smart Router uses aliases to perform as a proxy. For more information, see {URL_SMART_ROUTER}[_Installing and configuring Smart Router_].
 
 This section describes how to install Smart Router and configure it for a {PRODUCT} runtime environment.
-
-[NOTE]
-====
-Load balancing requests for Smart router cluster must be managed externally, using standard load balancing tools.
-====
 
 .Prerequisites
 * {KIE_SERVER} is installed on each node of a {EAP} {EAP_VERSION} cluster.
