@@ -123,7 +123,7 @@ Make a note of the user name and password. You will need them to access {CENTRAL
 . When the installation has completed, click *Next*.
 
 ifdef::PAM[]
-. If you installed {KIE_SERVER}, the *Configure Runtime* step appears under *Component Installation*. On the *Configure Runtime Environment* page, choose whether to perform the default installation or perform an advanced configuration.
+. If {KIE_SERVER} is installed, the *Configure Runtime* step appears under *Component Installation*. On the *Configure Runtime Environment* page, choose to perform the default installation or perform an advanced configuration.
 +
 If you choose *Perform advanced configuration*, you can
 choose to configure database settings or customize certain {KIE_SERVER} options.
@@ -138,7 +138,7 @@ A data source is an object that enables a Java Database Connectivity (JDBC) clie
 ifeval::["{context}" == "install-on-eap"]
 * *Controller URL*: The URL of the {HEADLESS_CONTROLLER}.
 endif::[]
-* Clear any {KIE_SERVER} server function you want to disable.
+* Clear any {KIE_SERVER} function you want to disable.
 +
 . Click *Next* to configure the runtime environment.
 endif::[]
