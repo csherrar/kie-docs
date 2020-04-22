@@ -1,36 +1,19 @@
-[id='assembly_installing-and-configuring-smart-router']
-
-include::_artifacts/document-attributes.adoc[]
-
+[id='installing-and-configuring-smart-router-con']
 = Installing and configuring Smart Router
-// Context attribute is assembly specific and enables module reuse between assemblies.
-:doctype: book
-:imagesdir: _images
-:context: smart-router
-include::_artifacts/author-group.adoc[]
 
-// Purpose statement for the assembly
 Smart Router ({KIE_SERVER} router) is a lightweight Java component that you can use as an integration layer between multiple {KIE_SERVER}s, client applications, and other components. Smart Router is required if you want {CENTRAL} to interact with several different {KIE_SERVER}s. Depending on your deployment and execution environment, Smart Router can aggregate multiple independent {KIE_SERVER} instances as though they are a single server. Smart Router provides the following features:
 
 Data aggregation::
 Collects data from various {KIE_SERVER} instances in a single client request and provides the information to the client application.
 
 Routing::
-Receives requests from client applications to any of your services, finds the {KIE_SERVER} running the specific service, and routes the request to that server.
+Smart Router is a single endpoint that can receive calls from client applications to any of your services and route each call automatically to the {KIE_SERVER} that runs the specific service.
 
 Load balancing::
 Provides efficient load balancing. Load balancing requests for a Smart Router cluster must be managed externally with standard load balancing tools.
 
 Authentication::
-Authenticates {KIE_SERVER} instances by using a system property flag.
+Authenticates {KIE_SERVER} instances by using a system property flag and can enable HTTPS traffic.
 
 Environment Management::
 Manages the changing environment, for example adding or removing server instances.
-
-.Prerequisites
-* {KIE_SERVER} is installed on each node of a {EAP} {EAP_VERSION} cluster.
-
-include::{enterprise-dir}/installation/clustering-smartrouter-install-proc.adoc[leveloffset=+1]
-
-// Versioning info
-include::_artifacts/versioning-information.adoc[]

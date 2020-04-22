@@ -1,7 +1,7 @@
-[id='clustering-smartrouter-install-proc']
+[id='clustering-smart-router-install-proc']
 = Clustering {KIE_SERVERS} with Smart Router
 
-You can use Smart Router to aggregate multiple independent {KIE_SERVER} instances as though they are a single server. It performs the role of an intelligent load balancer because it can route requests to individual {KIE_SERVERS} and aggregate data from different {KIE_SERVERS}. Smart Router uses aliases to perform as a proxy. For more information, see {URL_SMART_ROUTER}[_Installing and configuring Smart Router_].
+You can use Smart Router to aggregate multiple independent {KIE_SERVER} instances as though they are a single server. It performs the role of an intelligent load balancer because it can route requests to individual {KIE_SERVERS} and aggregate data from different {KIE_SERVERS}. Smart Router uses aliases to perform as a proxy.
 
 This section describes how to install Smart Router and configure it for a {PRODUCT} runtime environment.
 
@@ -46,11 +46,11 @@ org.kie.server.router.config.watcher.enabled=false
 +
 [NOTE]
 ====
-The router is capable of providing an aggregate sort, however the data returned when used through the management console is in raw format. Therefore, sorting is in whatever way  individual servers return.
+The router is capable of providing an aggregate sort, however the data returned when used through the management console is in raw format. Therefore, sorting is in whatever way individual servers return.
 
 Paging is supported in its standard format.
 ====
-. Optional: To start Smart Router from the client side, use the Smart Router URL instead of the {KIE_SERVER} URL, for example:
+. Optionally, to start Smart Router from the client side, use the Smart Router URL instead of the {KIE_SERVER} URL, for example:
 +
 [source]
 ----
@@ -68,7 +68,7 @@ org.kie.server.controller=http://<HOST>:<PORT>/controller/rest/controller
 +
 `org.kie.server.router.config.watcher.enabled` is an optional setting to enable the watcher service system property.
 
-. Optional: To start Smart Router with HTTPS enabled, use the TLS keystore properties, for example:
+. Optionally, to start Smart Router with HTTPS enabled, use the TLS keystore properties, for example:
 +
 ----
 org.kie.server.router.tls.keystore = <KEYSTORE_PATH>

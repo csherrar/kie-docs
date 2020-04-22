@@ -1,0 +1,19 @@
+[id='operator-deploy-smart-router-proc']
+= Setting custom Smart Router configuration for the environment
+
+By default, the deployed environment does not include Smart Router. You can add Smart Router to the environment and set configuration options.
+
+.Prerequisites
+
+* The basic configuration of {PRODUCT} environment is completed in the installation wizard.
+
+.Procedure
+. If the *Installation*, *Security*, *Console*, or *KIE Servers* tab is open, click *Next* until you view the *Smart Router* tab.
+. Click *Set Smart Router* to add Smart Router to the environment and to set Smart Router configuration.
+. Optionally, if you created the secret for Smart Router, enter the name of the secret in the *Secret* field.
+. Optionally, enter the number of replicas for the Smart Router in the *Replicas* field.
+. Optionally, enter requested and maximum CPU and memory limits in the fields under *Resource quotas*.
+
+.Next steps
+
+Click *Finish* and then click *Deploy* to deploy the environment.
