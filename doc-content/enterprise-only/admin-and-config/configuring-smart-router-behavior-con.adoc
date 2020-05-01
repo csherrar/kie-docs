@@ -2,20 +2,29 @@
 = Configuring Smart Router behavior
 
 In a clustered environment with multiple {KIE_SERVER}s, by default, process instances are started using the "round-robin" method. In the following example environment, each {KIE_SERVER} is deployed with the same KJAR but each KJAR version is different:
-+
-`kie-server1` is deployed with `kjar:1.0` `(alias=kjar, group-id=com.example, artifact-id=sample-kjar, version=1.0)`
-`kie-server2` is deployed with `kjar:2.0` `(alias=kjar, group-id=com.example, artifact-id=sample-kjar, version=2.0)`
-`kie-server3` is deployed with `kjar:3.0` `(alias=kjar, group-id=com.example, artifact-id=sample-kjar, version=3.0)`
+
+.Example environment
+[cols="20%a,80%a", frame="all", options="header"]
+|===
+|Server Name
+|KJAR version
+|`kie-server1`
+|`kjar:1.0` `(alias=kjar, group-id=com.example, artifact-id=sample-kjar, version=1.0)`
+|`kie-server2`
+|`kjar:2.0` `(alias=kjar, group-id=com.example, artifact-id=sample-kjar, version=2.0)`
+|`kie-server3`
+|`kjar:3.0` `(alias=kjar, group-id=com.example, artifact-id=sample-kjar, version=3.0)`
+|===
 
 If you enter the `<smart-router-host:port>/containers/kjar/processes/sample-process/instances` command five times, the process instances are started using the "round-robin" method, for example:
-+
+
 * First call starts the process on `kie-server1`
 * Second call starts the process on `kie-server2`
 * Third call starts the process on `kie-server3`
 * Fourth call starts the process on `kie-server1`
 * Fifth call starts the process on `kie-server2`
 
-Smart Router has three components that you can modify to change this behavior.
+Smart Router has three components that you can modify to change this behavior:
 
 ContainerResolver::
 The component responsible for finding the container id to use when interacting with servers.
@@ -36,13 +45,13 @@ ConfigRepository::
 For example, in the above scenario, you can customize the `ContainerResolver` to make Smart Router search for the latest version of the KJAR process across all available {KIE_SERVER}s and to always start with that process. This scenario would mean that each {KIE_SERVER} hosts a single KJAR and each version will share the same alias.
 
 Since Smart Router is an executable jar, to include extensions, you need to modify the command. For example:
-+
+
 ----
 java -cp LOCATION/router-ext-0.0.1-SNAPSHOT.jar:kie-server-router-proxy-7.0.0-SNAPSHOT.jar org.kie.server.router.KieServerRouter
 ----
 
 Once the service is started you will see log output stating the implementation that is used for the components:
-+
+
 ----
 Mar 01, 2017 1:47:10 PM org.kie.server.router.KieServerRouter <init>
 INFO: KIE Server router repository implementation is InMemoryConfigRepository
