@@ -1,7 +1,7 @@
 [id='kie-server-smart-router-enable-endpoint-authentication-proc']
 = Configuring Smart Router for endpoint authentication
 
-You can now configure Smart Router (KIE Server Router) for endpoint authentication.
+You can configure Smart Router (KIE Server Router) for endpoint authentication.
 
 .Prerequisites
 * {KIE_SERVER} is installed on each node of a {EAP} {EAP_VERSION} cluster.

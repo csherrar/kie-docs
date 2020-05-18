@@ -1,7 +1,7 @@
 [id='kie-server-smart-router-enable-tls-support-proc']
 = Configuring Smart Router for TLS support
 
-You can now configure Smart Router (KIE Server Router) for TLS support to allow HTTPS traffic.
+You can configure Smart Router (KIE Server Router) for TLS support to allow HTTPS traffic.
 
 .Prerequisites
 * {KIE_SERVER} is installed on each node of a {EAP} {EAP_VERSION} cluster.
@@ -16,7 +16,7 @@ java  -Dorg.kie.server.router.tls.keystore = <KEYSTORE_PATH>
       -Dorg.kie.server.router.tls.keystore.password = <KEYSTORE_PWD>
       -Dorg.kie.server.router.tls.keystore.keyalias = <KEYSTORE_ALIAS>
       -Dorg.kie.server.router.tls.port = <HTTPS_PORT>
-      -jar kie-server-router-proxy-7.10.0-SNAPSHOT.jar
+      -jar rhpam-7.7-smart-router.jar
 ----
 +
 `org.kie.server.router.tls.port` is a property used to configure the HTTPS port. The default HTTPS port value is `9443`.

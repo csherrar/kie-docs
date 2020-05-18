@@ -16,7 +16,7 @@ This section describes how to install Smart Router and configure it for a {PRODU
 . Extract the downloaded `{PRODUCT_FILE}-add-ons.zip` file to a temporary directory. The `{PRODUCT_INIT}-{PRODUCT_VERSION}-smart-router.jar` file is in the extracted `{PRODUCT_FILE}-add-ons` directory.
 . Copy the `{PRODUCT_INIT}-{PRODUCT_VERSION}-smart-router.jar` file the location where you will run the file.
 
-. From the temporary directory, enter the following command to start Smart Router:
+. Enter the following command to start Smart Router:
 +
 [source]
 ----
@@ -44,21 +44,6 @@ org.kie.server.router.repo= <CURRENT_WORKING_DIR>
 org.kie.server.router.config.watcher.enabled=false
 ----
 +
-[NOTE]
-====
-The router is capable of providing an aggregate sort, however the data returned when used through the management console is in raw format. Therefore, sorting is in whatever way individual servers return.
-
-Paging is supported in its standard format.
-====
-. Optionally, to start Smart Router from the client side, use the Smart Router URL instead of the {KIE_SERVER} URL, for example:
-+
-[source]
-----
-KieServicesConfiguration config = KieServicesFactory.newRestConfiguration("http://smartrouter.example.com:9000", "USERNAME", "PASSWORD");
-----
-+
-In this example, `smartrouter.example.com` is the Smart Router URL, and `USERNAME` and `PASSWORD` are the log in credentials for the Smart Router configuration.
-+
 `org.kie.server.controller` is the URL of the server controller, for example:
 +
 [source]
@@ -67,3 +52,12 @@ org.kie.server.controller=http://<HOST>:<PORT>/controller/rest/controller
 ----
 +
 `org.kie.server.router.config.watcher.enabled` is an optional setting to enable the watcher service system property.
+
+. To access Smart Router from the client side, use the Smart Router URL instead of the {KIE_SERVER} URL, for example:
++
+[source]
+----
+KieServicesConfiguration config = KieServicesFactory.newRestConfiguration("http://smartrouter.example.com:9000", "USERNAME", "PASSWORD");
+----
++
+In this example, `smartrouter.example.com` is the Smart Router URL, and `USERNAME` and `PASSWORD` are the log in credentials for the Smart Router configuration.
