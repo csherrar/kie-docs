@@ -9,7 +9,7 @@ Collects data from various {KIE_SERVER} instances in a single client request and
 The router is capable of providing an aggregate sort, however the data returned when used through the management console is in raw format. Therefore, sorting is in whatever way individual servers return. Paging is supported in its standard format.
 
 Routing::
-Smart Router is a single endpoint that can receive calls from client applications to any of your services and route each call automatically to the {KIE_SERVER} that runs the specific service.
+Functions as a single endpoint that receives calls from client applications to any of your services and routes each call automatically to the {KIE_SERVER} that runs the specific service. This means that {KIE_SERVER}s do not need to have the same services deployed.
 
 Load balancing::
 Provides efficient load balancing. Load balancing requests for a Smart Router cluster must be managed externally with standard load balancing tools.
