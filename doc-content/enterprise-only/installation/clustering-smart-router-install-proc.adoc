@@ -10,11 +10,11 @@ This section describes how to install Smart Router and configure it for a Red Ha
 +
 [NOTE]
 ====
-Smart Router does not require {KIE_SERVER} to be configured as unmanaged.
+You do not need to configure {KIE_SERVER} as unmanaged for Smart Router.
 
 An unmanaged {KIE_SERVER} does not connect to the controller.
 
-If you connect an unmanaged {KIE_SERVER} to a Smart Router and register the Smart Router with the controller, {CENTRAL} can contact the unmanaged {KIE_SERVER} by using Smart Router.
+For example, if you connect an unmanaged {KIE_SERVER} to Smart Router and register Smart Router with the controller, then {CENTRAL} contacts the unmanaged {KIE_SERVER} by using Smart Router.
 ====
 
 .Procedure
