@@ -17,6 +17,8 @@ Use these properties to set the location and name for the {KIE_SERVER} Git direc
 
 * `org.uberfire.nio.git.dir`: Location of the {KIE_SERVER} Git directory.
 * `org.uberfire.nio.git.dirname`: Name of the {KIE_SERVER} Git directory. Default value: `.niogit`.
+* `org.uberfire.nio.git.ketch`: Enables or disables Git ketch.
+* `org.uberfire.nio.git.hooks`: Location of the Git hooks directory.
 
 Git over HTTP::
 
@@ -25,6 +27,8 @@ Use these properties to set how to access the Git repository over HTTP.
 * `org.uberfire.nio.git.proxy.ssh.over.http`: Specifies whether SSH should use an HTTP proxy. Default value: `false`.
 * `http.proxyHost`: Defines the host name of the HTTP proxy. Default value: `null`.
 * `http.proxyPort`: Defines the host port (integer value) of the HTTP proxy. Default value: `null`.
+* `http.proxyUser`: Defines the user name of the HTTP proxy.
+* `http.proxyPassword`: Defines the user password of the HTTP proxy.
 * `org.uberfire.nio.git.http.enabled`: Enables or disables the HTTP daemon. Default value: `true`.
 * `org.uberfire.nio.git.http.host`: If the HTTP daemon is enabled, it uses this property as the host identifier. This is an informative property that is used to display how to access the Git repository over HTTP.  The HTTP still relies on the servlet container. Default value: `localhost`.
 * `org.uberfire.nio.git.http.hostname`: If the HTTP daemon is enabled, it uses this property as the host name identifier. This is an informative property that is used to display how to access the Git repository over HTTP.  The HTTP still relies on the servlet container. Default value: `localhost`.
@@ -37,10 +41,21 @@ Use these properties to set how to access the Git repository over HTTPS.
 * `org.uberfire.nio.git.proxy.ssh.over.https`: Specifies whether SSH should use an HTTPS proxy. Default value: `false`.
 * `https.proxyHost`: Defines the host name of the HTTPS proxy. Default value: `null`.
 * `https.proxyPort`: Defines the host port (integer value) of the HTTPS proxy. Default value: `null`.
+* `https.proxyUser`: Defines the user name of the HTTPS proxy.
+* `https.proxyPassword`: Defines the user password of the HTTPS proxy.
+* `user.dir`: Location of the user directory.
 * `org.uberfire.nio.git.https.enabled`: Enables or disables the HTTPS daemon. Default value: `false`
 * `org.uberfire.nio.git.https.host`: If the HTTPS daemon is enabled, it uses this property as the host identifier. This is an informative property that is used to display how to access the Git repository over HTTPS.  The HTTPS still relies on the servlet container. Default value: `localhost`.
 * `org.uberfire.nio.git.https.hostname`: If the HTTPS daemon is enabled, it uses this property as the host name identifier. This is an informative property that is used to display how to access the Git repository over HTTPS.  The HTTPS still relies on the servlet container. Default value: `localhost`.
 * `org.uberfire.nio.git.https.port`: If the HTTPS daemon is enabled, it uses this property as the port number. This is an informative property that is used to display how to access the Git repository over HTTPS.  The HTTPS still relies on the servlet container. Default value: `8080`.
+
+JGit::
+
+* `org.uberfire.nio.jgit.cache.instances`:
+* `org.uberfire.nio.jgit.cache.overflow.cleanup.size`: Defines the JGit cache overflow cleanup size.
+* `org.uberfire.nio.jgit.remove.eldest.iterations`: Enables or disables whether to remove eldest JGit iterations.
+* `org.uberfire.nio.jgit.cache.evict.threshold.duration`: Defines the JGit evict threshold duration.
+* `org.uberfire.nio.jgit.cache.evict.threshold.time.unit`: Defines the JGit evict threshold time unit.
 
 Git daemon::
 
@@ -66,8 +81,10 @@ Use these properties to enable and configure the Git SSH daemon.
 NOTE: If the default or assigned port is already in use, a new port is automatically selected. Ensure that the ports are available and check the log for more information.
 
 * `org.uberfire.nio.git.ssh.cert.dir`: Location of the `.security` directory where local certificates are stored. Default value: Working directory.
+* `org.uberfire.nio.git.ssh.idle.timeout`: Sets the ssh idle timeout.
 * `org.uberfire.nio.git.ssh.passphrase`: Pass phrase used to access the public key store of your operating system when cloning git repositories with SCP style URLs. Example: `git@github.com:user/repository.git`.
 * `org.uberfire.nio.git.ssh.algorithm`: Algorithm used by SSH. Default value: `RSA`.
+* `org.uberfire.nio.git.gc.limit`: Sets the GC limit.
 * `org.uberfire.nio.git.ssh.ciphers`: A comma-separated string of ciphers. The available ciphers are `aes128-ctr`, `aes192-ctr`, `aes256-ctr`, `arcfour128`, `arcfour256`, `aes192-cbc`, `aes256-cbc`. If the property is not used, all available ciphers are loaded.
 * `org.uberfire.nio.git.ssh.macs`: A comma-separated string of message authentication codes (MACs). The available MACs are `hmac-md5`, `hmac-md5-96`, `hmac-sha1`, `hmac-sha1-96`, `hmac-sha2-256`, `hmac-sha2-512`. If the property is not used, all available MACs are loaded.
 +
