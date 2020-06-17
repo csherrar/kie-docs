@@ -13,10 +13,10 @@ endif::[]
 
 Git directory::
 
-Use these properties to set the location and name for the {KIE_SERVER} Git directory.
+Use these properties to set the location and name for the {CENTRAL} Git directory.
 
-* `org.uberfire.nio.git.dir`: Location of the {KIE_SERVER} Git directory.
-* `org.uberfire.nio.git.dirname`: Name of the {KIE_SERVER} Git directory. Default value: `.niogit`.
+* `org.uberfire.nio.git.dir`: Location of the {CENTRAL} Git directory.
+* `org.uberfire.nio.git.dirname`: Name of the {CENTRAL} Git directory. Default value: `.niogit`.
 * `org.uberfire.nio.git.ketch`: Enables or disables Git ketch.
 * `org.uberfire.nio.git.hooks`: Location of the Git hooks directory.
 
