@@ -13,7 +13,7 @@ endif::[]
 
 Git directory::
 
-Use these properties to set the location and name for the {CENTRAL} Git directory.
+Use the following properties to set the location and name for the {CENTRAL} Git directory:
 
 * `org.uberfire.nio.git.dir`: Location of the {CENTRAL} Git directory.
 * `org.uberfire.nio.git.dirname`: Name of the {CENTRAL} Git directory. Default value: `.niogit`.
@@ -22,7 +22,7 @@ Use these properties to set the location and name for the {CENTRAL} Git director
 
 Git over HTTP::
 
-Use these properties to set how to access the Git repository over HTTP.
+Use the following properties to configure access to the Git repository over HTTP:
 
 * `org.uberfire.nio.git.proxy.ssh.over.http`: Specifies whether SSH should use an HTTP proxy. Default value: `false`.
 * `http.proxyHost`: Defines the host name of the HTTP proxy. Default value: `null`.
@@ -36,9 +36,9 @@ Use these properties to set how to access the Git repository over HTTP.
 
 Git over HTTPS::
 
-Use these properties to set how to access the Git repository over HTTPS.
+Use the following properties to configure access to the Git repository over HTTPS:
 
-* `org.uberfire.nio.git.proxy.ssh.over.https`: Specifies whether SSH should use an HTTPS proxy. Default value: `false`.
+* `org.uberfire.nio.git.proxy.ssh.over.https`: Specifies whether SSH uses an HTTPS proxy. Default value: `false`.
 * `https.proxyHost`: Defines the host name of the HTTPS proxy. Default value: `null`.
 * `https.proxyPort`: Defines the host port (integer value) of the HTTPS proxy. Default value: `null`.
 * `https.proxyUser`: Defines the user name of the HTTPS proxy.
@@ -51,7 +51,7 @@ Use these properties to set how to access the Git repository over HTTPS.
 
 JGit::
 
-* `org.uberfire.nio.jgit.cache.instances`:
+* `org.uberfire.nio.jgit.cache.instances`: Defines the JGit cache size.
 * `org.uberfire.nio.jgit.cache.overflow.cleanup.size`: Defines the JGit cache overflow cleanup size.
 * `org.uberfire.nio.jgit.remove.eldest.iterations`: Enables or disables whether to remove eldest JGit iterations.
 * `org.uberfire.nio.jgit.cache.evict.threshold.duration`: Defines the JGit evict threshold duration.
@@ -59,7 +59,7 @@ JGit::
 
 Git daemon::
 
-Use these properties to enable and configure the Git daemon.
+Use the following properties to enable and configure the Git daemon:
 
 * `org.uberfire.nio.git.daemon.enabled`: Enables or disables the Git daemon. Default value: `true`.
 * `org.uberfire.nio.git.daemon.host`: If the Git daemon is enabled, it uses this property as the local host identifier. Default value: `localhost`.
@@ -71,7 +71,7 @@ NOTE: If the default or assigned port is already in use, a new port is automatic
 
 Git SSH::
 
-Use these properties to enable and configure the Git SSH daemon.
+Use the following properties to enable and configure the Git SSH daemon:
 
 * `org.uberfire.nio.git.ssh.enabled`: Enables or disables the SSH daemon. Default value: `true`.
 * `org.uberfire.nio.git.ssh.host`: If the SSH daemon enabled, it uses this property as the local host identifier. Default value: `localhost`.
@@ -81,7 +81,7 @@ Use these properties to enable and configure the Git SSH daemon.
 NOTE: If the default or assigned port is already in use, a new port is automatically selected. Ensure that the ports are available and check the log for more information.
 
 * `org.uberfire.nio.git.ssh.cert.dir`: Location of the `.security` directory where local certificates are stored. Default value: Working directory.
-* `org.uberfire.nio.git.ssh.idle.timeout`: Sets the ssh idle timeout.
+* `org.uberfire.nio.git.ssh.idle.timeout`: Sets the SSH idle timeout.
 * `org.uberfire.nio.git.ssh.passphrase`: Pass phrase used to access the public key store of your operating system when cloning git repositories with SCP style URLs. Example: `git@github.com:user/repository.git`.
 * `org.uberfire.nio.git.ssh.algorithm`: Algorithm used by SSH. Default value: `RSA`.
 * `org.uberfire.nio.git.gc.limit`: Sets the GC limit.
@@ -92,7 +92,7 @@ NOTE: If you plan to use RSA or any algorithm other than DSA, make sure you set 
 
 {KIE_SERVER} nodes and {CONTROLLER}::
 
-Use these properties to configure how to connect to the {KIE_SERVER} nodes from the {CONTROLLER}.
+Use the following properties to configure the connections with the {KIE_SERVER} nodes from the {CONTROLLER}:
 
 * `org.kie.server.controller`: The URL is used to connect to the {CONTROLLER}. For example, `ws://localhost:8080/{URL_COMPONENT_CENTRAL}/websocket/controller`.
 * `org.kie.server.user`: User name used to connect to the {KIE_SERVER} nodes from the {CONTROLLER}. This property is only required when using this {CENTRAL} installation as a {CONTROLLER}.
@@ -100,7 +100,7 @@ Use these properties to configure how to connect to the {KIE_SERVER} nodes from 
 
 Maven and miscellaneous::
 
-Use these properties to configure Maven and other miscellaneous functions.
+Use the following properties to configure Maven and other miscellaneous functions:
 
 * `kie.maven.offline.force`: Forces Maven to behave as if offline. If true, disables online dependency resolution. Default value: `false`.
 +
@@ -114,12 +114,8 @@ NOTE: Use this property for {CENTRAL} only. If you share a runtime environment w
 * `appformer.experimental.features`: Enables the experimental features framework. Default value: `false`.
 * `org.kie.demo`: Enables an external clone of a demo application from GitHub.
 
-
-
-
-
 * `org.uberfire.metadata.index.dir`: Place where the Lucene `.index` directory is stored. Default value: Working directory.
-* `org.uberfire.ldap.regex.role_mapper`: Regex pattern used to map LDAP principal names to the application role name. Note that the variable role must be part of the pattern because it is substituted by the application role name when matching a principal value to a role name.
+* `org.uberfire.ldap.regex.role_mapper`: Regex pattern used to map LDAP principal names to the application role name. Note that the variable role must be a part of the pattern as the application role name substitutes the variable role when matching a principle value and role name.
 * `org.uberfire.sys.repo.monitor.disabled`: Disables the configuration monitor. Do not disable unless you are sure. Default value: `false`.
 * `org.uberfire.secure.key`: Password used by password encryption. Default value: `org.uberfire.admin`.
 * `org.uberfire.secure.alg`: Crypto algorithm used by password encryption. Default value: `PBEWithMD5AndDES`.
@@ -129,10 +125,9 @@ NOTE: Use this property for {CENTRAL} only. If you share a runtime environment w
 * `org.kie.build.disable-project-explorer`: Disables automatic build of a selected project in Project Explorer. Default value: `false`.
 * `org.kie.verification.disable-dtable-realtime-verification`: Disables the real-time validation and verification of decision tables. Default value: `false`.
 
-
 {CONTROLLER}::
 
-Use these properties to configure how to connect to the {CONTROLLER}.
+Use the following properties to configure how to connect to the {CONTROLLER}:
 
 * `org.kie.workbench.controller`: The URL used to connect to the {CONTROLLER}, for example, `ws://localhost:8080/kie-server-controller/websocket/controller`.
 * `org.kie.workbench.controller.user`: The {CONTROLLER} user. Default value: `kieserver`.
@@ -145,7 +140,7 @@ endif::[]
 
 Java Cryptography Extension KeyStore (JCEKS)::
 
-Use these properties to configure JCEKS.
+Use the following properties to configure JCEKS:
 
 * `kie.keystore.keyStoreURL`: The URL used to load a Java Cryptography Extension KeyStore (JCEKS). For example, `\file:///home/kie/keystores/keystore.jceks.`
 * `kie.keystore.keyStorePwd`: The password used for the JCEKS.
@@ -154,7 +149,7 @@ Use these properties to configure JCEKS.
 
 Rendering::
 
-Use these properties to switch between {CENTRAL} and {KIE_SERVER} rendered forms.
+Use the following properties to switch between {CENTRAL} and {KIE_SERVER} rendered forms:
 
 * `org.jbpm.wb.forms.renderer.ext`: Switches the form rendering between {CENTRAL} and {KIE_SERVER}. By default, the form rendering is performed by {CENTRAL}. Default value: `false`.
 * `org.jbpm.wb.forms.renderer.name`: Enables you to switch between {CENTRAL} and {KIE_SERVER} rendered forms. Default value: `workbench`.
