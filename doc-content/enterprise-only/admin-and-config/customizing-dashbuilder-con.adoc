@@ -6,7 +6,7 @@ You can customize Dashbuilder Runtime by using the system properties.
 Dashboards Path::
 
 When a dashboard is uploaded it is stored in the filesystem. The path where it is stored is controlled by the system property `org.dashbuilder.import.base.dir`. The default is `/tmp/dashbuilder`.
-
++
 The system property is the root path for any dashboard model. For example, if there are multiple files on this path, the file can be imported by accessing Dashbuilder Runtime and passing a query parameter import with the name of the file that should be loaded. For example, if you want to load the `sales_dashboard`, execute `runtime_host?import=sales_dashboard` and Dashbuilder Runtime will try to load the file `/tmp/dashbuilder/sales_dashboard.zip`.
 
 Static Dashboard::
@@ -19,4 +19,6 @@ Application servers control POST request size by default. You can control the al
 
 Loading external dashboards::
 
-A Dashboard that is located at an accessible URL can be accessed by Dashbuilder Runtime. You can access the URL by passing the URL with the import query parameter. For example: `runtime_host?import=http://filesHost/sales_dashboard.zip`. For security reasons this option is disabled by default. You can enable it by setting the system property `dashbuilder.runtime.allowExternal` as true.
+A Dashboard that is located at an accessible URL can be accessed by Dashbuilder Runtime. You can access the URL by passing the URL with the import query parameter such as `runtime_host?import=http://filesHost/sales_dashboard.zip`.
++
+NOTE: For security reasons this option is disabled by default. You can enable it by setting the system property `dashbuilder.runtime.allowExternal` as true.

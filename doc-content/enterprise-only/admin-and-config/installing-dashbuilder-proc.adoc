@@ -1,7 +1,7 @@
 [id='installing-dashbuilder-proc']
 = Installing Dashbuilder Runtime
 
-Dashbuilder Runtime is a Java web application and it is distributed in the form of a WAR and it can be deployed in a Wildfly 18 installation.
+Dashbuilder Runtime is a Java web application and it is distributed in the form of a WAR that can be deployed in a Wildfly 18 installation.
 
 .Prerequisites
 
@@ -15,7 +15,9 @@ Dashbuilder Runtime is a Java web application and it is distributed in the form 
 NOTE: By default this uses the root web context `/` and the other security domain, making it protected by default.
 
 . To create a user with the admin role using the `add-user.sh` utility, perform the following tasks:
++
 .. In the terminal, enter the following:
++
 ----
 /wildfly/bin/add-user.sh
 ----
