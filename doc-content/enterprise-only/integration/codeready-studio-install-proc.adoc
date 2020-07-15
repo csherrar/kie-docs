@@ -7,7 +7,7 @@
 . Download {CODEREADY_STUDIO}:
 .. Log in to the https://access.redhat.com[Red Hat Customer Portal].
 .. Click *DOWNLOADS* at the top of the page.
-.. On the *Product Downloads* page, navigate to the JBOSS DEVELOPMENT AND MANAGEMENT section, and click *Red Hat Developer Studio*.
+.. On the *Product Downloads* page, navigate to the *RUNTIMES* section, and click *Red Hat Developer Studio*.
 .. On the *Software Downloads* page, download *{CODEREADY_STUDIO} {CODEREADY_STUDIO_VERSION_LONG} Stand-alone Installer* (`codereadystudio-{CODEREADY_STUDIO_VERSION_LONG}.GA-installer-standalone.jar`).
 . In a terminal window, navigate to the directory where you downloaded the installer JAR file and enter the following command:
 +
