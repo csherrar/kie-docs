@@ -9,7 +9,7 @@ Red Hat supports this installation type only when it is installed on Red Hat Ent
 
 [NOTE]
 ====
-Example configuration files are available in the `{PRODUCT_FILE}-standalone-sample-configuration` folder of `{PRODUCT_FILE}-addons.zip`.
+Example configuration files are available in `{PRODUCT_FILE}-standalone-sample-configuration.zip` of `{PRODUCT_FILE}-addons.zip`.
 ====
 
 .Prerequisites
@@ -20,12 +20,12 @@ Example configuration files are available in the `{PRODUCT_FILE}-standalone-samp
 . Download the `{PRODUCT_FILE}-addons.zip` file from the {PRODUCT_DOWNLOAD_LINK}[Software Downloads] page for {PRODUCT} {PRODUCT_VERSION}.
 . Unzip the downloaded `{PRODUCT_FILE}-addons.zip` to a temporary directory.
 . Navigate to the `{PRODUCT_FILE}-addons` folder and unzip the `{PRODUCT_FILE}-standalone-sample-configuration.zip`.
-. Navigate to the `{PRODUCT_FILE}-standalone-sample-configuration` folder and copy the contents to your `HOME` directory.
+. Navigate to the `{PRODUCT_FILE}-standalone-sample-configuration` folder and copy the contents to the directory containing your `{PRODUCT_FILE}-{URL_COMPONENT_CENTRAL}-standalone.jar` file.
 . To run the standalone sample configuration, enter the following command:
 +
 [source,subs="attributes+"]
 ----
-java -jar {PRODUCT_FILE}-{URL_COMPONENT_CENTRAL}-standalone.jar -s sample-standalone-config.yaml
+java -jar {PRODUCT_FILE}-{URL_COMPONENT_CENTRAL}-standalone.jar -s sample-standalone-config.yml
 ----
 // . In a terminal window, navigate to the directory that contains the standalone JAR file
 // . Create the `application-users.properties` file. Include an administrative user and if this {CENTRAL} instance will be a {CONTROLLER} for {KIE_SERVER}, include a {CONTROLLER} user, for example:
