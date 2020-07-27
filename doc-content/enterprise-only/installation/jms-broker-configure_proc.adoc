@@ -3,7 +3,7 @@
 
 {AMQ_BROKER_LONG} enables your applications to communicate with any messaging provider. It specifies how components such as message-driven beans, Enterprise JavaBeans, and servlets can send or receive messages.
 
-To configure {AMQ_BROKER} for a high availability {PRODUCT} clustered environment, see  https://access.redhat.com/documentation/en-us/red_hat_amq/{AMQ_BROKER_VERSION}/html-single/using_amq_broker[_Using AMQ Broker_].
+To configure {AMQ_BROKER} for a high availability {PRODUCT} clustered environment, see  https://access.redhat.com/documentation/en-us/red_hat_amq/{AMQ_BROKER_VERSION}/html-single/getting_started_with_amq_broker[_Getting started with AMQ Broker_].
 
 You can use the following procedure to configure a simplified, non-high availability environment.
 
