@@ -16,32 +16,35 @@
 .. Click *Download* next to *{EAP_LONG} 7.3*. (`jboss-eap-7.3.0.zip`).
 . Extract the `jboss-eap-7.3.0.zip` file to the same base directory of {EAP} 7.2.
 +
-Note: The base directory of the {EAP} installation is referred to as `__EAP_HOME__`.
-. Execute `jboss-server-migration.sh` to migrate configurations and deployments from {EAP} 7.2 to {EAP} 7.3:
+[NOTE]
+====
+The base directory of the {EAP} installation is referred to as `__EAP_HOME__`.
+====
+. Run the `jboss-server-migration.sh` script to migrate configurations and deployments from {EAP} 7.2 to {EAP} 7.3:
 +
 ----
 $ ./bin/jboss-server-migration.sh -s ../jboss-eap-7.2/
 ----
 +
-Answer `yes` to all questions except the following one, which you should answer `no`:
+Answer `yes` to all questions except the following question. Answer `no` to this question:
 +
 ----
 This tool is not able to assert if the non-persistent deployments found are compatible with the target server, skip scanner's deployments migration?
 ----
 
-. Copy the `.niogit` directory from {EAP} 7.2. For example:
+. Copy the `.niogit` directory from {EAP} 7.2 directory to the new `.niogit` directory. For example:
 +
 ----
-$ cp -r ../jboss-eap-7.2/.niogit
+$ cp -r ../jboss-eap-7.2/.niogit .niogit
 ----
 
-. Change the `MaxMetaspaceSize` memory setting value to `1024m` in `bin/standalone.conf`. For example:
+. Change the `MaxMetaspaceSize` memory setting value to `1024m` in the `bin/standalone.conf` file. For example:
 +
 ----
 -XX:MaxMetaspaceSize=1024m
 ----
 
-. Optionally, to migrate unmanaged {KIE_SERVER} instances configuration to {EAP}, do the following tasks:
+. Optional: To migrate unmanaged {KIE_SERVER} instance configurations to {EAP}, perform the following tasks:
 +
 [IMPORTANT]
 ====
@@ -52,4 +55,4 @@ Proceed with this section only if there are unmanaged {KIE_SERVER} instances con
 ----
 $ grep -FR "<kie-server-state>"
 ----
-.. Copy the servers' state files to the directory where you will launch the new {EAP} 7.3 instance.
+.. Copy the server's state files to the directory where you will launch the new {EAP} 7.3 instance.
