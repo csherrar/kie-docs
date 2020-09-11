@@ -26,7 +26,7 @@ psql jbpm < /ddl-scripts/postgresql/postgresql-jbpm-schema.sql
 +
 [NOTE]
 ====
-If you are using PostgreSQL or Oracle in conjunction with Spring Boot, you must instead import the respective Spring Boot DDL script, for example `/ddl-scripts/oracle/oracle-springboot-jbpm-schema.sql` or `/ddl-scripts/postgresql/postgresql-springboot-jbpm-schema.sql`.
+If you are using PostgreSQL or Oracle in conjunction with Spring Boot, you must import the respective Spring Boot DDL script, for example `/ddl-scripts/oracle/oracle-springboot-jbpm-schema.sql` or `/ddl-scripts/postgresql/postgresql-springboot-jbpm-schema.sql`.
 ====
 
 . Open `_EAP_HOME_/standalone/configuration/standalone-full.xml` in a text editor and locate the `<system-properties>` tag.
