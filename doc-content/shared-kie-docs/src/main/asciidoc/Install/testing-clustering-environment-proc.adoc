@@ -13,7 +13,7 @@ Node 1: {CENTRAL}
 +
 Node 2: {CENTRAL}
 +
-Node 3: {CENTRAL}, {DATAGRID}, and NFS
+Node 3: AMQ, {DATAGRID}, and NFS
 
 .Procedure
 
@@ -23,7 +23,7 @@ Node 3: {CENTRAL}, {DATAGRID}, and NFS
 ----
 $ dnf install iperf3
 ----
-.. In the command terminal of the NFS server node, start `iPerf3` in server mode:
+.. In the command terminal of the NFS server node (server node 3), start `iPerf3` in server mode:
 +
 ----
 $ iperf3 -s
@@ -63,7 +63,7 @@ iperf Done.
 .. In the command terminal of each {CENTRAL} server node, mount the NFS node:
 +
 ----
-$ mount <NFS_SERVER_IP>:/opt/nfs/kie /opt/kie/niogit
+$ mount -o actimeo=1 <NFS_SERVER_IP>:/opt/nfs/kie /opt/kie/niogit
 ----
 .. In the command terminal of each mounted node, run `nfsiostat`:
 +
