@@ -1,9 +1,7 @@
 [id='testing-clustering-environment-proc_{context}']
-= Testing that your infrastructure meets the minimum hardware and performance requirements for a viable high availability (HA) on-premises environment.
+= Testing your high availability (HA) on-premise infrastructure
 
-When creating a production-ready high availability (HA) on-premises infrastructure for {CENTRAL}, you must ensure it meets the minimum hardware and performance requirements for a viable HA environment, and to mitigate performance related issues. This section describes the environment elements, an example environment, and how to test the performance.
-
-There are four main components; {CENTRAL}, the message system (AMQ), the indexing server ({DATAGRID}), and a shared file system (NFS/GlusterFS/Ceph).
+When you create a production-ready high availability (HA) on-premises infrastructure for {CENTRAL}, you must ensure that it meets the minimum hardware and performance requirements for a viable HA environment. An HA on-premise infrastructure consists of the following four main components: {CENTRAL}, the message system (AMQ), the indexing server ({DATAGRID}), and a shared file system (NFS/GlusterFS/Ceph).
 
 .Prerequisites
 
@@ -16,8 +14,7 @@ Node 2: {CENTRAL}
 Node 3: AMQ, {DATAGRID}, and NFS
 
 .Procedure
-
-. To test the network speed, do the following tasks:
+. Test the network speed by following these steps:
 .. In the command terminal of each server node, install `iPerf3`:
 +
 ----
@@ -33,8 +30,7 @@ $ iperf3 -s
 ----
 $ iperf3 -c <NFS_SERVER_IP>
 ----
-.. Note the results from each server node.
-.. Compare the results against the following example of minimum values:
+.. Compare the results from each server node with the following example of minimum values:
 +
 ----
 iperf3 -c 172.31.47.103
@@ -58,20 +54,18 @@ Connecting to host 172.31.47.103, port 5201
 
 iperf Done.
 ----
-
-. To check the NFS information, do the following tasks:
+. Verify the NFS information by following these steps:
 .. In the command terminal of each {CENTRAL} server node, mount the NFS node:
 +
 ----
 $ mount -o actimeo=1 <NFS_SERVER_IP>:/opt/nfs/kie /opt/kie/niogit
 ----
-.. In the command terminal of each mounted node, run `nfsiostat`:
+.. In the command terminal of each mounted node, enter `nfsiostat`:
 +
 ----
 $ nfsiostat
 ----
-.. Note the results from each server node.
-.. Compare the results against the following example of minimum values:
+.. Compare the results from each server node with the following example of minimum values:
 +
 ----
 nfsiostat
@@ -86,8 +80,8 @@ write:
 ops/s	kB/s	kB/op	retrans	avg RTT (ms)	avg exe (ms)	avg queue (ms)	errors
 0.517	0.467	0.903	0 (0.0%)	1.235		1.269		0.01 8		0 (0.0%)
 ----
-. To check that the disk is an SSD, do the following tasks:
-.. In the command terminal of the NFS server, run `df -h` to identify the disk, for example:
+. Verify that the disk is an SSD by following these steps:
+.. In the command terminal of the NFS server, enter `df -h` to identify the disk as shown in the following example:
 +
 ----
 $ df -h
@@ -100,18 +94,17 @@ tmpfs                    3.9G     0  3.9G   0% /sys/fs/cgroup
 tmpfs                    781M     0  781M   0% /run/user/1000
 172.31.47.103:/root/nfs   25G  2.1G   23G   9% /root/nfs
 ----
-.. Run `lsblk -d` to check that the disk is an SSD, for example:
+.. Enter `lsblk -d` to verify that the disk is an SSD:
 +
 ----
 $ lsblk -d
 ----
-.. Run `hdparm -Tt` to test the disk:
+.. Enter `hdparm -Tt` to test the disk:
 +
 ----
 $ hdparm -Tt /dev/xvda2
 ----
-.. Note the results.
-.. Compare the results against the following minimum values:
+.. Compare the results from each server node with the following example of minimum values:
 +
 ----
 $ hdparm -Tt /dev/xvda2
