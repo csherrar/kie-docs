@@ -1,11 +1,6 @@
 [id='clustering-dev-con_{context}']
 = {PRODUCT} clusters in a development (authoring) environment
 
-[NOTE]
-====
-Configuration of {CENTRAL} for high availability is currently technology preview.
-====
-
 ifdef::PAM[]
 Developers can use {PRODUCT} to author rules and processes that assist users with decision making.
 
