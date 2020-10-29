@@ -40,7 +40,7 @@ mount -o rw,sync,actimeo=1 <NFS_SERVER_IP>:<DATA_SHARE>/kie-wb-playground kie-wb
 . Edit or add the properties under the `<system-properties>` element and replace the following placeholders:
 * `<AMQ_USER>` and `<AMQ_PASSWORD>` are the credentials that you defined when creating the AMQ Broker.
 * `<AMQ_BROKER_IP_ADDRESS>` is the IP address of the AMQ Broker.
-* `<INFINISPAN_NODE_IP>` is the IP address where {DATAGRID} is installed.
+* `<DATA_GRID_NODE_IP>` is the IP address where {DATAGRID} is installed.
 +
 [source,xml]
 ----
@@ -53,7 +53,7 @@ mount -o rw,sync,actimeo=1 <NFS_SERVER_IP>:<DATA_SHARE>/kie-wb-playground kie-wb
   <property name="org.appformer.ext.metadata.infinispan.port"
      value="11222"/>
   <property name="org.appformer.ext.metadata.infinispan.host"
-     value="<INFINISPAN_NODE_IP>"/>
+     value="<DATA_GRID_NODE_IP>"/>
   <property name="org.appformer.ext.metadata.infinispan.realm"
      value="ApplicationRealm"/>
   <property name="org.appformer.ext.metadata.infinispan.cluster"
