@@ -1,0 +1,77 @@
+[id="proc-dashbuilder-standalone_{context}"]
+= Installing Dashbuilder Standalone using Operator
+
+You can use Operator to install Dashbuilder Standalone independently from other services.
+
+.Procedure
+
+. On the *Installation* page, in the *Application name* field, enter `standalone-dashbuilder`.
+. In the *Environment* field, enter `rhpam-standalone-dashbuilder`.
+. Click *Next*.
+. On the *Security* page, click *Next*.
+. On the *Components* page, from the *Components* list, select *Dashbuilder*.
+. To add a {KIE_SERVER} dataset, perform the following tasks:
+.. Click *Add new {KIE_SERVER} DataSets*.
+.. In the *DataSet name* field, enter `kieserver-1`.
+.. In the *Kie Server Location* field, enter the location of your {KIE_SERVER}, for example `https://my-kie-server:80/services/rest/server`.
+.. To set your credentials, perform one of the following tasks:
+* If you do not have a token set, in the *Username* and *Password* fields, enter your username and password. Leave the *Token* field blank.
+* If you have a token, in the *Token* field, enter your token. Leave the *Username* and *Password* fields blank.
++
+The custom resource example:
++
+----
+apiVersion: app.kiegroup.org/v2
+kind: KieApp
+metadata:
+  name: standalone-dashbuilder
+spec:
+  environment: rhpam-standalone-dashbuilder
+  objects:
+    dashbuilder:
+      config:
+        kieServerDataSets:
+          - name: kieserver-1
+            location: 'https://my-kie-server:80/services/rest/server'
+            user: kieserverAdmin
+            password: kieserverAdminPwd
+            replaceQuery: true
+----
+
++
+NOTE: You can add multiple {KIE_SERVER} DataSets by repeating step 6.
+
+. To add a {KIE_SERVER} template, perform the following tasks:
+.. Click *Add new {KIE_SERVER} Templates*.
+.. In the *DataSet name* field, enter `kieserver-template`.
+.. In the *{KIE_SERVER} Location* field, enter the location of your {KIE_SERVER}, for example `https://my-other-kie-server:80/services/rest/server`.
+.. To set your credentials, perform one of the following tasks:
+* If you do not have a token set, in the *Username* and *Password* fields, enter your username and password. Leave the *Token* field blank.
+* If you have a token, in the *Token* field, enter your token. Leave the *Username* and *Password* fields blank.
++
+----
+apiVersion: app.kiegroup.org/v2
+kind: KieApp
+metadata:
+  name: standalone-dashbuilder
+spec:
+  environment: rhpam-standalone-dashbuilder
+  objects:
+    dashbuilder:
+      config:
+        kieServerDataSets:
+          - name: kieserver-1
+            location: 'https://my-kie-server:80/services/rest/server'
+            user: kieserverAdmin
+            password: kieserverAdminPwd
+            replaceQuery: true
+        kieServerTemplates:
+          - name: kieserver-template
+            location: 'https://my-another-kie-server:80/services/rest/server'
+            user: user
+            password: pwd
+            replaceQuery: true
+----
+
++
+NOTE: You can add multiple {KIE_SERVER} Templates by repeating step 7.
