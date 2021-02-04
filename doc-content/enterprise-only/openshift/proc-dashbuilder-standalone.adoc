@@ -1,20 +1,20 @@
 [id="proc-dashbuilder-standalone_{context}"]
 = Installing Dashbuilder Standalone using Operator
 
-You can use Operator to install Dashbuilder Standalone independently from other services.
+Use Operator to install Dashbuilder Standalone separately from other services.
 
 .Procedure
 
-. On the *Installation* page, in the *Application name* field, enter `standalone-dashbuilder`.
+. On the *Installation* page, enter `standalone-dashbuilder` in the *Application name* field.
 . In the *Environment* field, enter `rhpam-standalone-dashbuilder`.
 . Click *Next*.
 . On the *Security* page, click *Next*.
-. On the *Components* page, from the *Components* list, select *Dashbuilder*.
-. To add a {KIE_SERVER} dataset, perform the following tasks:
+. On the *Components* page, select *Dashbuilder* from the *Components* list.
+. To add a {KIE_SERVER} dataset, complete the following tasks:
 .. Click *Add new {KIE_SERVER} DataSets*.
 .. In the *DataSet name* field, enter `kieserver-1`.
 .. In the *Kie Server Location* field, enter the location of your {KIE_SERVER}, for example `https://my-kie-server:80/services/rest/server`.
-.. To set your credentials, perform one of the following tasks:
+.. To set your credentials, complete one of the following tasks:
 * If you do not have a token set, in the *Username* and *Password* fields, enter your username and password. Leave the *Token* field blank.
 * If you have a token, in the *Token* field, enter your token. Leave the *Username* and *Password* fields blank.
 +
@@ -39,13 +39,13 @@ spec:
 ----
 
 +
-NOTE: You can add multiple {KIE_SERVER} DataSets by repeating step 6.
+NOTE: You can add multiple {KIE_SERVER} DataSets by repeating this step.
 
-. To add a {KIE_SERVER} template, perform the following tasks:
+. To add a {KIE_SERVER} template, complete the following tasks:
 .. Click *Add new {KIE_SERVER} Templates*.
 .. In the *DataSet name* field, enter `kieserver-template`.
 .. In the *{KIE_SERVER} Location* field, enter the location of your {KIE_SERVER}, for example `https://my-other-kie-server:80/services/rest/server`.
-.. To set your credentials, perform one of the following tasks:
+.. To set your credentials, complete one of the following tasks:
 * If you do not have a token set, in the *Username* and *Password* fields, enter your username and password. Leave the *Token* field blank.
 * If you have a token, in the *Token* field, enter your token. Leave the *Username* and *Password* fields blank.
 +
@@ -74,4 +74,4 @@ spec:
 ----
 
 +
-NOTE: You can add multiple {KIE_SERVER} Templates by repeating step 7.
+NOTE: You can add multiple {KIE_SERVER} Templates by repeating this step.S

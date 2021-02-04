@@ -53,7 +53,7 @@ For more information, see https://docs.jboss.org/jbpm/release/7.45.0.Final/jbpm-
 |`env` | EnvVar represents an environment variable present in a Container. | -- | --
 |===
 
-You can set options using Environment Variables, for example:
+You can set options using environment variables, for example:
 +
 ----
 apiVersion: app.kiegroup.org/v2
