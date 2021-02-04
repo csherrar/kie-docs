@@ -50,11 +50,11 @@ For more information, see https://docs.jboss.org/jbpm/release/7.45.0.Final/jbpm-
 |`persistentConfigs` | `` | Sets Dashbuilder as not ephemeral. If `ImportFileLocation` is set `PersistentConfigs` is ignored. Default value is true. Available only on operator. | True
 |`runtimeMultipleImport` | `DASHBUILDER_RUNTIME_MULTIPLE_IMPORT` | Allows Runtime to allow imports (multi-tenancy). Default value is false. | False
 |`uploadSize` | `DASHBUILDER_UPLOAD_SIZE` | Sets the size limit for dashboard uploads (in kb). Default value is 10485760 kb. | 10485760
-|`env` | EnvVar represents an environment variable present in a Container. | -- | --
+|`env` | -- | EnvVar represents an environment variable present in a Container. | --
 |===
 
 You can set options using environment variables, for example:
-+
+
 ----
 apiVersion: app.kiegroup.org/v2
 kind: KieApp
