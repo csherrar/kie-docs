@@ -5,10 +5,10 @@ Use Operator to install Dashbuilder Standalone separately from other services.
 
 .Procedure
 
-. On the *Installation* page, enter `standalone-dashbuilder` in the *Application name* field.
-. In the *Environment* field, enter `rhpam-standalone-dashbuilder`.
+. On the *Installation* page, enter a name for your application in the *Application name* field.
+. In the *Environment* field, enter a name for your environment, for example `rhpam-standalone-dashbuilder`.
 . Click *Next*.
-. On the *Security* page, click *Next*.
+. Optional: On the *Security* page, configure LDAP or {RHSSO} .
 . On the *Components* page, select *Dashbuilder* from the *Components* list.
 . To add a {KIE_SERVER} dataset, complete the following tasks:
 .. Click *Add new {KIE_SERVER} DataSets*.
@@ -39,11 +39,11 @@ spec:
 ----
 
 +
-NOTE: You can add multiple {KIE_SERVER} DataSets by repeating this step.
+NOTE: You can add additional {KIE_SERVER} DataSets by repeating this step.
 
 . To add a {KIE_SERVER} template, complete the following tasks:
 .. Click *Add new {KIE_SERVER} Templates*.
-.. In the *DataSet name* field, enter `kieserver-template`.
+.. In the *DataSet name* field, enter a name for your data set, for example `kieserver-template`.
 .. In the *{KIE_SERVER} Location* field, enter the location of your {KIE_SERVER}, for example `https://my-other-kie-server:80/services/rest/server`.
 .. To set your credentials, complete one of the following tasks:
 * If you do not have a token set, in the *Username* and *Password* fields, enter your username and password. Leave the *Token* field blank.
@@ -74,4 +74,4 @@ spec:
 ----
 
 +
-NOTE: You can add multiple {KIE_SERVER} Templates by repeating this step.S
+NOTE: You can add additional {KIE_SERVER} Templates by repeating this step.
