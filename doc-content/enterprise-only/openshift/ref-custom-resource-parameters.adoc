@@ -12,39 +12,13 @@ When you use the Dashbuilder Container Image within operator, you can configure 
 |`componentPartition` | `DASHBUILDER_COMPONENT_PARTITION` | Enables partitioning of components by the Runtime Model ID. Default value is true. | True
 |`configMapProps` | `DASHBUILDER_CONFIG_MAP_PROPS` | Allows the use of the properties file with Dashbuilder configurations. Unique properties are appended and if a property is set more than once, the one from the properties file is used. | True
 |`dataSetPartition` | `DASHBUILDER_DATASET_PARTITION` | Enables partitioning of Dataset IDs by the Runtime Model ID. Default value is true. | True
-|`enableBusinessCentral` | -- | Enables integration with {CENTRAL} by configuring {CENTRAL} and Dashbuilder automatically. Only available on operator | True
+|`enableBusinessCentral` | -- | Enables integration with {CENTRAL} by configuring {CENTRAL} and Dashbuilder automatically. Only available on operator. | True
 |`enableKieServer` | -- | Enables integration with {KIE_SERVER} by configuring {KIE_SERVER} and Dashbuilder automatically. Only available on operator. | True
 |`externalCompDir` | `DASHBUILDER_EXTERNAL_COMP_DIR` | Sets the base directory where dashboard ZIP files are stored. If `PersistentConfigs` is enabled and `ExternalCompDir` is not set to an existing path, the `/opt/kie/dashbuilder/components` directory is used. | --
 |`importFileLocation` | `DASHBUILDER_IMPORT_FILE_LOCATION` | Sets a static dashboard to run automatically. If this property is set, imports are not allowed. | --
 |`importsBaseDir` | `DASHBUILDER_IMPORTS_BASE_DIR` | Sets the base directory where dashboard ZIP files are stored. If `PersistentConfigs` is enabled and `ImportsBaseDir` is not set to an existing path, the `/opt/kie/dashbuilder/imports` directory is used. If `ImportFileLocation` is set `ImportsBaseDir` is ignored. | --
-|`kieServerDataSets` | `KIESERVER_DATASETS` | Defines the KIE Server Datasets access configuration, for example:
-
-`name`: dataset name +
-`location`: dataset address, url +
-`password`: dataset password (leave blank if using a token) +
-`user`: dataset username (leave blank if using a token) +
-`replaceQuery`: Enables automatic query creation if you use dashboards on a {KIE_SERVER}. +
-`token`: {KIE_SERVER} token (leave blank if using user and password
-
-For multi datasets, use comma separated values. Dashes are replaced by underscore on environment variable names. The valid values for this prefix are:
-
-${datasetPrefix}_LOCATION, ${datasetPrefix}_USER, ${datasetPrefix}_PASSWORD, ${datasetPrefix}_TOKEN, ${datasetPrefix}_REPLACE_QUERY.
-
-For more information, see {URL_INSTALLING_AND_CONFIGURING}#dashbuilder-runtimes-con[Dashbuilder runtimes] in the {INSTALLING_ON_EAP} guide. | --
-|`kieServerTemplates` | `KIESERVER_SERVER_TEMPLATES` | Defines the KIE Server Templates access configuration, for example:
-
-`name`: dataset name +
-`location`: dataset address, url +
-`password`: dataset password (leave blank if using a token) +
-`user`: dataset username (leave blank if using a token) +
-`replaceQuery`: Enables automatic query creation if you use dashboards on a {KIE_SERVER}. +
-`token`: {KIE_SERVER} token (leave blank if using user and password
-
-For multi serverTemplate, use comma separated values. Dashes are replaced by underscore on environment variable names. The valid values for this prefix are:
-
-${serverTemplatePrefix}_LOCATION, ${serverTemplatePrefix}_USER, ${serverTemplatePrefix}_PASSWORD, ${serverTemplatePrefix}_TOKEN, ${datasetPrefix}_REPLACE_QUERY.
-
-For more information, see {URL_INSTALLING_AND_CONFIGURING}#dashbuilder-runtimes-con[Dashbuilder runtimes] in the {INSTALLING_ON_EAP} guide. | --
+|`kieServerDataSets` | `KIESERVER_DATASETS` | Defines the KIE Server Datasets access configuration. | --
+|`kieServerTemplates` | `KIESERVER_SERVER_TEMPLATES` | Defines the KIE Server Templates access configuration. | --
 |`modelFileRemoval` | `DASHBUILDER_MODEL_FILE_REMOVAL` | Enables automatic removal of model file from the file system. Default value is false. | False
 |`modelUpdate` | `DASHBUILDER_MODEL_UPDATE` | Allows Runtime to check model last update in the file system to update the content. Default value is true. | True
 |`persistentConfigs` | `` | Sets Dashbuilder as not ephemeral. If `ImportFileLocation` is set `PersistentConfigs` is ignored. Default value is true. Available only on operator. | True
