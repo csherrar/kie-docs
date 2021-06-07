@@ -14,7 +14,7 @@ You can customize the code of a work item handler project. There are two Java me
 |Executed when the work item is aborted.
 |===
 
-In both methods, the `WorkItem` parameter contains any of the parameters entered into the custom task through a GUI or API call, and the `WorkItemManager` parameter is responsible for tracking the state of the custom task.
+In both methods, the `WorkItemDefinition` parameter contains any of the parameters entered into the custom task through a GUI or API call, and the `WorkItemManager` parameter is responsible for tracking the state of the custom task.
 
 .Example code structure
 [source,java,options="nowrap"]
@@ -56,13 +56,13 @@ public class MyWorkItemWorkItemHandler extends AbstractLogOrThrowWorkItemHandler
 |`RequiredParameterValidator.validate(this.getClass(), workItem);`
 |Checks that all parameters marked “required” are present. If they are not, an `IllegalArgumentException` is thrown.
 |`String sampleParam = (String) workItem.getParameter("SampleParam");`
-|Example of getting a parameter from the `WorkItem` class. The name is always a string. For example, `WorkItem`. In the example, `SampleParam` is always a string but the object associated with it can be many things and require a cast in order to avoid errors.
+|Example of getting a parameter from the `workItemDefinition` class. The name is always a string. For example, `WorkItem`. In the example, `SampleParam` is always a string but the object associated with it can be many things and require a cast in order to avoid errors.
 |`// complete workitem impl…`
 |Executes the custom Java code when a parameter is received.
 |`results.put("SampleResult", sampleResult);`
 |Passes results to the custom task. The results are placed in the data output areas of the custom task.
 |`manager.completeWorkItem(workItem.getId(), results);`
-|Marks the work item handler as complete. The `WorkItemManager` controls the state of the work item and is responsible for getting the `WorkItem` ID and associate the results with the correct custom task.
+|Marks the work item handler as complete. The `WorkItemManager` controls the state of the work item and is responsible for getting the `WorkItemDefinition` ID and associate the results with the correct custom task.
 |`abortWorkItem()`
 |Aborts the custom Java code. May be left blank if the work item is not designed to be aborted
 |===

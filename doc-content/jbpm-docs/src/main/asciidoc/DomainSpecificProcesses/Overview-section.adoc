@@ -40,7 +40,7 @@ If you're looking for specific integration logic with Twitter, for example, we r
 
 In general, a ``WorkItemHandler``'s `$$.$$executeWorkItem(...)` and ``$$.$$abortWorkItem(...)`` methods will do the following:
 
-. Extract information about the task being executed (or aborted) from the `WorkItem` instance
+. Extract information about the task being executed (or aborted) from the `WorkItemDefinition` instance
 . Execute the necessary business logic. This might be mean interacting with a web service, database, or other technical component.
 . Inform the {PROCESS_ENGINE} that the work item has been completed (or aborted) by calling one of the following two methods on the `WorkItemManager` instance passed  to the method:
 
