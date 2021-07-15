@@ -60,7 +60,7 @@ public class MyWorkItemWorkItemHandler extends AbstractLogOrThrowWorkItemHandler
 |`// complete workitem impl…`
 |Executes the custom Java code when a parameter is received.
 |`results.put("SampleResult", sampleResult);`
-|Passes results to the custom task. The results are placed in the data output areas of the custom task.
+|Puts `sampleResult` to the map.
 |`manager.completeWorkItem(workItem.getId(), results);`
 |Marks the work item handler as complete. The `WorkItemManager` controls the state of the work item and is responsible for getting the `WorkItem` ID and associate the results with the correct custom task.
 |`abortWorkItem()`

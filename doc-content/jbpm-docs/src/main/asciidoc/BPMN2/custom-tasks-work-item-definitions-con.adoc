@@ -15,33 +15,36 @@ The `@Wid` annotation is automatically created when you generate a work item han
 [source,options="nowrap"]
 ----
 @Wid(widfile="MyWorkItemDefinitions.wid",
-    name="MyWorkItemDefinitions",
-    displayName="MyWorkItemDefinitions",
-    icon="",
-    defaultHandler="mvel: new com.redhat.MyWorkItemWorkItemHandler()",
-    documentation = "myworkitem/index.html",
-    parameters={
-      @WidParameter(name="SampleParam", required = true),
-      @WidParameter(name="SampleParamTwo", required = true)
-    },
-    results={
-      @WidResult(name="SampleResult")
-    },
-    mavenDepends={
-      @WidMavenDepends(group="com.redhat",
+  name="MyWorkItemDefinitions",
+  displayName="MyWorkItemDefinitions",
+  icon="",
+  defaultHandler="mvel: new com.redhat.MyWorkItemWorkItemHandler()",
+  documentation = "myworkitem/index.html",
+  parameters={
+    @WidParameter(name="SampleParam", required = true),
+    @WidParameter(name="SampleParamTwo", required = true)
+  },
+  results={
+    @WidResult(name="SampleResult")
+  },
+  mavenDepends={
+    @WidMavenDepends(group="com.redhat",
       artifact="myworkitem",
-      version="7.52.0.Final-example-00007")
-    },
-    serviceInfo={
-      @WidService(category = "myworkitem",
+      version="7.52.0.Final-example-00007"
+    )
+  },
+  serviceInfo={
+    @WidService(category = "myworkitem",
       description = "${description}",
       keywords = "",
       action = @WidAction(title = "Sample Title"),
       authinfo = @WidAuth(required = true,
-      params = {"SampleParam", "SampleParamTwo"},
-      paramsdescription = {"SampleParam", "SampleParamTwo"},
-      referencesite = "referenceSiteURL"))
-    }
+        params = {"SampleParam", "SampleParamTwo"},
+        paramsdescription = {"SampleParam", "SampleParamTwo"},
+        referencesite = "referenceSiteURL"
+      )
+    )
+  }
 )
 ----
 

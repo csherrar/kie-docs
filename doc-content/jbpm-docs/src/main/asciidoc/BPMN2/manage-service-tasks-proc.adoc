@@ -2,7 +2,7 @@
 
 = Managing custom tasks in {CENTRAL}
 
-Custom tasks (work items) are tasks that can run custom logic. You can customize and reuse custom tasks across multiple business processes or across all projects in {CENTRAL}. You can also add custom elements in the designer palette, including name, icon, sub-category, input and output parameters, and documentation. {PRODUCT} provides a set of custom tasks within the custom task repository in {CENTRAL}. You can enable or disable the default custom tasks and upload custom tasks into {CENTRAL} to implement the tasks in the relevant processes.
+Custom tasks (work items) are tasks that can run custom logic. You can customize and reuse custom tasks across multiple business processes or across all projects in {CENTRAL}. You can also add custom elements in the designer palette, including name, icon, sub-category, input and output parameters, and documentation. {PRODUCT} provides a set of custom tasks within the custom task repository in {CENTRAL}. You can enable or disable default custom tasks, and upload custom tasks to {CENTRAL} to use these tasks in your process designs.
 
 NOTE: {PRODUCT} includes a limited set of supported custom tasks. Custom tasks that are not included in {PRODUCT} are not supported.
 
