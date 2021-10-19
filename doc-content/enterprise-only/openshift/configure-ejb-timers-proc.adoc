@@ -11,7 +11,7 @@
 
 . Disable automatic EJB Timer configuration by setting the following environment variables:
 +
-* `AUTO_CONFIGURE_EJB_TIMER` set to true.
+* `AUTO_CONFIGURE_EJB_TIMER` set to `false`.
 * `EJB_TIMER` datasource prefix placed before the `RHPAM` database on the `DATASOURCES` environment variable, for example: `DATASOURCES="EJB_TIMER,RHPAM"`.
 * The following `XA` variables are used:
 +
@@ -41,29 +41,29 @@ spec:
           - name: RHPAM_JNDI
             value: 'java:jboss/datasources/rhpam'
           - name: RHPAM_CONNECTION_CHECKER
-            value: 'oracle-connection-checker'
+            value: 'org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker'
           - name: RHPAM_EXCEPTION_SORTER
-            value: 'oracle-exception-sorter'
+            value: 'org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter'
           - name: RHPAM_NONXA
             value: 'true'
           - name: RHPAM_URL
-            value: 'my-jdbc-url'
+            value: 'jdbc:oracle:thin:@localhost:1521:rhpam_ejbtimer'
           - name: RHPAM_DRIVER
             value: 'oracle'
           - name: KIE_SERVER_PERSISTENCE_DIALECT
-            value: oracle-dialect
+            value: 'org.hibernate.dialect.OracleDialect'
           - name: RHPAM_USERNAME
             value: user
           - name: RHPAM_PASSWORD
             value: pwd
           - name: EJB_TIMER_XA_CONNECTION_PROPERTY_URL
-            value: ''
+            value: 'jdbc:oracle:thin:@localhost:1521:rhpam_ejbtimer'
           - name: EJB_TIMER_JNDI
             value: 'java:jboss/datasources/ejb_timer'
           - name: EJB_TIMER_TX_ISOLATION
             value: TRANSACTION_READ_COMMITTED
           - name: EJB_TIMER_CONNECTION_CHECKER
-            value: 'oracle-connection-checker'
+            value: 'org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker'
           - name: EJB_TIMER_EXCEPTION_SORTER
             value: 'oracleExceptionSorter'
           - name: EJB_TIMER_DRIVER
