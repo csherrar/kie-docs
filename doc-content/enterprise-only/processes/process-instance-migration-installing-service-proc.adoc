@@ -19,19 +19,71 @@ $ java -jar {PRODUCT_FILE}-process-migration-service-standalone.jar -s./config.y
 ----
 . Ensure the relevant authentication method is set for `auth-method`. Valid values are `file`, `jdbc`, and `ldap`. For example:
 +
+.`ldap` method example
 ----
-database:
-  generation: update
+pim:
+  auth-method: ldap
+quakus:
+  security:
+    ldap:
+      dir-context:
+        url: ldap://localhost:10389
+        principal: uid=admin,ou=system
+        password: secret
+      identity-mapping:
+        search-base-dn: ou=users,dc=example,dc=com
+        rdn-identifier: uid
+        attribute-mappings:
+          from: uid
+          filter: uniqueMember
+          filter-base-dn: ou=groups,dc=example,dc=com
+----
++
+.`file` method example
++
+----
 pim:
   auth-method: file
+quarkus:
+  security:
+    users:
+      file:
+        enabled: true
+        plain-text: true
+        users: users.properties
+        roles: roles.properties
 ----
-. To add dependencies or modify the build time properties by re-augmenting your Quarkus application, build your application with the `quarkus.package.type=mutable-jar` option:
++
+.`jdbc` method example
 +
 ----
-$ mvn clean install -Dquarkus.package.type=mutable-jar
+pim:
+  auth-method: jdbc
+quarkus:
+  jdbc:
+    principal-query:
+      sql: SELECT u.password, u.role FROM users u WHERE u.username=?
+      clear-password-mapper:
+        enabled: true
+        password-index: 1
+      attribute-mappings:
+        0:
+          index: 2
+          to: groups
+----
+. To configure connections to one or more {KIE_SERVERS}, add the {KIE_SERVERS} to the custom configuration file, for example:
++
+----
+kieservers:
+  - host: http://kieserver1.example.com:8080/kie-server/services/rest/server
+    username: admin
+    password: admin123
+  - host: https://kieserver2.example.com:8443/kie-server/services/rest/server
+    username: foo
+    password: bar
 ----
 +
-For more information about Quarkus application re-augmentation, see https://quarkus.io/guides/reaugmentation[RE-AUGMENT A QUARKUS APPLICATION] guide.
+You can use different configuration sources in any other configuration parameter. For more information, see the https://quarkus.io/guides/config-reference#configuration-sources[CONFIGURATION REFERENCE GUIDE].
 . Ensure the `quarkus.launch.rebuild` system property set to `true`:
 +
 ----
