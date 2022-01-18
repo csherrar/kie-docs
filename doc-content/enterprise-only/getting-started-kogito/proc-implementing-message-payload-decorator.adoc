@@ -1,12 +1,12 @@
 [id="proc-implementing-message-payload-decorator_{context}"]
-= Implementing message payload decorator
+= Implementing message payload decorator for {KOGITO} events add-on
 
 [role="_abstract"]
 Any dependent add-on can implement the https://github.com/kiegroup/kogito-runtimes/blob/main/addons/common/messaging/common/src/main/java/org/kie/kogito/addon/cloudevents/message/MessagePayloadDecorator.java[_MessagePayloadDecorator_].
 
 .Prerequisites
 
-* You have installed the Events add-on in Kogito.
+* You have installed the Events add-on in {KOGITO}.
 
 .Procedure
 
@@ -18,11 +18,11 @@ Any dependent add-on can implement the https://github.com/kiegroup/kogito-runtim
 
 . Save the file.
 +
-The `MessagePayloadDecoratorProvider` loads the file upon application start-up and adds the file to the decoration chain. When Kogito calls the `MessagePayloadDecoratorProvider#decorate`, your implementation is part of the decoration algorithm.
+The `MessagePayloadDecoratorProvider` loads the file upon application start-up and adds the file to the decoration chain. When {KOGITO} calls the `MessagePayloadDecoratorProvider#decorate`, your implementation is part of the decoration algorithm.
 
-. To use the events add-on, add the following code to the pom.xml file of your project:
+. To use the events add-on, add the following code to the `pom.xml` file of your project:
 +
-.Events smallrye add-on for Quarkus
+.Events smallrye add-on for {QAURKUS}
 [source,xml]
 ----
 <dependency>
@@ -32,7 +32,7 @@ The `MessagePayloadDecoratorProvider` loads the file upon application start-up a
 </dependency>
 ----
 +
-.Events decisions add-on for Quarkus
+.Events decisions add-on for {QAURKUS}
 [source,xml]
 ----
 <dependency>

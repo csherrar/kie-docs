@@ -44,8 +44,6 @@ include::{enterprise-dir}/getting-started-kogito/con-kogito-events-add-on.adoc[l
 
 include::{enterprise-dir}/getting-started-kogito/proc-implementing-message-payload-decorator.adoc[leveloffset=+2]
 
-include::{enterprise-dir}/getting-started-kogito/con-kogito-operator-deployment-configs.adoc[leveloffset=+2]
-
 include::{enterprise-dir}/getting-started-kogito/proc-kogito-microservice-running-app.adoc[leveloffset=+1]
 
 include::{enterprise-dir}/getting-started-kogito/proc-kogito-microservice-interacting-app.adoc[leveloffset=+1]
