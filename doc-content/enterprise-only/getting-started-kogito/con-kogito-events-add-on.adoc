@@ -1,0 +1,5 @@
+[id="con-kogito-events-add-on_{context}"]
+= {KOGITO} events add-on
+
+[role="_abstract"]
+The events add-on provides a default implementation in supported target platforms for `EventEmitter` and `EventReceiver` interfaces. You can use `EventEmitter` and `EventReceiver` interfaces to enable messaging by process, serverless workflow events, and event decision handling. For more information, see https://docs.jboss.org/kogito/release/latest/html_single/#con-knative-eventing_kogito-developing-process-services[_Knative Eventing in Kogito services_], https://docs.jboss.org/kogito/release/latest/html_single/#con-serverless-workflow-definitions_kogito-orchestrating-serverless[_Serverless Workflow definitions_], and {URL_GETTING_STARTED_KOGITO_MICROSERVICES}#proc-kogito-messaging-enabling_getting-started-kogito-microservices[_Enabling Kafka messaging for {KOGITO} services_].
