@@ -1,7 +1,7 @@
 [id="con-rhpam-kogito-operator-interaction-with-kafka_{context}"]
 = {PRODUCT} {KOGITO} Operator interaction with Kafka
 
-The {PRODUCT} {KOGITO} Operator uses the {AMQ_STREAMS} Operator to automatically configure the Red Hat build of {KOGITO} microservice with Kafka.
+The {PRODUCT} {KOGITO} Operator uses the {AMQ_STREAMS} Operator to automatically configure the {KOGITO} microservice with Kafka.
 
 When you enable an infrastructure mechanism through `KogitoInfra` deployment, the {PRODUCT} {KOGITO} Operator uses the relevant third-party operator to configure the infrastructure.
 
@@ -39,3 +39,5 @@ spec:
   infra:
   - my-kafka-infra
 ----
+
+The {PRODUCT} {KOGITO} Operator configures the necessary properties so that your application can connect to the Kafka instance.
