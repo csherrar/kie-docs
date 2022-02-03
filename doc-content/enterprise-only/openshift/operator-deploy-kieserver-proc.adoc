@@ -25,7 +25,9 @@ Optionally, you can set custom configuration for {KIE_SERVERS}. In this case, de
 +
 [NOTE]
 ====
-To change the custom hostname, you can modify the `routeHostname` variable.
+The custom hostname must be valid and resolvable.
+
+To change the custom hostname, you can modify the `routeHostname` property.
 ====
 . Optional: If you want to use a custom image for the {KIE_SERVER} deployment, complete one the following sets of additional steps:
 .. If you want to use a Docker image by specifying the image in the registry:

@@ -41,7 +41,9 @@ For example, if the full address of the image is `registry.example.com/mycontext
 +
 [NOTE]
 ====
-To change the custom hostname, you can modify the `routeHostname` variable.
+The custom hostname must be valid and resolvable.
+
+To change the custom hostname, you can modify the `routeHostname` property.
 ====
 +
 . Optional: Configure Git hooks.
