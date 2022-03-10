@@ -1270,7 +1270,7 @@ metadata:
   name: <broker-name>
 ----
 +
-The YAML file creates a broker named `default` in the current namespace. For more information about configuring broker options using YAML, see https://knative.dev/docs/eventing/broker/example-mtbroker/[Broker configuration example - Knative].
+The YAML file creates a broker with the desired name in the current namespace. For more information about configuring broker options using YAML, see https://knative.dev/docs/eventing/broker/example-mtbroker/[Broker configuration example - Knative].
 
 . To apply the YAML file, enter the following command:
 +
@@ -1298,10 +1298,11 @@ If the broker is working correctly, it shows a *READY* status of `True`, for exa
 |URL
 |AGE
 
-|default
+|<broker-name>
 |True
 |
-|http://broker-ingress.knative-eventing.svc.cluster.local/event-example/default |1m
+|http://broker-ingress.knative-eventing.svc.cluster.local/event-example/<broker-name>
+|1m
 |===
 +
 If the *READY* status is `False`, wait a few moments and then run the command again.
@@ -1328,7 +1329,7 @@ spec:
     ref:
       apiVersion: eventing.knative.dev/v1
       kind: Broker
-      name: default
+      name: <broker-name>
 ----
 . To deploy your source, enter the following command:
 +
