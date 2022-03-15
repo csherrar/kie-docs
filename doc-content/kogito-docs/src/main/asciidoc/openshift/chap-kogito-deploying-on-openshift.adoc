@@ -1022,12 +1022,112 @@ $ {PRODUCT_INIT} deploy-service example-quarkus https://github.com/kiegroup/kogi
 == Custom {PRODUCT} service integration options with {PRODUCT} Operator and CLI
 
 <Start here>
+////
 
 [id="proc-custom-kogito-service-integration-infinispan_{context}"]
 === Integrating a custom {PRODUCT} service with Infinispan
 
-<Start here>
-////
+You can integrate a custom {PRODUCT} service with an infinispan cluster using the following configuration modes:
+
+* Automatic configuration
+* Manual configuration
+
+==== Integrating a custom {PRODUCT} service with Infinispan using automatic configuration mode
+
+In automatic configuration mode the {PRODUCT} operator automatically fetches the relevant infinispan connection details from the Infinispan custom resource and provides it to the custom {PRODUCT} service.
+
+The Infinispan Operator provides operational intelligence and reduces management complexity for deploying Infinispan on Kubernetes and {OPENSHIFT}.
+
+For more information about installing Infinispan Operator and setting up an Infinispan cluster, see the https://infinispan.org/docs/infinispan-operator/main/operator.html[Infinispan Operator 2.2 Guide].
+
+KogitoInfra defines the relevant infrastructure component or the third-party operator for the {PRODUCT} service, such as Infinispan and MongoDB for persistence or Apache Kafka for messaging.
+
+.Prerequisites
+
+* Infinispan cluster is configured by using the Infinispan operator.
+
+.Procedure
+
+. Install a KogitoInfra custom resource instance with `spec.resource.name` and `spec.resource.namespace` configurations.
++
+`spec.resource.name` refers to the infinispan custom resource name and `spec.resource.namespace` refers to the infinispan custom resource namespace.
++
+.Example {PRODUCT} infrastructure resource for Infinispan persistence
+[source,yaml]
+----
+apiVersion: app.kiegroup.org/v1beta1
+kind: KogitoInfra
+metadata:
+  name: kogito-infinispan-infra
+spec:
+  resource:
+    apiVersion: infinispan.org/v1
+    kind: Infinispan
+    name: kogito-infinispan
+    namespace: infinispan-cluster-namespace
+----
+
+. To enable Infinispan persistence, bind KogitoInfra with the {PRODUCT} Service by doing one of the following tasks:
++
+* Use the `--infra INFINISPAN_INFRA_NAME` flag during deployment using the {PRODUCT} CLI, for example:
++
+[source,subs="attributes+,+quotes"]
+----
+$ kogito deploy-service travels --infra kogito-infinispan-infra
+----
+
+* Edit the `spec.infra` configuration in the {PRODUCT} Runtime custom resource, for example:
++
+[source,yaml]
+----
+apiVersion: app.kiegroup.org/v1beta1
+kind: KogitoRuntime
+metadata:
+  name: travels
+spec:
+  infra:
+    - kogito-infinispan-infra
+----
+
+==== Integrating a custom {PRODUCT} service with Infinispan using manual configurations
+
+If you set up a custom Infinispan cluster, you can refer to it in the {PRODUCT}Runtime custom resource by configuring the following environment variables and application properties:
+
+.Example {PRODUCT} service deployment with Infinispan persistence enabled using the {PRODUCT} CLI
+[source,subs="attributes+,+quotes"]
+----
+$ kogito deploy-service
+----
+
+.Required environment variables for a custom Infinispan cluster
+[source,yaml]
+----
+ENABLE_PERSISTENCE=true
+
+# On Quarkus
+`QUARKUS_INFINISPAN_CLIENT_AUTH_USERNAME`
+`QUARKUS_INFINISPAN_CLIENT_AUTH_PASSWORD`
+
+# On Spring Boot
+`INFINISPAN_REMOTE_AUTH_USERNAME`
+`INFINISPAN_REMOTE_AUTH_PASSWORD`
+----
+
+.Required application properties for a custom Infinispan cluster
+[source,yaml]
+----
+# On Quarkus
+quarkus.infinispan-client.server-list=
+quarkus.infinispan-client.use-auth=
+quarkus.infinispan-client.sasl-mechanism=
+quarkus.infinispan-client.auth-realm=
+
+# On Spring Boot
+infinispan.remote.server-list=
+infinispan.remote.use-auth=
+infinispan.remote.sasl-mechanism=
+infinispan.remote.auth-realm=
+----
 
 ==== Infinispan persistence in {PRODUCT} services
 
@@ -1054,7 +1154,7 @@ spec:
 If you set up a custom Infinispan cluster, you can refer to it in the `KogitoRuntime` custom resource by configuring the following environment variables and application properties:
 
 .Required environment variables for a custom Infinispan cluster
-[source]
+[source,yaml]
 ----
 ENABLE_PERSISTENCE=true
 
@@ -1068,7 +1168,7 @@ INFINISPAN_REMOTE_AUTH_PASSWORD
 ----
 
 .Required application properties for a custom Infinispan cluster
-[source]
+[source,yaml]
 ----
 # On Quarkus
 quarkus.infinispan-client.server-list=
