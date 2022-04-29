@@ -63,55 +63,8 @@ If this box is not selected, only secure (HTTPS) routes are exposed externally.
 +
 . If you want to use a custom image registry, under *Custom registry*, enter the URL of the registry in the *Image registry* field. If this registry does not have a properly signed and recognized SSL certificate, select the *Insecure* box.
 +
---
-To use a specific image from the custom registry, set the image context, image name, and image tag parameters in the *Console* and *KIE Server* tabs:
-
-.Parameters
-[cols="25%,75%", frame="all", options="header"]
-|===
-|Name
-|Description
-|*Image context*
-|The context of the image in the registry.
-|*Image*
-|The name of the image.
-|*Image tag*
-|The tag of the image. If you do not set this field, the installation uses the latest tag.
-|===
-
-You can specify an external image registry and image in a KieApp CR yaml file, for example:
-
-.Example
-[source,yaml]
-----
-apiVersion: app.kiegroup.org/v2
-kind: KieApp
-spec:
-  ...
-  useImageTags: true
-  imageRegistry:
-    registry: registry.example.com:5000
-    ...
-  objects:
-    ...
-    servers:
-      - id:  ...
-        ...
-        image: YOUR_IMAGE_NAME
-        imageContext: YOUR_IMAGE_CONTEXT
-        imageTag: YOUR_IMAGE_TAG
-        ...
-----
-
-[NOTE]
-====
-The operator does not create an Imagestream if there is an existing imagestream in the namespace.
-
-The operator also does not create an Imagestream if the samples operator created the imagestreams in the OpenShift namespace.
-
-To configure an Imagestream to update automatically, the `scheduledImportPolicy` property must be set to `true`.
-====
---
+For instructions about configuring the image registry to use specific images, see xref:configuring-image-registry-images-proc_{context}[].
++
 . Under *Admin user*, enter the user name and password for the administrative user for {PRODUCT} in the *Username* and *Password* fields.
 +
 [IMPORTANT]
