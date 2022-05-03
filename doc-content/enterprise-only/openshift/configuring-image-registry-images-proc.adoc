@@ -9,9 +9,9 @@ During the basic configuration of the environment you can configure the custom r
 
 .Procedure
 
-. During the {PRODUCT} environment configuration, to use a specific image from the custom registry, perform one of the following tasks:
-* If you want to specify the image using the installer wizard, set the image context, image name, and image tag parameters in the *Console* and *KIE Server* tabs:
-
+* During the {PRODUCT} environment configuration, to use a specific image from the custom registry, perform one of the following tasks:
+** If you want to specify the image using the installer wizard, set the image context, image name, and image tag parameters in the *Console* and *KIE Server* tabs:
++
 .Parameters
 [cols="25%,75%", frame="all", options="header"]
 |===
@@ -25,7 +25,7 @@ During the basic configuration of the environment you can configure the custom r
 |The tag of the image. If you do not set this field, the installation uses the latest tag.
 |===
 
-* You want to specify the image by using a KieApp CR YAML file, add the the image registry and image details to the file, for example:
+** If you want to specify the image by using a KieApp CR YAML file, add the image registry and image details to the file, for example:
 +
 .Example
 [source,yaml]
@@ -48,12 +48,10 @@ spec:
        imageTag: YOUR_IMAGE_TAG
        ...
 ----
-+
+
 [NOTE]
 ====
-The operator does not create an Imagestream if there is an existing imagestream in the namespace.
+If an ImageStream with the configured name exists in the namespace that you are using or in the {OPENSHIFT} namespace, the operator uses this ImageStream and does not create a new ImageStream.
 
-The operator also does not create an Imagestream if the samples operator created the imagestreams in the OpenShift namespace.
-
-To configure an Imagestream to update automatically, the `scheduledImportPolicy` property must be set to `true`.
+To configure an ImageStream to update automatically, the ImageStream property `scheduledImportPolicy` must be set to `true` in the KieApp CR YAML file.
 ====
