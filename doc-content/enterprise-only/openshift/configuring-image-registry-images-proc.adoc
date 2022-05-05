@@ -9,7 +9,7 @@ During the basic configuration of the environment you can configure the custom r
 
 .Procedure
 
-* During the {PRODUCT} environment configuration, to use a specific image from the custom registry, perform one of the following tasks:
+* During the {PRODUCT} environment configuration, to use a specific image from the custom registry, complete one of the following steps:
 ** If you want to specify the image using the installer wizard, set the image context, image name, and image tag parameters in the *Console* and *KIE Server* tabs:
 +
 .Parameters
