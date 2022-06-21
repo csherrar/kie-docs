@@ -1,7 +1,7 @@
 [id='configmaps-con_{context}']
 = KIE configuration and ConfigMaps
 
-When installing {PRODUCT} operator, the operator creates ConfigMaps, a YAML file, prefixed as `kieconfig-$VERSION`, for the current namespace. A ConfigMap is a YAML file containing the `DeploymentConfigs` for the {PRODUCT} components for that namespace.
+When installing the {PRODUCT} operator, the operator creates ConfigMaps, a YAML file, prefixed as `kieconfig-$VERSION`, for the current namespace. A ConfigMap is a YAML file containing the configuration for functionality such as `DeploymentConfigs`, secrets, routes, and services for the {PRODUCT} components for that namespace.
 
 .Example ConfigMap:
 [source]
@@ -20,9 +20,9 @@ data:
 …
 ----
 
-The operator uses ConfigMaps to configure and deploy the components. This includes all supported {PRODUCT} components such as {KIE_SERVER}, Smart Router, {CENTRAL} and service related configuration such as for persistent volumes, build configuration, and routes. When ConfigMaps are edited manually, the operator uses the new values to create the deployments when the environment is redeployed.
+The operator uses ConfigMaps to configure and deploy the components. This includes all supported {PRODUCT} components such as {KIE_SERVER}, Smart Router, {CENTRAL} and service-related configuration such as for persistent volumes, build configuration, and routes. When ConfigMaps are edited manually, the operator uses the new values to create the deployments when the environment is reconciled.
 
-The {PRODUCT} operator can use the current version and the previous version of {PRODUCT} components concurrently, with ConfigMaps for each version, for example, 7.12.0 and 7.12.1.
+The {PRODUCT} operator can use the current version and the previous version of {PRODUCT} components concurrently, with ConfigMaps for each version, for example, 7.13.0 and 7.12.1.
 
 kieconfigs-7.12.1::
 This contains the `common.yaml` configuration file. For more information, see  https://github.com/kiegroup/kie-cloud-operator/blob/7.12.1-1/rhpam-config/7.12.1/common.yaml[`common.yaml`] on GitHub. You can configure the following components using this configuration file:
@@ -49,7 +49,7 @@ For more information about the MySQL configuration, see https://github.com/kiegr
 For more information about the PostgreSQL configuration, see https://github.com/kiegroup/kie-cloud-operator/blob/7.12.1-1/rhpam-config/7.12.1/dbs/servers/postgresql.yaml[`postgresql.yaml`] on GitHub.
 
 kieconfigs-7.12.1-dbs-pim::
-This contains the snippet configuration for the process instance migration (PIM) supported databases; external, MySQL, and PostgreSQL.
+This contains the snippet configuration for the Process Instance Migration (PIM) supported databases; external, MySQL, and PostgreSQL.
 +
 For more information about the PIM external configuration, see https://github.com/kiegroup/kie-cloud-operator/blob/7.12.1-1/rhpam-config/7.12.1/dbs/pim/external.yaml[`external.yaml`] on GitHub.
 +
@@ -63,7 +63,7 @@ These YAML files only hold the specific configuration for the PIM database confi
 ====
 
 kieconfigs-7.12.1-dbs-servers::
-This contains the snippet configuration for the supported database methods; external, h2, MySQL, and PostgreSQL.
+This contains the snippet configuration for the supported database configurations; external, h2, MySQL, and PostgreSQL.
 +
 For more information about the external configuration, see https://github.com/kiegroup/kie-cloud-operator/blob/7.12.1-1/rhpam-config/7.12.1/dbs/servers/external.yaml[`external.yaml`] on GitHub.
 +

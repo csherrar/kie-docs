@@ -1,7 +1,7 @@
 [id='using-configmaps-proc_{context}']
 = Using ConfigMaps
 
-You can use ConfigMaps to customize the {PRODUCT} Operator and apply related configuration. To make changes to ConfigMaps, you can use the `oc` command tool or the {OPENSHIFT} console.
+You can use ConfigMaps to customize the {PRODUCT} Operator and apply the related configuration. To make changes to ConfigMaps, you can use the `oc` command tool or the {OPENSHIFT} console.
 
 .Prerequisites
 
@@ -19,14 +19,14 @@ $ oc get cm | grep kieconfigs
 +
 [source]
 ----
-kieconfigs-7.12.0               1       64m
-kieconfigs-7.12.0-dashbuilder   1       64m
-kieconfigs-7.12.0-dbs           2       64m
-kieconfigs-7.12.0-dbs-pim       3       64m
-kieconfigs-7.12.0-dbs-servers   4       64m
-kieconfigs-7.12.0-envs         10       64m
-kieconfigs-7.12.0-jms           1       64m
-kieconfigs-7.12.0-pim           1       64m
+kieconfigs-7.13.0               1       64m
+kieconfigs-7.13.0-dashbuilder   1       64m
+kieconfigs-7.13.0-dbs           2       64m
+kieconfigs-7.13.0-dbs-pim       3       64m
+kieconfigs-7.13.0-dbs-servers   4       64m
+kieconfigs-7.13.0-envs         10       64m
+kieconfigs-7.13.0-jms           1       64m
+kieconfigs-7.13.0-pim           1       64m
 kieconfigs-7.12.1               1       64m
 kieconfigs-7.12.1-dashbuilder   1       64m
 kieconfigs-7.12.1-dbs           2       64m
