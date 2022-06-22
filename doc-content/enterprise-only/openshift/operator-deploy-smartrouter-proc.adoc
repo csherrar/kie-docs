@@ -17,6 +17,16 @@ By default, the deployed environment does not include Smart Router. You can add 
 If you used a custom tag for the image, set the *Image tag* field to this tag.
 +
 . If you created the secret for Smart Router according to the instructions in <<secrets-smartrouter-create-proc_{context}>>, enter the name of the secret in the *Secret* field.
+. Optional: To configure {KIE_SERVER} for decision management only capabilities so that jBPM and case management features are disabled, complete either one of the following steps:
++
+* Select *Execute Kie Server only with Decisions capabilities*.
++
+* Set `KIE_SERVER_DECISIONS_ONLY` to `true` in the `image.yaml` file. For more information, see https://github.com/jboss-container-images/rhpam-7-openshift-image/blob/main/kieserver/image.yaml#L263)[`image.yaml`] on GitHub.
++
+[NOTE]
+====
+`KIE_SERVER_DECISIONS_ONLY` is set to `true` by default for Red Hat Decision Manager templates. For more information, see https://github.com/jboss-container-images/rhpam-7-openshift-image/blob/main/templates/decision/rhdm713-authoring-ha.yaml#L61).[`rhdm713-authoring-ha.yaml`] on GitHub.
+====
 . Optional: Enter the number of replicas for the Smart Router in the *Replicas* field.
 . Optional: To set a custom hostname for the external route, enter a domain in the *Custom hostname to be used on the Smart Router external Route* field, formatted as in the following example:
 +
