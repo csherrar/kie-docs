@@ -81,6 +81,14 @@ Do not enable the controller-based startup strategy in an environment with a hig
 ====
 +
 . Optional: If you want to use the OpenShift CA bundle as the trust store for HTTPS communication, select the *Use OpenShift CA Bundle* box.
+. Optional: If you want to use a secret containing the credentials for the Admin user, under *Admin user configuration*, enter the secret configuration to use for the Admin user in the *Secret* field.
++
+[NOTE]
+====
+If the *Secret* field is left blank, the `kie-admin-credentials` secret is used.
+
+If `kie-admin-credentials` is missing, `kie-admin-credentials` is generated with a default username and password
+====
 
 .Next steps
 
