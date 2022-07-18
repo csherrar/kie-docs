@@ -4,10 +4,10 @@
     Changes to .adoc or HTML files may be overwritten! Please change the
     generator or the input template (https://github.com/jboss-container-images/jboss-kie-modules/tree/main/tools/gen-template-doc/*.in)
 ////
-[id='rhpam712-kieserver-postgresql-ref_{context}']
-= rhpam712-kieserver-postgresql.yaml template
+[id='rhpam713-kieserver-externaldb-ref']
+= rhpam713-kieserver-externaldb.yaml template
 
-Application template for a managed KIE Server with a PostgreSQL database, for {PRODUCT_PAM} 7.12 - Deprecated
+Application template for a managed KIE Server with an external database, for Red Hat Process Automation Manager 7.13 - Deprecated
 
 
 
@@ -29,21 +29,33 @@ https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/
 |`MAVEN_REPO_PASSWORD` | `EXTERNAL_MAVEN_REPO_PASSWORD` | Password to access the Maven repository, if required. | -- | False
 |`BUSINESS_CENTRAL_SERVICE` | `WORKBENCH_SERVICE_NAME` | The Service name for the optional Business Central, where it can be reached, to allow service lookups (for example,  maven repo usage), if required. | myapp-rhpamcentr | False
 |`CREDENTIALS_SECRET` | -- | Secret containing the KIE_ADMIN_USER and KIE_ADMIN_PWD values | rhpam-credentials | True
-|`IMAGE_STREAM_NAMESPACE` | -- | Namespace in which the ImageStreams for {PRODUCT_PAM} images are installed. These ImageStreams are normally installed in the openshift namespace. You need to modify this parameter only if you installed the ImageStream in a different namespace/project. Default is "openshift". | openshift | True
+|`IMAGE_STREAM_NAMESPACE` | -- | Namespace in which the ImageStreams for Red Hat Process Automation Manager images are installed. These ImageStreams are normally installed in the openshift namespace. You need to modify this parameter only if you installed the ImageStream in a different namespace/project. Default is "openshift". | openshift | True
 |`KIE_SERVER_IMAGE_STREAM_NAME` | -- | The name of the image stream to use for KIE Server. Default is "rhpam-kieserver-rhel8". | rhpam-kieserver-rhel8 | True
-|`IMAGE_STREAM_TAG` | -- | A named pointer to an image in an image stream. Default is "7.12.0". | 7.12.0 | True
-|`KIE_SERVER_PERSISTENCE_DS` | `KIE_SERVER_PERSISTENCE_DS` | KIE Server persistence datasource. (Sets the org.kie.server.persistence.ds system property) | java:/jboss/datasources/rhpam | False
-|`KIE_SERVER_POSTGRESQL_USER` | `RHPAM_USERNAME` | KIE Server PostgreSQL database user name. | rhpam | False
-|`KIE_SERVER_POSTGRESQL_PWD` | `RHPAM_PASSWORD` | KIE Server PostgreSQL database password. | -- | False
-|`KIE_SERVER_POSTGRESQL_DB` | `RHPAM_DATABASE` | KIE Server PostgreSQL database name. | rhpam7 | False
-|`POSTGRESQL_IMAGE_STREAM_NAMESPACE` | -- | Namespace in which the ImageStream for the PostgreSQL image is installed. The ImageStream is already installed in the openshift namespace. You need to modify this parameter only if you installed the ImageStream in a different namespace/project. Default is "openshift". | openshift | False
-|`POSTGRESQL_IMAGE_STREAM_TAG` | -- | The PostgreSQL image version, which is intended to correspond to the PostgreSQL version. Default is "10". | 10 | False
-|`POSTGRESQL_MAX_PREPARED_TRANSACTIONS` | `POSTGRESQL_MAX_PREPARED_TRANSACTIONS` | Allows the PostgreSQL to handle XA transactions. | 100 | True
-|`DB_VOLUME_CAPACITY` | -- | Size of persistent storage for the database volume. | 1Gi | True
-|`KIE_SERVER_POSTGRESQL_DIALECT` | `KIE_SERVER_PERSISTENCE_DIALECT` | KIE Server PostgreSQL Hibernate dialect. | org.hibernate.dialect.PostgreSQLDialect | True
+|`IMAGE_STREAM_TAG` | -- | A named pointer to an image in an image stream. Default is "7.13.0". | 7.13.0 | True
+|`KIE_SERVER_PERSISTENCE_SCHEMA` | `KIE_SERVER_PERSISTENCE_SCHEMA` | Hibernate persistence schema. | bd.schema | False
+|`KIE_SERVER_EXTERNALDB_DIALECT` | `KIE_SERVER_PERSISTENCE_DIALECT` | KIE Server external database Hibernate dialect. | org.hibernate.dialect.MySQL57Dialect | True
+|`KIE_SERVER_EXTERNALDB_SERVICE_HOST` | `RHPAM_SERVICE_HOST` | Sets the datasource service host. Use this if you want to use the predefined mysql or postgresql datasource properties. Leave blank if the KIE_SERVER_EXTERNALDB_URL parameter is set. | 10.10.10.1 | False
+|`KIE_SERVER_EXTERNALDB_SERVICE_PORT` | `RHPAM_SERVICE_PORT` | Sets the datasource service port. Use this if you want to use the predefined mysql or postgresql datasource properties. Leave blank if the KIE_SERVER_EXTERNALDB_URL parameter is set. | 4321 | False
+|`KIE_SERVER_EXTERNALDB_NONXA` | `RHPAM_NONXA` | Sets the datasources type. It can be XA or NONXA. For non XA set it to true. Default value is true. | True | False
+|`KIE_SERVER_EXTERNALDB_URL` | `RHPAM_URL` | Sets the datasource jdbc connection url. Note that, if you are using PostgreSQL do not use this field, use the SERVICE_HOST and PORT. If using SERVICE_PORT and HOST there is no need to fill this parameter. | jdbc:mysql://127.0.0.1:3306/rhpam | False
+|`KIE_SERVER_EXTERNALDB_DRIVER` | `RHPAM_DRIVER` | The predefined driver name, available values are mysql, postgresql or the preferred name for the external driver. | mariadb | True
+|`KIE_SERVER_EXTERNALDB_JNDI` | `KIE_SERVER_PERSISTENCE_DS` | Database JNDI name used by application to resolve the datasource, e.g. java:/jboss/datasources/ExampleDS. | java:jboss/datasources/jbpmDS | True
+|`KIE_SERVER_EXTERNALDB_DB` | `RHPAM_DATABASE` | KIE Server external database name. Leave blank if the KIE_SERVER_EXTERNALDB_URL is set. | rhpam | False
+|`KIE_SERVER_EXTERNALDB_USER` | `RHPAM_USERNAME` | KIE Server external database user name. | rhpam | True
+|`KIE_SERVER_EXTERNALDB_PWD` | `RHPAM_PASSWORD` | KIE Server external database password. | -- | True
+|`KIE_SERVER_EXTERNALDB_MIN_POOL_SIZE` | `RHPAM_MIN_POOL_SIZE` | Sets xa-pool/min-pool-size for the configured datasource. | -- | False
+|`KIE_SERVER_EXTERNALDB_MAX_POOL_SIZE` | `RHPAM_MAX_POOL_SIZE` | Sets xa-pool/max-pool-size for the configured datasource. | -- | False
+|`KIE_SERVER_EXTERNALDB_CONNECTION_CHECKER` | `RHPAM_CONNECTION_CHECKER` | An org.jboss.jca.adapters.jdbc.ValidConnectionChecker that provides a SQLException isValidConnection(Connection e) method to validate if a connection is valid. | org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker | False
+|`KIE_SERVER_EXTERNALDB_EXCEPTION_SORTER` | `RHPAM_EXCEPTION_SORTER` | An org.jboss.jca.adapters.jdbc.ExceptionSorter that provides a boolean isExceptionFatal(SQLException e) method to validate if an exception should be broadcast to all javax.resource.spi.ConnectionEventListener as a connectionErrorOccurred. | org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter | False
+|`KIE_SERVER_EXTERNALDB_BACKGROUND_VALIDATION` | `RHPAM_BACKGROUND_VALIDATION` | Sets the sql validation method to background-validation, if set to false the validate-on-match method will be used. | true | False
+|`KIE_SERVER_EXTERNALDB_BACKGROUND_VALIDATION_MILLIS` | `RHPAM_VALIDATION_MILLIS` | Defines the interval for the background-validation check for the jdbc connections. | 10000 | False
+|`KIE_SERVER_EXTERNALDB_DRIVER_TYPE` | `RHPAM_DRIVER_TYPE` | KIE Server external database driver type, applicable only for DB2, possible values are 4 (default) or 2. | 4 | False
+|`EXTENSIONS_IMAGE` | -- | ImageStreamTag definition for the image containing the drivers and configuration. For example, custom-driver-image:7.13.0. | custom-driver-extension:7.13.0 | True
+|`EXTENSIONS_IMAGE_NAMESPACE` | -- | Namespace within which the ImageStream definition for the image containing the drivers and configuration is located. | openshift | True
+|`EXTENSIONS_INSTALL_DIR` | -- | Full path to the directory within the extensions image where the extensions are located (e.g. install.sh, modules/, etc.). | `/extensions` | True
 |`KIE_SERVER_MODE` | `KIE_SERVER_MODE` | The KIE Server mode. Valid values are 'DEVELOPMENT' or 'PRODUCTION'. In production mode, you can not deploy SNAPSHOT versions of artifacts on the KIE Server and can not change the version of an artifact in an existing container. (Sets the org.kie.server.mode system property). | `PRODUCTION` | False
-|`KIE_MBEANS` | `KIE_MBEANS` | KIE Server mbeans enabled/disabled. (Sets the kie.mbeans and kie.scanner.mbeans system properties) | enabled | False
-|`DROOLS_SERVER_FILTER_CLASSES` | `DROOLS_SERVER_FILTER_CLASSES` | KIE Server class filtering. (Sets the org.drools.server.filter.classes system property) | true | False
+|`KIE_MBEANS` | `KIE_MBEANS` | KIE Server mbeans enabled/disabled (Sets the kie.mbeans and kie.scanner.mbeans system properties). | enabled | False
+|`DROOLS_SERVER_FILTER_CLASSES` | `DROOLS_SERVER_FILTER_CLASSES` | KIE Server class filtering (Sets the org.drools.server.filter.classes system property). | true | False
 |`PROMETHEUS_SERVER_EXT_DISABLED` | `PROMETHEUS_SERVER_EXT_DISABLED` | If set to false, the prometheus server extension will be enabled. (Sets the org.kie.prometheus.server.ext.disabled system property) | false | False
 |`KIE_SERVER_HOSTNAME_HTTP` | `HOSTNAME_HTTP` | Custom hostname for http service route. Leave blank for default hostname, e.g.: insecure-<application-name>-kieserver-<project>.<default-domain-suffix> | -- | False
 |`KIE_SERVER_HOSTNAME_HTTPS` | `HOSTNAME_HTTPS` | Custom hostname for https service route.  Leave blank for default hostname, e.g.: <application-name>-kieserver-<project>.<default-domain-suffix> | -- | False
@@ -58,7 +70,7 @@ https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/
 |`KIE_SERVER_CPU_LIMIT` | -- | KIE Server Container CPU limit. | 1 | True
 |`KIE_SERVER_CPU_REQUEST` | -- | KIE Server Container CPU request. | 750m | True
 |`KIE_SERVER_CONTAINER_DEPLOYMENT` | `KIE_SERVER_CONTAINER_DEPLOYMENT` | KIE Server Container deployment configuration with optional alias. Format: containerId=groupId:artifactId:version\|c2(alias2)=g2:a2:v2 | rhpam-kieserver-library=org.openshift.quickstarts:rhpam-kieserver-library:1.6.0-SNAPSHOT | False
-|`KIE_SERVER_MGMT_DISABLED` | `KIE_SERVER_MGMT_DISABLED` | Disable management api and don't allow KIE containers to be deployed/undeployed or started/stopped sets the property org.kie.server.mgmt.api.disabled to true and org.kie.server.startup.strategy to LocalContainersStartupStrategy. | true | False
+|`KIE_SERVER_MGMT_DISABLED` | `KIE_SERVER_MGMT_DISABLED` | Disable management api and don't allow KIE containers to be deployed/undeployed or started/stopped. Sets the property org.kie.server.mgmt.api.disabled to true and org.kie.server.startup.strategy to LocalContainersStartupStrategy. | true | False
 |`SSO_URL` | `SSO_URL` | RH-SSO URL. | \https://rh-sso.example.com/auth | False
 |`SSO_REALM` | `SSO_REALM` | RH-SSO Realm name. | -- | False
 |`KIE_SERVER_SSO_CLIENT` | `SSO_CLIENT` | KIE Server RH-SSO Client name. | -- | False
@@ -72,6 +84,7 @@ https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/
 |`AUTH_LDAP_LOGIN_FAILOVER` | `AUTH_LDAP_LOGIN_FAILOVER` | Enable failover, if LDAP Url is unreachable, it will fail over to the KieFsRealm. | true | False
 |`AUTH_LDAP_BIND_DN` | `AUTH_LDAP_BIND_DN` | Bind DN used for authentication. | uid=admin,ou=users,ou=example,ou=com | False
 |`AUTH_LDAP_BIND_CREDENTIAL` | `AUTH_LDAP_BIND_CREDENTIAL` | LDAP Credentials used for authentication. | Password | False
+|`AUTH_LDAP_ALLOW_EMPTY_PASSWORDS` | `AUTH_LDAP_ALLOW_EMPTY_PASSWORDS` | Does this realm support blank password direct verification? Blank password attempt will be rejected otherwise. Boolean flag, defaults to false. | true | False
 |`AUTH_LDAP_BASE_CTX_DN` | `AUTH_LDAP_BASE_CTX_DN` | LDAP Base DN of the top-level context to begin the user search. | ou=users,ou=example,ou=com | False
 |`AUTH_LDAP_BASE_FILTER` | `AUTH_LDAP_BASE_FILTER` | LDAP search filter used to locate the context of the user to authenticate. The input username or userDN obtained from the login module callback is substituted into the filter anywhere a {0} expression is used. A common example for the search filter is (uid={0}). | (uid={0}) | False
 |`AUTH_LDAP_RECURSIVE_SEARCH` | `AUTH_LDAP_RECURSIVE_SEARCH` | Indicates if the user queries are recursive. | true | False
@@ -80,7 +93,7 @@ https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/
 |`AUTH_LDAP_ROLES_CTX_DN` | `AUTH_LDAP_ROLES_CTX_DN` | The fixed DN of the context to search for user roles. This is not the DN where the actual roles are, but the DN where the objects containing the user roles are. For example, in a Microsoft Active Directory server, this is the DN where the user account is. | ou=groups,ou=example,ou=com | False
 |`AUTH_LDAP_ROLE_FILTER` | `AUTH_LDAP_ROLE_FILTER` | A search filter used to locate the roles associated with the authenticated user. The input username or userDN obtained from the login module callback is substituted into the filter anywhere a {0} expression is used. The authenticated userDN is substituted into the filter anywhere a {1} is used. An example search filter that matches on the input username is (member={0}). An alternative that matches on the authenticated userDN is (member={1}). | (memberOf={1}) | False
 |`AUTH_LDAP_ROLE_RECURSION` | `AUTH_LDAP_ROLE_RECURSION` | The number of levels of recursion the role search will go below a matching context. Disable recursion by setting this to 0. | 1 | False
-|`AUTH_LDAP_DEFAULT_ROLE` | `AUTH_LDAP_DEFAULT_ROLE` | A role included for all authenticated users | user | False
+|`AUTH_LDAP_DEFAULT_ROLE` | `AUTH_LDAP_DEFAULT_ROLE` | A role included for all authenticated users. | user | False
 |`AUTH_LDAP_NEW_IDENTITY_ATTRIBUTES` | `AUTH_LDAP_NEW_IDENTITY_ATTRIBUTES` | Provide new identities for LDAP  identity mapping, the pattern to be used with this env is 'attribute_name=attribute_value;another_attribute_name=value' | sn=BlankSurname;cn=BlankCommonName | False
 |`AUTH_LDAP_REFERRAL_MODE` | `AUTH_LDAP_REFERRAL_MODE` | If LDAP referrals should be followed. Corresponds to REFERRAL ('java.naming.referral') environment property. Allowed values: 'ignore', 'follow', 'throw' | -- | False
 |`AUTH_ROLE_MAPPER_ROLES_PROPERTIES` | `AUTH_ROLE_MAPPER_ROLES_PROPERTIES` | When present, the RoleMapping will be configured to use the provided properties file or roles. This parameter defines the fully-qualified file path and name of a properties file or a set of roles with the following pattern 'role=role1;another-role=role2'. The format of every entry in the file is original_role=role1,role2,role3 | role=role1,role3,role4;role7=role,admin | False
@@ -108,9 +121,6 @@ https://cloud.google.com/container-engine/docs/services/[container-engine docume
 |8080 | http
 .2+| All the KIE Server web server's ports.
 |8443 | https
-.1+| `${APPLICATION_NAME}-postgresql`
-|5432 | --
-.1+| The database server's port.
 |=============
 
 
@@ -120,7 +130,7 @@ https://cloud.google.com/container-engine/docs/services/[container-engine docume
 A route is a way to expose a service by giving it an externally reachable hostname such as `www.example.com`. A defined route and the endpoints
 identified by its service can be consumed by a router to provide named connectivity from external clients to your applications. Each route consists
 of a route name, service selector, and (optionally) security configuration. See the
-https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/architecture/networking#architecture-core-concepts-routes[Openshift documentation] for more information.
+https://access.redhat.com/documentation/en-us/openshift_enterprise/3.2/html/architecture/core-concepts#architecture-core-concepts-routes[Openshift documentation] for more information.
 
 |=============
 | Service    | Security | Hostname
@@ -130,6 +140,19 @@ https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/
 |=============
 
 
+
+=== Build Configurations
+
+A `buildConfig` describes a single build definition and a set of triggers for when a new build should be created.
+A `buildConfig` is a REST object, which can be used in a POST to the API server to create a new instance. Refer to
+the https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/developer_guide/builds#defining-a-buildconfig[Openshift documentation]
+for more information.
+
+|=============
+| S2I image  | link | Build output | BuildTriggers and Settings
+
+|rhpam-kieserver-rhel8:7.13.0 |  `rhpam-7/rhpam-kieserver-rhel8` | `${APPLICATION_NAME}-kieserver:latest` | ImageChange, ImageChange, ConfigChange
+|=============
 
 
 === Deployment Configurations
@@ -147,7 +170,6 @@ https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/
 |Deployment | Triggers
 
 |`${APPLICATION_NAME}-kieserver` | ImageChange
-|`${APPLICATION_NAME}-postgresql` | ImageChange
 |============
 
 
@@ -163,7 +185,6 @@ for more information.
 |Deployment | Replicas
 
 |`${APPLICATION_NAME}-kieserver` | 1
-|`${APPLICATION_NAME}-postgresql` | 1
 |============
 
 
@@ -190,7 +211,6 @@ information.
 |Deployment | Image
 
 |`${APPLICATION_NAME}-kieserver` | `${KIE_SERVER_IMAGE_STREAM_NAME}`
-|`${APPLICATION_NAME}-postgresql` | postgresql
 |============
 
 
@@ -203,11 +223,6 @@ information.
 Http Get on http://localhost:8080/services/rest/server/readycheck
 ----
 
-.${APPLICATION_NAME}-postgresql
-----
-/usr/libexec/check-container
-----
-
 
 
 
@@ -217,11 +232,6 @@ Http Get on http://localhost:8080/services/rest/server/readycheck
 .${APPLICATION_NAME}-kieserver
 ----
 Http Get on http://localhost:8080/services/rest/server/healthcheck
-----
-
-.${APPLICATION_NAME}-postgresql
-----
-/usr/libexec/check-container --live
 ----
 
 
@@ -236,8 +246,6 @@ Http Get on http://localhost:8080/services/rest/server/healthcheck
 |jolokia | 8778 | `TCP`
 |http | 8080 | `TCP`
 |https | 8443 | `TCP`
-.1+| `${APPLICATION_NAME}-postgresql`
-|-- | 5432 | `TCP`
 |=============
 
 
@@ -247,13 +255,13 @@ Http Get on http://localhost:8080/services/rest/server/healthcheck
 |=======================================================================
 |Deployment |Variable name |Description |Example value
 
-.76+| `${APPLICATION_NAME}-kieserver`
+.86+| `${APPLICATION_NAME}-kieserver`
 |`WORKBENCH_SERVICE_NAME` | The Service name for the optional Business Central, where it can be reached, to allow service lookups (for example,  maven repo usage), if required. | `${BUSINESS_CENTRAL_SERVICE}`
 |`KIE_ADMIN_USER` | Admin user name | Set according to the credentials secret
 |`KIE_ADMIN_PWD` | Admin user password | Set according to the credentials secret
 |`KIE_SERVER_MODE` | The KIE Server mode. Valid values are 'DEVELOPMENT' or 'PRODUCTION'. In production mode, you can not deploy SNAPSHOT versions of artifacts on the KIE Server and can not change the version of an artifact in an existing container. (Sets the org.kie.server.mode system property). | `${KIE_SERVER_MODE}`
-|`KIE_MBEANS` | KIE Server mbeans enabled/disabled. (Sets the kie.mbeans and kie.scanner.mbeans system properties) | `${KIE_MBEANS}`
-|`DROOLS_SERVER_FILTER_CLASSES` | KIE Server class filtering. (Sets the org.drools.server.filter.classes system property) | `${DROOLS_SERVER_FILTER_CLASSES}`
+|`KIE_MBEANS` | KIE Server mbeans enabled/disabled (Sets the kie.mbeans and kie.scanner.mbeans system properties). | `${KIE_MBEANS}`
+|`DROOLS_SERVER_FILTER_CLASSES` | KIE Server class filtering (Sets the org.drools.server.filter.classes system property). | `${DROOLS_SERVER_FILTER_CLASSES}`
 |`PROMETHEUS_SERVER_EXT_DISABLED` | If set to false, the prometheus server extension will be enabled. (Sets the org.kie.prometheus.server.ext.disabled system property) | `${PROMETHEUS_SERVER_EXT_DISABLED}`
 |`KIE_SERVER_BYPASS_AUTH_USER` | Allows the KIE Server to bypass the authenticated user for task-related operations, for example, queries. (Sets the org.kie.server.bypass.auth.user system property) | `${KIE_SERVER_BYPASS_AUTH_USER}`
 |`KIE_SERVER_ID` | -- | --
@@ -271,21 +279,30 @@ Http Get on http://localhost:8080/services/rest/server/healthcheck
 |`EXTERNAL_MAVEN_REPO_URL` | Fully qualified URL to a Maven repository or service. | `${MAVEN_REPO_URL}`
 |`EXTERNAL_MAVEN_REPO_USERNAME` | User name for accessing the Maven repository, if required. | `${MAVEN_REPO_USERNAME}`
 |`EXTERNAL_MAVEN_REPO_PASSWORD` | Password to access the Maven repository, if required. | `${MAVEN_REPO_PASSWORD}`
-|`KIE_SERVER_MGMT_DISABLED` | Disable management api and don't allow KIE containers to be deployed/undeployed or started/stopped sets the property org.kie.server.mgmt.api.disabled to true and org.kie.server.startup.strategy to LocalContainersStartupStrategy. | `${KIE_SERVER_MGMT_DISABLED}`
+|`KIE_SERVER_MGMT_DISABLED` | Disable management api and don't allow KIE containers to be deployed/undeployed or started/stopped. Sets the property org.kie.server.mgmt.api.disabled to true and org.kie.server.startup.strategy to LocalContainersStartupStrategy. | `${KIE_SERVER_MGMT_DISABLED}`
 |`KIE_SERVER_STARTUP_STRATEGY` | -- | OpenShiftStartupStrategy
-|`KIE_SERVER_PERSISTENCE_DS` | KIE Server persistence datasource. (Sets the org.kie.server.persistence.ds system property) | `${KIE_SERVER_PERSISTENCE_DS}`
+|`KIE_SERVER_PERSISTENCE_DS` | Database JNDI name used by application to resolve the datasource, e.g. java:/jboss/datasources/ExampleDS. | `${KIE_SERVER_EXTERNALDB_JNDI}`
+|`KIE_SERVER_PERSISTENCE_SCHEMA` | Hibernate persistence schema. | `${KIE_SERVER_PERSISTENCE_SCHEMA}`
+|`KIE_SERVER_PERSISTENCE_DIALECT` | KIE Server external database Hibernate dialect. | `${KIE_SERVER_EXTERNALDB_DIALECT}`
 |`DATASOURCES` | -- | `RHPAM`
-|`RHPAM_DATABASE` | KIE Server PostgreSQL database name. | `${KIE_SERVER_POSTGRESQL_DB}`
-|`RHPAM_DRIVER` | -- | postgresql
-|`RHPAM_USERNAME` | KIE Server PostgreSQL database user name. | `${KIE_SERVER_POSTGRESQL_USER}`
-|`RHPAM_PASSWORD` | KIE Server PostgreSQL database password. | `${KIE_SERVER_POSTGRESQL_PWD}`
-|`RHPAM_SERVICE_HOST` | -- | `${APPLICATION_NAME}-postgresql`
-|`RHPAM_SERVICE_PORT` | -- | 5432
-|`KIE_SERVER_PERSISTENCE_DIALECT` | KIE Server PostgreSQL Hibernate dialect. | `${KIE_SERVER_POSTGRESQL_DIALECT}`
+|`RHPAM_DATABASE` | KIE Server external database name. Leave blank if the KIE_SERVER_EXTERNALDB_URL is set. | `${KIE_SERVER_EXTERNALDB_DB}`
+|`RHPAM_SERVICE_HOST` | Sets the datasource service host. Use this if you want to use the predefined mysql or postgresql datasource properties. Leave blank if the KIE_SERVER_EXTERNALDB_URL parameter is set. | `${KIE_SERVER_EXTERNALDB_SERVICE_HOST}`
+|`RHPAM_SERVICE_PORT` | Sets the datasource service port. Use this if you want to use the predefined mysql or postgresql datasource properties. Leave blank if the KIE_SERVER_EXTERNALDB_URL parameter is set. | `${KIE_SERVER_EXTERNALDB_SERVICE_PORT}`
+|`RHPAM_JNDI` | Database JNDI name used by application to resolve the datasource, e.g. java:/jboss/datasources/ExampleDS. | `${KIE_SERVER_EXTERNALDB_JNDI}`
+|`RHPAM_DRIVER` | The predefined driver name, available values are mysql, postgresql or the preferred name for the external driver. | `${KIE_SERVER_EXTERNALDB_DRIVER}`
+|`RHPAM_USERNAME` | KIE Server external database user name. | `${KIE_SERVER_EXTERNALDB_USER}`
+|`RHPAM_PASSWORD` | KIE Server external database password. | `${KIE_SERVER_EXTERNALDB_PWD}`
+|`RHPAM_NONXA` | Sets the datasources type. It can be XA or NONXA. For non XA set it to true. Default value is true. | `${KIE_SERVER_EXTERNALDB_NONXA}`
+|`RHPAM_URL` | Sets the datasource jdbc connection url. Note that, if you are using PostgreSQL do not use this field, use the SERVICE_HOST and PORT. If using SERVICE_PORT and HOST there is no need to fill this parameter. | `${KIE_SERVER_EXTERNALDB_URL}`
+|`RHPAM_XA_CONNECTION_PROPERTY_URL` | Sets the datasource jdbc connection url. Note that, if you are using PostgreSQL do not use this field, use the SERVICE_HOST and PORT. If using SERVICE_PORT and HOST there is no need to fill this parameter. | `${KIE_SERVER_EXTERNALDB_URL}`
+|`RHPAM_MIN_POOL_SIZE` | Sets xa-pool/min-pool-size for the configured datasource. | `${KIE_SERVER_EXTERNALDB_MIN_POOL_SIZE}`
+|`RHPAM_MAX_POOL_SIZE` | Sets xa-pool/max-pool-size for the configured datasource. | `${KIE_SERVER_EXTERNALDB_MAX_POOL_SIZE}`
+|`RHPAM_CONNECTION_CHECKER` | An org.jboss.jca.adapters.jdbc.ValidConnectionChecker that provides a SQLException isValidConnection(Connection e) method to validate if a connection is valid. | `${KIE_SERVER_EXTERNALDB_CONNECTION_CHECKER}`
+|`RHPAM_EXCEPTION_SORTER` | An org.jboss.jca.adapters.jdbc.ExceptionSorter that provides a boolean isExceptionFatal(SQLException e) method to validate if an exception should be broadcast to all javax.resource.spi.ConnectionEventListener as a connectionErrorOccurred. | `${KIE_SERVER_EXTERNALDB_EXCEPTION_SORTER}`
+|`RHPAM_BACKGROUND_VALIDATION` | Sets the sql validation method to background-validation, if set to false the validate-on-match method will be used. | `${KIE_SERVER_EXTERNALDB_BACKGROUND_VALIDATION}`
+|`RHPAM_VALIDATION_MILLIS` | Defines the interval for the background-validation check for the jdbc connections. | `${KIE_SERVER_EXTERNALDB_BACKGROUND_VALIDATION_MILLIS}`
+|`RHPAM_DRIVER_TYPE` | KIE Server external database driver type, applicable only for DB2, possible values are 4 (default) or 2. | `${KIE_SERVER_EXTERNALDB_DRIVER_TYPE}`
 |`RHPAM_JTA` | -- | true
-|`RHPAM_JNDI` | KIE Server persistence datasource. (Sets the org.kie.server.persistence.ds system property) | `${KIE_SERVER_PERSISTENCE_DS}`
-|`RHPAM_CONNECTION_CHECKER` | -- | org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker
-|`RHPAM_EXCEPTION_SORTER` | -- | org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter
 |`TIMER_SERVICE_DATA_STORE_REFRESH_INTERVAL` | Sets refresh-interval for the EJB timer database data-store service. | `${TIMER_SERVICE_DATA_STORE_REFRESH_INTERVAL}`
 |`HTTPS_KEYSTORE_DIR` | -- | `/etc/kieserver-secret-volume`
 |`HTTPS_KEYSTORE` | The name of the keystore file within the secret. | `${KIE_SERVER_HTTPS_KEYSTORE}`
@@ -310,6 +327,7 @@ Http Get on http://localhost:8080/services/rest/server/healthcheck
 |`AUTH_LDAP_LOGIN_FAILOVER` | Enable failover, if LDAP Url is unreachable, it will fail over to the KieFsRealm. | `${AUTH_LDAP_LOGIN_FAILOVER}`
 |`AUTH_LDAP_BIND_DN` | Bind DN used for authentication. | `${AUTH_LDAP_BIND_DN}`
 |`AUTH_LDAP_BIND_CREDENTIAL` | LDAP Credentials used for authentication. | `${AUTH_LDAP_BIND_CREDENTIAL}`
+|`AUTH_LDAP_ALLOW_EMPTY_PASSWORDS` | Does this realm support blank password direct verification? Blank password attempt will be rejected otherwise. Boolean flag, defaults to false. | `${AUTH_LDAP_ALLOW_EMPTY_PASSWORDS}`
 |`AUTH_LDAP_BASE_CTX_DN` | LDAP Base DN of the top-level context to begin the user search. | `${AUTH_LDAP_BASE_CTX_DN}`
 |`AUTH_LDAP_BASE_FILTER` | LDAP search filter used to locate the context of the user to authenticate. The input username or userDN obtained from the login module callback is substituted into the filter anywhere a {0} expression is used. A common example for the search filter is (uid={0}). | `${AUTH_LDAP_BASE_FILTER}`
 |`AUTH_LDAP_RECURSIVE_SEARCH` | Indicates if the user queries are recursive. | `${AUTH_LDAP_RECURSIVE_SEARCH}`
@@ -318,17 +336,12 @@ Http Get on http://localhost:8080/services/rest/server/healthcheck
 |`AUTH_LDAP_ROLES_CTX_DN` | The fixed DN of the context to search for user roles. This is not the DN where the actual roles are, but the DN where the objects containing the user roles are. For example, in a Microsoft Active Directory server, this is the DN where the user account is. | `${AUTH_LDAP_ROLES_CTX_DN}`
 |`AUTH_LDAP_ROLE_FILTER` | A search filter used to locate the roles associated with the authenticated user. The input username or userDN obtained from the login module callback is substituted into the filter anywhere a {0} expression is used. The authenticated userDN is substituted into the filter anywhere a {1} is used. An example search filter that matches on the input username is (member={0}). An alternative that matches on the authenticated userDN is (member={1}). | `${AUTH_LDAP_ROLE_FILTER}`
 |`AUTH_LDAP_ROLE_RECURSION` | The number of levels of recursion the role search will go below a matching context. Disable recursion by setting this to 0. | `${AUTH_LDAP_ROLE_RECURSION}`
-|`AUTH_LDAP_DEFAULT_ROLE` | A role included for all authenticated users | `${AUTH_LDAP_DEFAULT_ROLE}`
+|`AUTH_LDAP_DEFAULT_ROLE` | A role included for all authenticated users. | `${AUTH_LDAP_DEFAULT_ROLE}`
 |`AUTH_LDAP_NEW_IDENTITY_ATTRIBUTES` | Provide new identities for LDAP  identity mapping, the pattern to be used with this env is 'attribute_name=attribute_value;another_attribute_name=value' | `${AUTH_LDAP_NEW_IDENTITY_ATTRIBUTES}`
 |`AUTH_LDAP_REFERRAL_MODE` | If LDAP referrals should be followed. Corresponds to REFERRAL ('java.naming.referral') environment property. Allowed values: 'ignore', 'follow', 'throw' | `${AUTH_LDAP_REFERRAL_MODE}`
 |`AUTH_ROLE_MAPPER_ROLES_PROPERTIES` | When present, the RoleMapping will be configured to use the provided properties file or roles. This parameter defines the fully-qualified file path and name of a properties file or a set of roles with the following pattern 'role=role1;another-role=role2'. The format of every entry in the file is original_role=role1,role2,role3 | `${AUTH_ROLE_MAPPER_ROLES_PROPERTIES}`
 |`AUTH_LDAP_MAPPER_KEEP_MAPPED` | When set to 'true' the mapped roles will retain all roles, that have defined mappings. | `${AUTH_LDAP_MAPPER_KEEP_MAPPED}`
 |`AUTH_LDAP_MAPPER_KEEP_NON_MAPPED` | When set to 'true' the mapped roles will retain all roles, that have no defined mappings. | `${AUTH_LDAP_MAPPER_KEEP_NON_MAPPED}`
-.4+| `${APPLICATION_NAME}-postgresql`
-|`POSTGRESQL_USER` | KIE Server PostgreSQL database user name. | `${KIE_SERVER_POSTGRESQL_USER}`
-|`POSTGRESQL_PASSWORD` | KIE Server PostgreSQL database password. | `${KIE_SERVER_POSTGRESQL_PWD}`
-|`POSTGRESQL_DATABASE` | KIE Server PostgreSQL database name. | `${KIE_SERVER_POSTGRESQL_DB}`
-|`POSTGRESQL_MAX_PREPARED_TRANSACTIONS` | Allows the PostgreSQL to handle XA transactions. | `${POSTGRESQL_MAX_PREPARED_TRANSACTIONS}`
 |=======================================================================
 
 
@@ -339,25 +352,10 @@ Http Get on http://localhost:8080/services/rest/server/healthcheck
 |Deployment |Name  | mountPath | Purpose | readOnly
 
 |`${APPLICATION_NAME}-kieserver` | kieserver-keystore-volume | `/etc/kieserver-secret-volume` | ssl certs | True
-|`${APPLICATION_NAME}-postgresql` | `${APPLICATION_NAME}-postgresql-pvol` | `/var/lib/pgsql/data` | postgresql | false
 |=============
 
 
 === External Dependencies
-
-
-==== Volume Claims
-
-A `PersistentVolume` object is a storage resource in an OpenShift cluster. Storage is provisioned by an administrator
-by creating `PersistentVolume` objects from sources such as GCE Persistent Disks, AWS Elastic Block Stores (EBS), and NFS mounts.
-See the https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/developer_guide/dev-guide-persistent-volumes[Openshift documentation] for
-more information.
-
-|=============
-|Name | Access Mode
-
-|`${APPLICATION_NAME}-postgresql-claim` | ReadWriteOnce
-|=============
 
 
 
